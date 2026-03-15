@@ -45,6 +45,8 @@
   nav.scrolled{background: rgba(249,247,242,0.98);box-shadow:0 2px 0 var(--border),var(--shadow)}
   .nav-logo{display:flex;align-items:center;text-decoration:none}
   .nav-logo img{height:52px;width:auto;display:block}
+  .nav-logo-icon svg{width:22px;height:22px;fill:var(--gold)}
+  .nav-logo-text{font-family:var(--font-cond);font-size:16px;letter-spacing:3px;color:var(--white);font-weight:600}
   .nav-links{display:flex;align-items:center;gap:36px;list-style:none}
   .nav-links a{font-family:var(--font-cond);font-size:11.5px;letter-spacing:2.5px;color: var(--text-muted);text-decoration:none;text-transform:uppercase;transition:color var(--transition);position:relative;padding-bottom:4px}
   .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--accent);transition:width var(--transition)}
@@ -294,11 +296,13 @@
 
 <nav>
   <a href="index.html" class="nav-logo">
-  <img src="furahia-web-logo.png" alt="Furahia Transfers &amp; Logistics" style="height:54px;width:auto;display:block;" />
-    <div>
-      <span class="nav-logo-text">FURAHIA TRANSFER</span>
-      <span class="nav-logo-sub">GROUP</span>
-    </div>
+      <div class="nav-logo-icon">
+          <img src="furahia-web-logo.png" alt="Furahia Transfers &amp; Logistics" style="height:54px;width:auto;display:block;" />
+      </div>
+      <div>
+          <span class="nav-logo-text">FURAHIA TRANSFER</span>
+          <span class="nav-logo-sub">GROUP</span>
+      </div>
 </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
