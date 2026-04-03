@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FURAHIA TRANSFER GROUP — Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    /* ── NEW BRAND PALETTE ── */
+    --bg:         #F9F7F2;   /* primary page background */
+    --bg-alt:     #EDE8DF;   /* section alternates, input fills */
+    --card:       #F4F0E8;   /* card surfaces */
+    --text:       #3E2723;   /* headings, brand, body copy */
+    --text-muted: #6B5851;   /* secondary body text */
+    --accent:     #C05A35;   /* CTA buttons (Book Now / Inquire) */
+    --accent-hover:#F2B138;  /* button hover & active link state */
+    --link:       #5E7D67;   /* inline text links */
+    --footer-bg:  #3E2723;   /* footer & dark sections */
+    --footer-text:#F9F7F2;   /* text on dark footer */
+    --border:     rgba(62,39,35,0.14);   /* subtle warm border */
+    --border-soft:rgba(62,39,35,0.08);
+    --glass:      rgba(249,247,242,0.88);/* nav glass */
+    --shadow:     0 4px 24px rgba(62,39,35,0.12);
+    --shadow-lg:  0 12px 48px rgba(62,39,35,0.18);
+    --transition: 0.35s cubic-bezier(0.4,0,0.2,1);
+    --font-display:'Cormorant Garamond',serif;
+    --font-body:   'DM Sans',sans-serif;
+    --font-cond:   'Barlow Condensed',sans-serif;
+
+    /* Legacy aliases so existing code keeps working */
+    --black:      #F4F0E8;   /* was dark, now light card bg */
+    --deep:       #F9F7F2;   /* was darkest bg, now main bg */
+    --navy:       #EDE8DF;   /* was dark navy, now warm grey section */
+    --gold:       #C05A35;   /* accent replaces gold throughout */
+    --gold-light: #F2B138;   /* hover amber replaces gold-light */
+    --gold-dim:   rgba(192,90,53,0.10);
+    --white:      #F9F7F2;   /* inverted — was white on dark */
+    --grey:       #6B5851;
+    --border-soft:rgba(62,39,35,0.08);
+    --glass:      rgba(249,247,242,0.88);
+    --shadow-dark:0 12px 48px rgba(62,39,35,0.18);
+    --shadow-gold:0 8px 32px rgba(192,90,53,0.18);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;overflow-y:scroll;scrollbar-gutter:stable}
+  body{background:var(--bg);color:var(--text);font-family:var(--font-body);overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:76px;background:var(--glass);backdrop-filter:blur(28px) saturate(160%);-webkit-backdrop-filter:blur(28px) saturate(160%);border-bottom:1px solid var(--border);box-shadow:var(--shadow);transition:background var(--transition),box-shadow var(--transition)}
+  nav.scrolled{background:rgba(249,247,242,0.98);box-shadow:0 2px 0 var(--border),var(--shadow)}
+  .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .nav-logo img{height:48px;width:auto;display:block;flex-shrink:0}
+  .nav-logo-text{font-family:var(--font-cond);font-size:15px;letter-spacing:2.5px;color:var(--text);font-weight:700;display:block;line-height:1.1}
+  .nav-logo-sub{font-family:var(--font-cond);font-size:9px;letter-spacing:4px;color:var(--accent);font-weight:500;display:block;margin-top:1px}
+  .nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+  .nav-links a{font-family:var(--font-cond);font-size:11.5px;letter-spacing:2.5px;color:var(--grey);text-decoration:none;text-transform:uppercase;transition:color var(--transition);position:relative;padding-bottom:4px}
+  .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width var(--transition)}
+  .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+  .nav-links a:hover,.nav-links a.active{color:var(--accent)}
+  .nav-cta{font-family:var(--font-cond);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;padding:10px 26px;border:2px solid var(--accent);color:var(--accent);background:transparent;cursor:pointer;text-decoration:none;transition:all var(--transition);position:relative;overflow:hidden}
+  .nav-cta::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--accent),var(--accent-hover));transform:scaleX(0);transform-origin:left;transition:transform var(--transition);z-index:0}
+  .nav-cta span{position:relative;z-index:1}
+  .nav-cta:hover{color:#fff}
+  .nav-cta:hover::before{transform:scaleX(1)}
+
+  /* HERO */
+  .hero{height:100vh;position:relative;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,#3E2723 0%,#5D4037 40%,#2E1B18 100%)}
+  .hero-grid{position:absolute;inset:0;opacity:.04;background-image:linear-gradient(var(--gold) 1px,transparent 1px),linear-gradient(90deg,var(--gold) 1px,transparent 1px);background-size:80px 80px}
+  .hero-accent{position:absolute;right:0;top:0;width:55%;height:100%;background:linear-gradient(135deg,transparent 0%,rgba(201,168,76,.03) 100%);clip-path:polygon(15% 0,100% 0,100% 100%,0% 100%)}
+  .hero-line{position:absolute;left:0;top:0;width:4px;height:100%;background:linear-gradient(to bottom,transparent,var(--gold),transparent);opacity:.6}
+  .hero-content{position:relative;z-index:2;padding:0 60px;max-width:900px}
+  .hero-tag{font-family:var(--font-cond);font-size:11px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:30px;display:flex;align-items:center;gap:16px;opacity:0;animation:fadeUp .8s .3s forwards}
+  .hero-tag::before{content:'';width:40px;height:1px;background:var(--gold)}
+  .hero-title{font-family:var(--font-display);font-size:clamp(60px,8vw,110px);font-weight:300;line-height:.9;margin-bottom:30px;opacity:0;animation:fadeUp .8s .5s forwards}
+  .hero-title em{font-style:italic;color:var(--accent-hover)}
+  .hero-title strong{font-weight:700;display:block}
+  .hero-desc{font-size:16px;font-weight:300;color:rgba(249,247,242,0.8);line-height:1.8;max-width:520px;margin-bottom:50px;opacity:0;animation:fadeUp .8s .7s forwards}
+  .hero-actions{display:flex;gap:20px;opacity:0;animation:fadeUp .8s .9s forwards}
+  .btn-primary{font-family:var(--font-cond);font-size:12px;letter-spacing:3px;text-transform:uppercase;padding:18px 40px;background:var(--accent);color:#fff;border:none;cursor:pointer;text-decoration:none;transition:all .3s;font-weight:600}
+  .btn-primary:hover{background:var(--accent-hover);color:var(--text);transform:translateY(-2px)}
+  .btn-outline{font-family:var(--font-cond);font-size:12px;letter-spacing:3px;text-transform:uppercase;padding:18px 40px;background:transparent;color:var(--text);border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:all .3s}
+  .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+  .hero-stats{position:absolute;bottom:60px;right:60px;z-index:2;display:flex;gap:50px;opacity:0;animation:fadeUp .8s 1.1s forwards}
+  .stat-item{text-align:right}
+  .stat-num{font-family:var(--font-display);font-size:48px;font-weight:300;color:var(--accent-hover);line-height:1}
+  .stat-label{font-family:var(--font-cond);font-size:10px;letter-spacing:3px;color:var(--grey);text-transform:uppercase;margin-top:4px}
+  .hero-scroll{position:absolute;bottom:60px;left:60px;z-index:2;display:flex;align-items:center;gap:12px;font-family:var(--font-cond);font-size:10px;letter-spacing:3px;color:var(--grey);text-transform:uppercase;opacity:0;animation:fadeUp .8s 1.3s forwards}
+  .scroll-line{width:60px;height:1px;background:var(--accent-hover);position:relative;overflow:hidden}
+  .scroll-line::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--white);animation:scrollAnim 2s infinite}
+
+  /* SERVICES STRIP */
+  .services-strip{background:var(--accent);padding:20px 60px;display:flex;align-items:center;overflow:hidden}
+  .strip-item{display:flex;align-items:center;gap:14px;padding:0 36px;border-right:1px solid rgba(255,255,255,.2);flex-shrink:0}
+  .strip-item:last-child{border-right:none}
+  .strip-icon{width:28px;height:28px;fill:var(--black)}
+  .strip-text{font-family:var(--font-cond);font-size:13px;letter-spacing:2px;color:#fff;font-weight:600;text-transform:uppercase}
+
+  /* SECTION BASE */
+  section{padding:120px 60px}
+  .about-label{font-family:var(--font-cond);font-size:11px;letter-spacing:5px;color:var(--accent);text-transform:uppercase;margin-bottom:20px}
+  .section-title{font-family:var(--font-display);font-size:clamp(36px,5vw,60px);font-weight:300;line-height:1.1;margin-bottom:24px}
+  .section-title em{font-style:italic;color: var(--accent-hover)}
+
+  /* ═══════════════════════════════════
+     TRANSPORT TYPES — 3×2 card grid
+     matching expressairporttransport.co.uk
+     ═══════════════════════════════════ */
+  .transport-types{
+    background:var(--deep);
+    padding:110px 60px 120px;
+    position:relative;overflow:hidden;
+  }
+  .transport-types::before{
+    content:'';position:absolute;inset:0;pointer-events:none;
+    background-image:linear-gradient(var(--border-soft) 1px,transparent 1px),linear-gradient(90deg,var(--border-soft) 1px,transparent 1px);
+    background-size:70px 70px;
+  }
+  .transport-types::after{
+    content:'';position:absolute;top:-160px;right:-160px;
+    width:520px;height:520px;border-radius:50%;
+    background:radial-gradient(circle,rgba(200,168,75,.07) 0%,transparent 65%);
+    pointer-events:none;
+  }
+  .tt-header{text-align:center;margin-bottom:72px;position:relative;z-index:1}
+  .tt-sub{font-size:15px;font-weight:300;color:var(--text-muted);max-width:540px;margin:18px auto 0;line-height:1.8}
+
+  /* 3-column grid — matches the reference layout exactly */
+  .tt-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:4px;
+    position:relative;z-index:1;
+  }
+
+  .tt-card{
+    position:relative;overflow:hidden;
+    background:var(--black);
+    aspect-ratio:4/3;
+    display:flex;flex-direction:column;
+    align-items:center;justify-content:flex-end;
+    text-decoration:none;color:inherit;cursor:pointer;
+  }
+  /* illustrated background fills card */
+  .tt-card-bg{
+    position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+    transition:transform .7s cubic-bezier(.4,0,.2,1);
+  }
+  .tt-card-bg svg{width:100%;height:100%}
+  .tt-card:hover .tt-card-bg{transform:scale(1.055)}
+
+  /* dark-to-light overlay — content pops bottom */
+  .tt-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(to top,rgba(4,7,12,.96) 0%,rgba(4,7,12,.52) 45%,rgba(4,7,12,.18) 100%);
+    transition:background var(--transition);
+  }
+  .tt-card:hover .tt-overlay{
+    background:linear-gradient(to top,rgba(4,7,12,.98) 0%,rgba(4,7,12,.62) 40%,rgba(4,7,12,.08) 100%);
+  }
+
+  /* gold top-bar on hover */
+  .tt-card::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,var(--gold),var(--gold-light));
+    transform:scaleX(0);transform-origin:left;
+    transition:transform .45s cubic-bezier(.4,0,.2,1);z-index:3;
+  }
+  .tt-card:hover::before{transform:scaleX(1)}
+
+  /* content layer */
+  .tt-content{
+    position:relative;z-index:2;
+    padding:0 28px 28px;width:100%;text-align:left;
+  }
+  .tt-num{
+    font-family:var(--font-display);font-size:72px;font-weight:700;
+    color:rgba(200,168,75,.06);line-height:1;
+    position:absolute;top:16px;right:20px;z-index:2;pointer-events:none;
+    transition:color var(--transition);
+  }
+  .tt-card:hover .tt-num{color:rgba(200,168,75,.11)}
+
+  .tt-icon{
+    width:52px;height:52px;
+    border:1px solid rgba(200,168,75,.35);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(200,168,75,.1);margin-bottom:14px;
+    transition:border-color var(--transition),background var(--transition),transform .4s cubic-bezier(.34,1.3,.64,1);
+  }
+  .tt-card:hover .tt-icon{border-color:var(--gold);background:rgba(200,168,75,.22);transform:translateY(-6px)}
+  .tt-icon svg{width:24px;height:24px;fill:var(--gold)}
+
+  .tt-name{
+    font-family:var(--font-cond);font-size:19px;font-weight:600;
+    letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--white);line-height:1.2;margin-bottom:8px;
+    transition:color var(--transition);
+  }
+  .tt-card:hover .tt-name{color:var(--gold-light)}
+
+  .tt-desc{
+    font-size:13px;font-weight:300;color:var(--text-muted);
+    line-height:1.7;
+    max-height:0;overflow:hidden;opacity:0;
+    transition:max-height .45s ease,opacity .35s ease,margin .35s ease;
+  }
+  .tt-card:hover .tt-desc{max-height:70px;opacity:1;margin-bottom:14px}
+
+  .tt-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--font-cond);font-size:10px;letter-spacing:3px;
+    text-transform:uppercase;color:var(--gold);
+    opacity:0;transform:translateY(8px);
+    transition:opacity .3s .05s ease,transform .3s ease;
+  }
+  .tt-card:hover .tt-cta{opacity:1;transform:translateY(0)}
+  .tt-arrow{font-size:13px;transition:transform .25s ease}
+  .tt-card:hover .tt-arrow{transform:translateX(5px)}
+
+  /* ABOUT */
+  .about{background:var(--card);display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
+  .about-text{color:var(--text-muted);line-height:1.9;font-weight:300;font-size:15px;margin-bottom:16px}
+  .about-divider{width:60px;height:2px;background:var(--accent);margin:30px 0}
+  .about-features{display:flex;flex-direction:column;gap:16px}
+  .about-feature{display:flex;align-items:center;gap:14px;font-family:var(--font-cond);font-size:13px;letter-spacing:1px;color:var(--text-muted)}
+  .about-feature::before{content:'';width:6px;height:6px;background:var(--gold);flex-shrink:0}
+  .about-visual{position:relative;aspect-ratio:4/5;background:linear-gradient(135deg,var(--navy),#1a2a3a);overflow:hidden}
+  .about-visual-inner{position:absolute;inset:20px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center}
+  .about-visual-icon{width:100px;height:100px;fill:rgba(201,168,76,.15)}
+  .about-visual-text{position:absolute;bottom:40px;left:40px;right:40px;font-family:var(--font-display);font-size:28px;font-weight:300;color:rgba(249,247,242,0.8);font-style:italic;line-height:1.3}
+  .about-visual-tag{position:absolute;top:40px;right:40px;font-family:var(--font-cond);font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;writing-mode:vertical-rl}
+
+  /* SERVICES GRID */
+  .services{background:var(--bg)}
+  .services-header{text-align:center;margin-bottom:70px}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+  .service-card{background:#fff;padding:50px 40px;position:relative;overflow:hidden;cursor:pointer;transition:background .4s;text-decoration:none;display:block;color:inherit}
+  .service-card::before{content:'';position:absolute;bottom:0;left:0;width:100%;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+  .service-card:hover{background:#f5ede8}
+  .service-card:hover::before{transform:scaleX(1)}
+  .service-num{font-family:var(--font-display);font-size:64px;font-weight:300;color:rgba(201,168,76,.12);position:absolute;top:30px;right:30px;line-height:1}
+  .service-icon{width:44px;height:44px;fill:var(--gold);margin-bottom:24px}
+  .service-title{font-family:var(--font-cond);font-size:20px;font-weight:600;letter-spacing:1px;margin-bottom:16px}
+  .service-desc{color:var(--text-muted);font-size:14px;line-height:1.8;font-weight:300;margin-bottom:24px}
+  .service-link{font-family:var(--font-cond);font-size:11px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;display:flex;align-items:center;gap:10px}
+  .service-link::after{content:'→';transition:transform .3s}
+  .service-card:hover .service-link::after{transform:translateX(6px)}
+
+  /* PROCESS */
+  .process{background:var(--bg-alt)}
+  .process-header{margin-bottom:70px}
+  .process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+  .process-steps::before{content:'';position:absolute;top:32px;left:60px;right:60px;height:1px;background:linear-gradient(90deg,var(--gold),rgba(201,168,76,.2))}
+  .step{padding:0 30px;text-align:center}
+  .step-circle{width:64px;height:64px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;background:var(--navy);position:relative;z-index:1}
+  .step-num{font-family:var(--font-display);font-size:22px;color:var(--gold)}
+  .step-title{font-family:var(--font-cond);font-size:15px;font-weight:600;letter-spacing:1px;margin-bottom:12px}
+  .step-desc{color:var(--text-muted);font-size:13px;line-height:1.7;font-weight:300}
+
+  /* ── TESTIMONIAL SLIDER ── */
+  .testimonials{background:#3E2723;padding:110px 0 100px;position:relative;overflow:hidden}
+  .testimonials::before{content:'"';font-family:var(--font-display);font-size:480px;font-weight:700;color:rgba(200,168,75,0.03);position:absolute;top:-60px;left:50%;transform:translateX(-50%);line-height:1;pointer-events:none;z-index:0}
+  .testi-header{text-align:center;margin-bottom:60px;padding:0 60px;position:relative;z-index:1}
+  .testi-header .about-label{display:inline-block;margin-bottom:14px}
+  .testi-viewport{overflow:hidden;position:relative;z-index:1}
+  .testi-track{display:flex;transition:transform 0.72s cubic-bezier(0.4,0,0.2,1);will-change:transform}
+  .testi-slide{min-width:100%;padding:0 60px;display:flex;justify-content:center}
+  .testi-card{background:#2E1B18;border:1px solid var(--border);max-width:860px;width:100%;padding:52px 60px 48px;position:relative}
+  .testi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+  .testi-quote{width:44px;height:44px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:28px;background:rgba(242,177,56,0.12)}
+  .testi-quote svg{width:20px;height:20px;fill:var(--gold)}
+  .testi-stars{display:flex;gap:4px;margin-bottom:22px}
+  .testi-star{width:15px;height:15px;fill:var(--gold)}
+  .testi-text{font-family:var(--font-display);font-size:clamp(18px,2.4vw,27px);font-weight:300;font-style:italic;line-height:1.55;color: rgba(249,247,242,0.9);margin-bottom:36px}
+  .testi-author-row{display:flex;align-items:center;gap:16px;border-top:1px solid var(--border-soft);padding-top:28px}
+  .testi-avatar{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#5D4037,rgba(242,177,56,0.25));border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:18px;color:var(--gold);flex-shrink:0}
+  .testi-name{font-family:var(--font-cond);font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color: #F9F7F2;margin-bottom:4px}
+  .testi-role{font-size:12px;color:rgba(249,247,242,0.55);font-weight:300}
+  .testi-tag{margin-left:auto;font-family:var(--font-cond);font-size:10px;letter-spacing:3px;text-transform:uppercase;color: var(--accent-hover);border:1px solid var(--border);padding:5px 12px;white-space:nowrap}
+  .testi-controls{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:48px;position:relative;z-index:1}
+  .testi-btn{width:46px;height:46px;border:1px solid var(--border);background:transparent;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s}
+  .testi-btn:hover{border-color:var(--gold);background:rgba(242,177,56,0.12)}
+  .testi-btn svg{width:18px;height:18px;fill:var(--gold)}
+  .testi-dots{display:flex;gap:10px;align-items:center}
+  .testi-dot{width:8px;height:8px;border-radius:50%;background:rgba(200,168,75,0.2);border:none;cursor:pointer;transition:all 0.3s;padding:0}
+  .testi-dot.active{background:var(--accent-hover);transform:scale(1.35)}
+  .testi-progress{width:80px;height:2px;background:rgba(200,168,75,0.12);position:relative;overflow:hidden}
+  .testi-progress-fill{position:absolute;top:0;left:0;height:100%;background:var(--gold);width:0}
+  @media(max-width:900px){.testi-slide{padding:0 24px}.testi-card{padding:36px 28px 32px}.testi-tag{display:none}.testi-header{padding:0 24px}}
+
+  /* FOOTER */
+  footer{background:var(--footer-bg);border-top:none;padding:80px 60px 40px}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
+  .footer-logo{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+  .footer-desc{color:rgba(245,243,239,.4);font-size:13px;line-height:1.8;font-weight:300}
+  .footer-col-title{font-family:var(--font-cond);font-size:11px;letter-spacing:4px;color:var(--accent-hover);text-transform:uppercase;margin-bottom:24px}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .footer-links a{font-size:13px;color:rgba(245,243,239,.5);text-decoration:none;font-weight:300;transition:color .3s}
+  .footer-links a:hover{color:var(--accent-hover)}
+  .footer-bottom{border-top:1px solid rgba(249,247,242,0.12);padding-top:30px;display:flex;justify-content:space-between;align-items:center}
+  .footer-copy{font-size:12px;color:rgba(249,247,242,0.45);font-family:var(--font-cond);letter-spacing:1px}
+  .footer-bottom-links{display:flex;gap:30px}
+  .footer-bottom-links a{font-size:11px;color:rgba(249,247,242,0.45);text-decoration:none;font-family:var(--font-cond);letter-spacing:1px}
+
+  /* WHATSAPP */
+  .whatsapp-float{position:fixed;bottom:28px;right:28px;z-index:9999;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.45),0 2px 8px rgba(0,0,0,.35);text-decoration:none;animation:waPopIn .6s 1.2s both cubic-bezier(.34,1.56,.64,1);transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s ease,background .25s ease}
+  .whatsapp-float:hover{background:#128C7E;transform:scale(1.12);box-shadow:0 10px 36px rgba(37,211,102,.55),0 4px 14px rgba(0,0,0,.4)}
+  .whatsapp-float svg{width:30px;height:30px;fill:#fff}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes scrollAnim{0%{left:-100%}100%{left:100%}}
+  @keyframes waPopIn{0%{opacity:0;transform:scale(.3) translateY(20px)}100%{opacity:1;transform:scale(1) translateY(0)}}
+
+  .reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+
+  /* RESPONSIVE */
+  @media(max-width:1100px){.tt-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:900px){
+    nav{padding:0 24px}
+    .nav-links{display:none}
+    section{padding:80px 24px}
+    .hero-content{padding:0 24px}
+    .hero-stats{right:24px;bottom:30px;gap:24px}
+    .hero-scroll{left:24px;bottom:30px}
+    .services-strip{padding:16px 24px;overflow-x:auto}
+    .about{grid-template-columns:1fr;gap:50px}
+    .services-grid{grid-template-columns:1fr}
+    .process-steps{grid-template-columns:1fr 1fr;gap:40px}
+    .process-steps::before{display:none}
+    .footer-grid{grid-template-columns:1fr 1fr}
+    .transport-types{padding:70px 24px 80px}
+    .tt-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:500px){
+    .tt-grid{grid-template-columns:1fr}
+    .whatsapp-float{bottom:18px;right:16px;width:52px;height:52px}
+    .whatsapp-float svg{width:26px;height:26px}
+  }
+
+  /* ── HERO VIDEO BACKGROUND ── */
+  .hero-video-bg {
+    position: absolute; inset: 0; z-index: 0;
+    overflow: hidden;
+  }
+  .hero-video-bg video {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+  }
+  .hero-video-bg video.loaded { opacity: 1; }
+  /* dark overlay so text stays legible */
+  .hero-video-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(6,9,14,0.72) 0%,
+      rgba(6,9,14,0.55) 50%,
+      rgba(6,9,14,0.80) 100%
+    );
+  }
+
+
+  /* ══ MOBILE NAV ══ */
+  .nav-hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;width:44px;height:44px;background:none;border:1px solid var(--border);border-radius:2px;cursor:pointer;gap:5px;flex-shrink:0;transition:border-color var(--transition)}
+  .nav-hamburger:hover{border-color:var(--accent)}
+  .nav-hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:1px;transition:all 0.35s cubic-bezier(0.4,0,0.2,1);transform-origin:center}
+  .nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+  .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  .nav-overlay{position:fixed;inset:0;background:rgba(62,39,35,0.45);backdrop-filter:blur(4px);z-index:98;opacity:0;pointer-events:none;transition:opacity 0.35s ease}
+  .nav-overlay.open{opacity:1;pointer-events:all}
+
+  .nav-drawer{position:fixed;top:0;right:0;bottom:0;width:min(320px,88vw);background:var(--bg);z-index:99;display:flex;flex-direction:column;transform:translateX(100%);transition:transform 0.38s cubic-bezier(0.4,0,0.2,1);box-shadow:-8px 0 40px rgba(62,39,35,0.18)}
+  .nav-drawer.open{transform:translateX(0)}
+
+  .nav-drawer-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--border)}
+  .nav-drawer-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .nav-drawer-logo img{height:42px;width:auto}
+  .nav-drawer-logo-text{font-family:var(--font-cond);font-size:13px;letter-spacing:2px;color:var(--text);font-weight:700;display:block;line-height:1.1}
+  .nav-drawer-logo-sub{font-family:var(--font-cond);font-size:8px;letter-spacing:3px;color:var(--accent);font-weight:500;display:block}
+  .nav-drawer-close{width:36px;height:36px;background:none;border:1px solid var(--border);border-radius:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--transition);flex-shrink:0}
+  .nav-drawer-close:hover{border-color:var(--accent);background:rgba(192,90,53,0.06)}
+  .nav-drawer-close svg{width:16px;height:16px;fill:var(--text)}
+
+  .nav-drawer-links{flex:1;overflow-y:auto;padding:16px 0}
+  .nav-drawer-links a{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;font-family:var(--font-cond);font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);text-decoration:none;border-bottom:1px solid var(--border-soft);transition:all var(--transition)}
+  .nav-drawer-links a:hover,.nav-drawer-links a.active{color:var(--accent);background:rgba(192,90,53,0.04);padding-left:34px}
+  .nav-drawer-links a .drawer-arrow{font-size:14px;opacity:0;transition:opacity var(--transition)}
+  .nav-drawer-links a:hover .drawer-arrow,.nav-drawer-links a.active .drawer-arrow{opacity:1}
+
+  .nav-drawer-foot{padding:24px 28px;border-top:1px solid var(--border)}
+  .nav-drawer-cta{display:block;width:100%;padding:16px;background:var(--accent);color:#fff;font-family:var(--font-cond);font-size:12px;letter-spacing:3px;text-transform:uppercase;text-align:center;text-decoration:none;font-weight:600;transition:background var(--transition)}
+  .nav-drawer-cta:hover{background:var(--accent-hover);color:var(--text)}
+  .nav-drawer-contact{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+  .nav-drawer-contact a{font-family:var(--font-cond);font-size:11px;letter-spacing:2px;color:var(--text-muted);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color var(--transition)}
+  .nav-drawer-contact a:hover{color:var(--accent)}
+  .nav-drawer-contact svg{width:14px;height:14px;fill:var(--accent);flex-shrink:0}
+
+  @media(max-width:900px){
+    .nav-hamburger{display:flex}
+    .nav-links{display:none!important}
+    .nav-cta{display:none}
+    nav{padding:0 20px}
+  }
+  @media(min-width:901px){
+    .nav-overlay,.nav-drawer{display:none!important}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+  <img src="data:image/png;base64,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" alt="Furahia" />
+  <div>
+    <span class="nav-logo-text">FURAHIA TRANSFER</span>
+    <span class="nav-logo-sub">TRANSFERS &amp; LOGISTICS</span>
+  </div>
+</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="hospitality.html">Hospitality</a></li>
+    <li><a href="vehicles.html">Our Fleet</a></li>
+    <li><a href="impact.html">Impact</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="tel:+255700000000" class="nav-cta"><span>Book Now</span></a>
+
+  <button class="nav-hamburger" id="navHam" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button></nav>
+<!-- Mobile Nav Overlay & Drawer -->
+<div class="nav-overlay" id="navOverlay"></div>
+<div class="nav-drawer" id="navDrawer">
+  <div class="nav-drawer-head">
+    <a href="index.html" class="nav-drawer-logo">
+      <img src="data:image/png;base64,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" alt="Furahia" />
+      <div>
+        <span class="nav-drawer-logo-text">FURAHIA TRANSFER</span>
+        <span class="nav-drawer-logo-sub">TRANSFERS &amp; LOGISTICS</span>
+      </div>
+    </a>
+    <button class="nav-drawer-close" id="navClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+  </div>
+  <div class="nav-drawer-links">
+      <a href="index.html" class="active">Home<span class="drawer-arrow">→</span></a>
+      <a href="about.html">About<span class="drawer-arrow">→</span></a>
+      <a href="hospitality.html">Hospitality<span class="drawer-arrow">→</span></a>
+      <a href="vehicles.html">Our Fleet<span class="drawer-arrow">→</span></a>
+      <a href="impact.html">Impact<span class="drawer-arrow">→</span></a>
+      <a href="contact.html">Contact<span class="drawer-arrow">→</span></a>
+  </div>
+  <div class="nav-drawer-foot">
+    <a href="contact.html" class="nav-drawer-cta">Book a Transfer</a>
+    <div class="nav-drawer-contact">
+      <a href="tel:+255700000000"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>+255 700 000 000</a>
+      <a href="https://wa.me/255700000000"><svg viewBox="0 0 24 24"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.3-.148-1.134-.447-2.157-1.38-.796-.8-1.333-1.788-1.49-2.087-.16-.3-.017-.462.124-.61.13-.136.3-.354.452-.527.15-.174.2-.3.3-.498.099-.204.05-.382-.025-.531l-.92-2.207c-.24-.584-.487-.51-.669-.51h-.57c-.198 0-.52.074-.792.372S6 8.35 6 9.813s1.07 2.865 1.219 3.075c.148.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345z"/><path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896.002-3.176-1.24-6.165-3.48-8.45z"/></svg>WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-video-bg">
+    <video autoplay muted loop playsinline preload="auto" id="heroBgVideo">
+      <source src="Video.mp4" type="video/mp4"/>
+    </video>
+  </div>
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-line"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Premium Transfer Services Since 2005</div>
+    <h1 class="hero-title"><em>Precision</em><strong>In Every<br>Journey</strong></h1>
+    <p class="hero-desc">Airport transfers, executive taxi services, and global cargo logistics — delivered with uncompromising reliability and corporate excellence.</p>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn-primary">Book a Transfer</a>
+      <a href="impact.html" class="btn-outline">Our Mission</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item"><div class="stat-num">18+</div><div class="stat-label">Years of Service</div></div>
+    <div class="stat-item"><div class="stat-num">50K</div><div class="stat-label">Transfers Complete</div></div>
+    <div class="stat-item"><div class="stat-num">99%</div><div class="stat-label">On-Time Rate</div></div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div>Scroll to Explore</div>
+</section>
+
+<!-- SERVICES STRIP -->
+<div class="services-strip">
+  <div class="strip-item">
+    <svg class="strip-icon" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+    <span class="strip-text">Airport Transfers</span>
+  </div>
+  <div class="strip-item">
+    <svg class="strip-icon" viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+    <span class="strip-text">Executive Taxi</span>
+  </div>
+  <div class="strip-item">
+    <svg class="strip-icon" viewBox="0 0 24 24"><path d="M20 21c-2.39 0-4.78-.5-7-1.5-2.22 1-4.61 1.5-7 1.5H4l-.85-3.36A5.013 5.013 0 0 1 2 15.5c0-1.07.32-2.07.88-2.91L6 7V3h12v4l3.12 5.59c.56.84.88 1.84.88 2.91 0 .79-.16 1.54-.44 2.23L20.78 21H20z"/></svg>
+    <span class="strip-text">Cruiseport</span>
+  </div>
+  <div class="strip-item">
+    <svg class="strip-icon" viewBox="0 0 24 24"><path d="M19 15v4H5v-4H3v4c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-4h-2zm-8 .59l-2.29-2.3-1.42 1.42L12 19.41l4.71-4.7-1.42-1.42L13 15.59V3h-2v12.59z"/></svg>
+    <span class="strip-text">Cargo &amp; Logistics</span>
+  </div>
+  <div class="strip-item">
+    <svg class="strip-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+    <span class="strip-text">24/7 Dispatch</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     TRANSPORT TYPES — 6 cards, 3×2 grid
+     Inspired by expressairporttransport.co.uk
+     ═══════════════════════════════════════ -->
+<section class="transport-types">
+  <div class="tt-header reveal">
+    <div class="about-label">What We Cover</div>
+    <h2 class="section-title">Choose Your <em>Transport Type</em></h2>
+    <p class="tt-sub">Every journey is different. Select the service that fits your needs and let Furahia Transfer handle the rest with precision and care.</p>
+  </div>
+
+  <div class="tt-grid reveal">
+
+    <!-- 01 AIRPORT -->
+    <a href="hospitality.html" class="tt-card">
+      <div class="tt-card-bg">
+        <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <rect width="800" height="600" fill="#0a0f1a"/>
+          <ellipse cx="400" cy="200" rx="380" ry="200" fill="rgba(13,31,53,0.9)"/>
+          <!-- Stars -->
+          <circle cx="100" cy="80" r="1.5" fill="rgba(200,168,75,0.6)"/>
+          <circle cx="250" cy="50" r="1" fill="rgba(200,168,75,0.5)"/>
+          <circle cx="550" cy="60" r="1.5" fill="rgba(200,168,75,0.5)"/>
+          <circle cx="700" cy="90" r="1" fill="rgba(200,168,75,0.4)"/>
+          <circle cx="650" cy="40" r="1.5" fill="rgba(200,168,75,0.6)"/>
+          <!-- Plane silhouette -->
+          <g transform="translate(160,140) scale(1.4)" fill="rgba(200,168,75,0.2)" stroke="rgba(200,168,75,0.45)" stroke-width="1">
+            <path d="M80 60 L200 50 C220 48 230 55 220 65 L160 80 L120 155 L100 155 L120 85 L60 95 L45 112 L28 112 L38 78 L28 60 L45 60 L60 74 Z"/>
+          </g>
+          <!-- Terminal building -->
+          <rect x="0" y="370" width="800" height="100" fill="rgba(10,18,36,0.95)"/>
+          <rect x="0" y="368" width="800" height="3" fill="rgba(200,168,75,0.25)"/>
+          <!-- Terminal windows -->
+          <rect x="60" y="382" width="32" height="20" fill="rgba(200,168,75,0.22)" rx="2"/>
+          <rect x="108" y="382" width="32" height="20" fill="rgba(200,168,75,0.15)" rx="2"/>
+          <rect x="156" y="382" width="32" height="20" fill="rgba(200,168,75,0.22)" rx="2"/>
+          <rect x="204" y="382" width="32" height="20" fill="rgba(200,168,75,0.18)" rx="2"/>
+          <rect x="252" y="382" width="32" height="20" fill="rgba(200,168,75,0.22)" rx="2"/>
+          <rect x="300" y="382" width="32" height="20" fill="rgba(200,168,75,0.15)" rx="2"/>
+          <rect x="348" y="382" width="32" height="20" fill="rgba(200,168,75,0.22)" rx="2"/>
+          <rect x="396" y="382" width="32" height="20" fill="rgba(200,168,75,0.18)" rx="2"/>
+          <rect x="444" y="382" width="32" height="20" fill="rgba(200,168,75,0.22)" rx="2"/>
+          <rect x="492" y="382" width="32" height="20" fill="rgba(200,168,75,0.15)" rx="2"/>
+          <rect x="540" y="382" width="32" height="20" fill="rgba(200,168,75,0.22)" rx="2"/>
+          <rect x="588" y="382" width="32" height="20" fill="rgba(200,168,75,0.18)" rx="2"/>
+          <rect x="636" y="382" width="32" height="20" fill="rgba(200,168,75,0.22)" rx="2"/>
+          <rect x="684" y="382" width="32" height="20" fill="rgba(200,168,75,0.15)" rx="2"/>
+          <rect x="732" y="382" width="32" height="20" fill="rgba(200,168,75,0.22)" rx="2"/>
+          <!-- Tarmac -->
+          <rect x="0" y="470" width="800" height="130" fill="rgba(6,9,14,0.98)"/>
+          <!-- Runway lights -->
+          <circle cx="340" cy="495" r="4" fill="rgba(200,168,75,0.5)"/>
+          <circle cx="380" cy="495" r="4" fill="rgba(200,168,75,0.35)"/>
+          <circle cx="420" cy="495" r="4" fill="rgba(200,168,75,0.25)"/>
+          <circle cx="460" cy="495" r="4" fill="rgba(200,168,75,0.15)"/>
+        </svg>
+      </div>
+      <div class="tt-overlay"></div>
+      <div class="tt-num">01</div>
+      <div class="tt-content">
+        <div class="tt-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+        </div>
+        <div class="tt-name">Airport<br>Transport</div>
+        <p class="tt-desc">Meet-and-greet arrivals, flight tracking, and seamless terminal pickups across all major airports.</p>
+        <span class="tt-cta">View Service <span class="tt-arrow">→</span></span>
+      </div>
+    </a>
+
+    <!-- 02 CRUISEPORT -->
+    <a href="hospitality.html" class="tt-card">
+      <div class="tt-card-bg">
+        <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <rect width="800" height="600" fill="#060e1c"/>
+          <rect x="0" y="0" width="800" height="350" fill="rgba(8,18,38,0.95)"/>
+          <!-- Ocean horizon -->
+          <path d="M0 340 Q400 320 800 340" stroke="rgba(200,168,75,0.15)" stroke-width="2" fill="none"/>
+          <!-- Ship hull -->
+          <path d="M80 260 L720 260 L750 310 L770 330 L50 330 L30 310 Z" fill="rgba(10,20,42,0.97)" stroke="rgba(200,168,75,0.3)" stroke-width="1.5"/>
+          <!-- Decks -->
+          <rect x="120" y="190" width="560" height="72" fill="rgba(8,16,36,0.97)" stroke="rgba(200,168,75,0.2)" stroke-width="1"/>
+          <rect x="165" y="128" width="470" height="64" fill="rgba(6,13,28,0.97)" stroke="rgba(200,168,75,0.18)" stroke-width="1"/>
+          <rect x="210" y="76" width="380" height="54" fill="rgba(5,10,22,0.97)" stroke="rgba(200,168,75,0.15)" stroke-width="1"/>
+          <!-- Funnel -->
+          <rect x="345" y="30" width="55" height="50" fill="rgba(8,14,28,0.97)" stroke="rgba(200,168,75,0.2)" stroke-width="1"/>
+          <rect x="355" y="18" width="35" height="14" fill="rgba(200,168,75,0.2)" rx="2"/>
+          <!-- Portholes -->
+          <circle cx="185" cy="295" r="11" fill="rgba(200,168,75,0.2)" stroke="rgba(200,168,75,0.5)" stroke-width="1.5"/>
+          <circle cx="255" cy="295" r="11" fill="rgba(200,168,75,0.15)" stroke="rgba(200,168,75,0.4)" stroke-width="1.5"/>
+          <circle cx="325" cy="295" r="11" fill="rgba(200,168,75,0.2)" stroke="rgba(200,168,75,0.5)" stroke-width="1.5"/>
+          <circle cx="395" cy="295" r="11" fill="rgba(200,168,75,0.12)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5"/>
+          <circle cx="465" cy="295" r="11" fill="rgba(200,168,75,0.2)" stroke="rgba(200,168,75,0.5)" stroke-width="1.5"/>
+          <circle cx="535" cy="295" r="11" fill="rgba(200,168,75,0.15)" stroke="rgba(200,168,75,0.4)" stroke-width="1.5"/>
+          <circle cx="605" cy="295" r="11" fill="rgba(200,168,75,0.2)" stroke="rgba(200,168,75,0.5)" stroke-width="1.5"/>
+          <!-- Deck windows -->
+          <rect x="140" y="207" width="18" height="12" fill="rgba(200,168,75,0.2)" rx="2"/>
+          <rect x="174" y="207" width="18" height="12" fill="rgba(200,168,75,0.25)" rx="2"/>
+          <rect x="208" y="207" width="18" height="12" fill="rgba(200,168,75,0.18)" rx="2"/>
+          <rect x="242" y="207" width="18" height="12" fill="rgba(200,168,75,0.22)" rx="2"/>
+          <rect x="276" y="207" width="18" height="12" fill="rgba(200,168,75,0.2)" rx="2"/>
+          <rect x="310" y="207" width="18" height="12" fill="rgba(200,168,75,0.25)" rx="2"/>
+          <rect x="344" y="207" width="18" height="12" fill="rgba(200,168,75,0.18)" rx="2"/>
+          <rect x="378" y="207" width="18" height="12" fill="rgba(200,168,75,0.22)" rx="2"/>
+          <rect x="412" y="207" width="18" height="12" fill="rgba(200,168,75,0.2)" rx="2"/>
+          <rect x="446" y="207" width="18" height="12" fill="rgba(200,168,75,0.25)" rx="2"/>
+          <rect x="480" y="207" width="18" height="12" fill="rgba(200,168,75,0.18)" rx="2"/>
+          <rect x="514" y="207" width="18" height="12" fill="rgba(200,168,75,0.22)" rx="2"/>
+          <rect x="548" y="207" width="18" height="12" fill="rgba(200,168,75,0.2)" rx="2"/>
+          <rect x="582" y="207" width="18" height="12" fill="rgba(200,168,75,0.25)" rx="2"/>
+          <!-- Water -->
+          <rect x="0" y="330" width="800" height="270" fill="rgba(4,10,22,0.98)"/>
+          <path d="M0 340 Q100 332 200 340 Q300 348 400 340 Q500 332 600 340 Q700 348 800 340 L800 370 Q700 362 600 370 Q500 378 400 370 Q300 362 200 370 Q100 378 0 370 Z" fill="rgba(200,168,75,0.04)"/>
+        </svg>
+      </div>
+      <div class="tt-overlay"></div>
+      <div class="tt-num">02</div>
+      <div class="tt-content">
+        <div class="tt-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 21c-2.39 0-4.78-.5-7-1.5-2.22 1-4.61 1.5-7 1.5H4l-.85-3.36A5.013 5.013 0 0 1 2 15.5c0-1.07.32-2.07.88-2.91L6 7V3h12v4l3.12 5.59c.56.84.88 1.84.88 2.91 0 .79-.16 1.54-.44 2.23L20.78 21H20zm-7-4.07c1.95.63 3.97.95 6 .94l.47-1.86c.33-.5.53-1.1.53-1.51 0-.69-.22-1.33-.6-1.86L16 7.55V5H8v2.55L4.6 13.64c-.38.53-.6 1.17-.6 1.86 0 .41.2 1.01.53 1.51L5 18.87c2.03.01 4.05-.31 6-.94v-4.44l-3.18-1.76 1-1.73L12 12.44l3.18-1.44 1 1.73L13 14.43v2.5z"/></svg>
+        </div>
+        <div class="tt-name">Cruiseport<br>Transport</div>
+        <p class="tt-desc">Punctual transfers to and from cruise terminals, coordinated with your sailing schedule.</p>
+        <span class="tt-cta">View Service <span class="tt-arrow">→</span></span>
+      </div>
+    </a>
+
+    <!-- 03 STATION -->
+    <a href="hospitality.html" class="tt-card">
+      <div class="tt-card-bg">
+        <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <rect width="800" height="600" fill="#080d16"/>
+          <!-- Platform -->
+          <rect x="0" y="440" width="800" height="160" fill="rgba(6,10,16,0.98)"/>
+          <rect x="0" y="438" width="800" height="3" fill="rgba(200,168,75,0.3)"/>
+          <!-- Rails -->
+          <rect x="0" y="476" width="800" height="5" fill="rgba(200,168,75,0.18)" rx="2.5"/>
+          <rect x="0" y="500" width="800" height="5" fill="rgba(200,168,75,0.18)" rx="2.5"/>
+          <!-- Sleepers -->
+          <rect x="40"  y="472" width="12" height="38" fill="rgba(200,168,75,0.08)" rx="2"/>
+          <rect x="100" y="472" width="12" height="38" fill="rgba(200,168,75,0.08)" rx="2"/>
+          <rect x="160" y="472" width="12" height="38" fill="rgba(200,168,75,0.08)" rx="2"/>
+          <rect x="220" y="472" width="12" height="38" fill="rgba(200,168,75,0.08)" rx="2"/>
+          <rect x="280" y="472" width="12" height="38" fill="rgba(200,168,75,0.08)" rx="2"/>
+          <rect x="340" y="472" width="12" height="38" fill="rgba(200,168,75,0.08)" rx="2"/>
+          <rect x="400" y="472" width="12" height="38" fill="rgba(200,168,75,0.08)" rx="2"/>
+          <rect x="460" y="472" width="12" height="38" fill="rgba(200,168,75,0.08)" rx="2"/>
+          <rect x="520" y="472" width="12" height="38" fill="rgba(200,168,75,0.08)" rx="2"/>
+          <rect x="580" y="472" width="12" height="38" fill="rgba(200,168,75,0.08)" rx="2"/>
+          <rect x="640" y="472" width="12" height="38" fill="rgba(200,168,75,0.08)" rx="2"/>
+          <rect x="700" y="472" width="12" height="38" fill="rgba(200,168,75,0.08)" rx="2"/>
+          <rect x="760" y="472" width="12" height="38" fill="rgba(200,168,75,0.08)" rx="2"/>
+          <!-- Train body -->
+          <rect x="20" y="300" width="680" height="142" fill="rgba(10,20,38,0.97)" rx="10" stroke="rgba(200,168,75,0.28)" stroke-width="1.5"/>
+          <!-- Nose -->
+          <path d="M20 300 Q0 345 20 442" fill="rgba(10,20,38,0.97)" stroke="rgba(200,168,75,0.2)" stroke-width="1"/>
+          <!-- Windows -->
+          <rect x="42"  y="320" width="54" height="36" fill="rgba(200,168,75,0.17)" rx="4" stroke="rgba(200,168,75,0.32)" stroke-width="1"/>
+          <rect x="114" y="320" width="54" height="36" fill="rgba(200,168,75,0.22)" rx="4" stroke="rgba(200,168,75,0.32)" stroke-width="1"/>
+          <rect x="186" y="320" width="54" height="36" fill="rgba(200,168,75,0.15)" rx="4" stroke="rgba(200,168,75,0.32)" stroke-width="1"/>
+          <rect x="258" y="320" width="54" height="36" fill="rgba(200,168,75,0.22)" rx="4" stroke="rgba(200,168,75,0.32)" stroke-width="1"/>
+          <rect x="330" y="320" width="54" height="36" fill="rgba(200,168,75,0.17)" rx="4" stroke="rgba(200,168,75,0.32)" stroke-width="1"/>
+          <rect x="402" y="320" width="54" height="36" fill="rgba(200,168,75,0.22)" rx="4" stroke="rgba(200,168,75,0.32)" stroke-width="1"/>
+          <rect x="474" y="320" width="54" height="36" fill="rgba(200,168,75,0.15)" rx="4" stroke="rgba(200,168,75,0.32)" stroke-width="1"/>
+          <rect x="546" y="320" width="54" height="36" fill="rgba(200,168,75,0.22)" rx="4" stroke="rgba(200,168,75,0.32)" stroke-width="1"/>
+          <rect x="618" y="320" width="54" height="36" fill="rgba(200,168,75,0.17)" rx="4" stroke="rgba(200,168,75,0.32)" stroke-width="1"/>
+          <!-- Canopy -->
+          <path d="M0 230 Q400 205 800 230 L800 305 L0 305 Z" fill="rgba(6,12,22,0.85)" stroke="rgba(200,168,75,0.12)" stroke-width="1"/>
+          <!-- Platform lamps -->
+          <rect x="108" y="290" width="5" height="150" fill="rgba(200,168,75,0.28)" rx="2"/>
+          <circle cx="110" cy="290" r="11" fill="rgba(200,168,75,0.12)" stroke="rgba(200,168,75,0.4)" stroke-width="1"/>
+          <rect x="368" y="290" width="5" height="150" fill="rgba(200,168,75,0.28)" rx="2"/>
+          <circle cx="370" cy="290" r="11" fill="rgba(200,168,75,0.12)" stroke="rgba(200,168,75,0.4)" stroke-width="1"/>
+          <rect x="628" y="290" width="5" height="150" fill="rgba(200,168,75,0.28)" rx="2"/>
+          <circle cx="630" cy="290" r="11" fill="rgba(200,168,75,0.12)" stroke="rgba(200,168,75,0.4)" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tt-overlay"></div>
+      <div class="tt-num">03</div>
+      <div class="tt-content">
+        <div class="tt-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zm0 2c3.51 0 5.5.48 5.93 1.5H6.07C6.5 4.48 8.49 4 12 4zm5.5 8H13V9h4.5v3zm-6.5 0H6.5V9H11v3zm6.5 2.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5 1.5.67 1.5 1.5zm-11 0c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5z"/></svg>
+        </div>
+        <div class="tt-name">Station<br>Transport</div>
+        <p class="tt-desc">Rail and ferry station pickups and drop-offs with real-time delay monitoring built in.</p>
+        <span class="tt-cta">View Service <span class="tt-arrow">→</span></span>
+      </div>
+    </a>
+
+    <!-- 04 CORPORATE -->
+    <a href="hospitality.html" class="tt-card">
+      <div class="tt-card-bg">
+        <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <rect width="800" height="600" fill="#08101a"/>
+          <!-- City skyline -->
+          <rect x="0"   y="290" width="55"  height="220" fill="rgba(10,20,36,0.95)"/>
+          <rect x="65"  y="215" width="75"  height="295" fill="rgba(8,16,30,0.95)"/>
+          <rect x="150" y="250" width="58"  height="260" fill="rgba(10,20,36,0.95)"/>
+          <rect x="218" y="168" width="96"  height="342" fill="rgba(7,14,26,0.97)"/>
+          <rect x="324" y="125" width="115" height="385" fill="rgba(6,12,22,0.98)" stroke="rgba(200,168,75,0.1)" stroke-width="1"/>
+          <rect x="449" y="185" width="88"  height="325" fill="rgba(8,16,30,0.97)"/>
+          <rect x="547" y="228" width="68"  height="282" fill="rgba(10,20,36,0.95)"/>
+          <rect x="625" y="255" width="78"  height="255" fill="rgba(8,16,30,0.95)"/>
+          <rect x="713" y="205" width="87"  height="305" fill="rgba(10,20,36,0.95)"/>
+          <!-- Building windows — tallest tower -->
+          <rect x="338" y="142" width="14" height="10" fill="rgba(200,168,75,0.22)" rx="1"/>
+          <rect x="364" y="142" width="14" height="10" fill="rgba(200,168,75,0.28)" rx="1"/>
+          <rect x="390" y="142" width="14" height="10" fill="rgba(200,168,75,0.2)"  rx="1"/>
+          <rect x="416" y="142" width="14" height="10" fill="rgba(200,168,75,0.25)" rx="1"/>
+          <rect x="338" y="165" width="14" height="10" fill="rgba(200,168,75,0.18)" rx="1"/>
+          <rect x="364" y="165" width="14" height="10" fill="rgba(200,168,75,0.22)" rx="1"/>
+          <rect x="390" y="165" width="14" height="10" fill="rgba(200,168,75,0.28)" rx="1"/>
+          <rect x="416" y="165" width="14" height="10" fill="rgba(200,168,75,0.2)"  rx="1"/>
+          <rect x="338" y="188" width="14" height="10" fill="rgba(200,168,75,0.25)" rx="1"/>
+          <rect x="364" y="188" width="14" height="10" fill="rgba(200,168,75,0.18)" rx="1"/>
+          <rect x="390" y="188" width="14" height="10" fill="rgba(200,168,75,0.22)" rx="1"/>
+          <rect x="416" y="188" width="14" height="10" fill="rgba(200,168,75,0.28)" rx="1"/>
+          <!-- Second tower windows -->
+          <rect x="230" y="182" width="12" height="9" fill="rgba(200,168,75,0.2)"  rx="1"/>
+          <rect x="254" y="182" width="12" height="9" fill="rgba(200,168,75,0.25)" rx="1"/>
+          <rect x="278" y="182" width="12" height="9" fill="rgba(200,168,75,0.18)" rx="1"/>
+          <rect x="302" y="182" width="12" height="9" fill="rgba(200,168,75,0.22)" rx="1"/>
+          <rect x="230" y="203" width="12" height="9" fill="rgba(200,168,75,0.25)" rx="1"/>
+          <rect x="254" y="203" width="12" height="9" fill="rgba(200,168,75,0.18)" rx="1"/>
+          <rect x="278" y="203" width="12" height="9" fill="rgba(200,168,75,0.22)" rx="1"/>
+          <rect x="302" y="203" width="12" height="9" fill="rgba(200,168,75,0.2)"  rx="1"/>
+          <!-- Road -->
+          <rect x="0" y="460" width="800" height="140" fill="rgba(5,9,14,0.99)"/>
+          <rect x="0" y="458" width="800" height="3" fill="rgba(200,168,75,0.2)"/>
+          <!-- Road markings -->
+          <rect x="60"  y="490" width="55" height="5" fill="rgba(200,168,75,0.13)" rx="2"/>
+          <rect x="175" y="490" width="55" height="5" fill="rgba(200,168,75,0.13)" rx="2"/>
+          <rect x="290" y="490" width="55" height="5" fill="rgba(200,168,75,0.13)" rx="2"/>
+          <rect x="405" y="490" width="55" height="5" fill="rgba(200,168,75,0.13)" rx="2"/>
+          <rect x="520" y="490" width="55" height="5" fill="rgba(200,168,75,0.13)" rx="2"/>
+          <rect x="635" y="490" width="55" height="5" fill="rgba(200,168,75,0.13)" rx="2"/>
+          <!-- Luxury saloon car -->
+          <path d="M165 415 Q185 388 265 382 L490 382 Q570 388 590 415 L590 453 L165 453 Z" fill="rgba(8,16,30,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5"/>
+          <path d="M215 382 Q245 354 325 349 L425 349 Q505 354 540 382" fill="rgba(10,20,40,0.97)" stroke="rgba(200,168,75,0.25)" stroke-width="1"/>
+          <!-- Car windows -->
+          <rect x="220" y="353" width="92" height="30" fill="rgba(200,168,75,0.11)" rx="3" stroke="rgba(200,168,75,0.28)" stroke-width="1"/>
+          <rect x="326" y="353" width="100" height="30" fill="rgba(200,168,75,0.08)" rx="3" stroke="rgba(200,168,75,0.22)" stroke-width="1"/>
+          <rect x="440" y="356" width="82" height="28" fill="rgba(200,168,75,0.11)" rx="3" stroke="rgba(200,168,75,0.28)" stroke-width="1"/>
+          <!-- Wheels -->
+          <circle cx="234" cy="451" r="23" fill="rgba(4,8,14,0.99)" stroke="rgba(200,168,75,0.42)" stroke-width="2"/>
+          <circle cx="234" cy="451" r="14" fill="rgba(200,168,75,0.1)"  stroke="rgba(200,168,75,0.28)" stroke-width="1"/>
+          <circle cx="522" cy="451" r="23" fill="rgba(4,8,14,0.99)" stroke="rgba(200,168,75,0.42)" stroke-width="2"/>
+          <circle cx="522" cy="451" r="14" fill="rgba(200,168,75,0.1)"  stroke="rgba(200,168,75,0.28)" stroke-width="1"/>
+          <!-- Headlights -->
+          <ellipse cx="588" cy="428" rx="10" ry="7" fill="rgba(200,168,75,0.45)"/>
+          <path d="M598 422 L700 415 L700 422" stroke="rgba(200,168,75,0.1)" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+      <div class="tt-overlay"></div>
+      <div class="tt-num">04</div>
+      <div class="tt-content">
+        <div class="tt-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+        </div>
+        <div class="tt-name">Corporate<br>Transport</div>
+        <p class="tt-desc">Executive chauffeur services, board-level account management, and monthly corporate billing.</p>
+        <span class="tt-cta">View Service <span class="tt-arrow">→</span></span>
+      </div>
+    </a>
+
+    <!-- 05 GROUP -->
+    <a href="hospitality.html" class="tt-card">
+      <div class="tt-card-bg">
+        <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <rect width="800" height="600" fill="#090f1a"/>
+          <!-- Coach body -->
+          <path d="M45 280 Q68 248 155 240 L700 240 Q786 248 800 280 L800 420 Q785 432 760 435 L85 435 Q60 432 45 420 Z" fill="rgba(8,16,32,0.98)" stroke="rgba(200,168,75,0.32)" stroke-width="1.5"/>
+          <!-- Coach nose -->
+          <path d="M45 280 Q24 340 45 435" fill="rgba(8,16,32,0.98)" stroke="rgba(200,168,75,0.22)" stroke-width="1"/>
+          <!-- Windscreen -->
+          <path d="M70 250 Q95 228 175 224 L670 224 Q748 228 773 250 L773 280 L70 280 Z" fill="rgba(200,168,75,0.07)" stroke="rgba(200,168,75,0.22)" stroke-width="1"/>
+          <!-- Side windows -->
+          <rect x="98"  y="260" width="60" height="40" fill="rgba(200,168,75,0.14)" rx="4" stroke="rgba(200,168,75,0.3)" stroke-width="1"/>
+          <rect x="172" y="260" width="60" height="40" fill="rgba(200,168,75,0.11)" rx="4" stroke="rgba(200,168,75,0.28)" stroke-width="1"/>
+          <rect x="246" y="260" width="60" height="40" fill="rgba(200,168,75,0.17)" rx="4" stroke="rgba(200,168,75,0.3)" stroke-width="1"/>
+          <rect x="320" y="260" width="60" height="40" fill="rgba(200,168,75,0.14)" rx="4" stroke="rgba(200,168,75,0.28)" stroke-width="1"/>
+          <rect x="394" y="260" width="60" height="40" fill="rgba(200,168,75,0.11)" rx="4" stroke="rgba(200,168,75,0.3)" stroke-width="1"/>
+          <rect x="468" y="260" width="60" height="40" fill="rgba(200,168,75,0.17)" rx="4" stroke="rgba(200,168,75,0.28)" stroke-width="1"/>
+          <rect x="542" y="260" width="60" height="40" fill="rgba(200,168,75,0.14)" rx="4" stroke="rgba(200,168,75,0.3)" stroke-width="1"/>
+          <rect x="616" y="260" width="60" height="40" fill="rgba(200,168,75,0.11)" rx="4" stroke="rgba(200,168,75,0.28)" stroke-width="1"/>
+          <rect x="690" y="260" width="58" height="40" fill="rgba(200,168,75,0.17)" rx="4" stroke="rgba(200,168,75,0.28)" stroke-width="1"/>
+          <!-- Decorative stripe -->
+          <rect x="45" y="330" width="755" height="7" fill="rgba(200,168,75,0.22)" rx="3"/>
+          <!-- People silhouettes in windows -->
+          <ellipse cx="128" cy="265" rx="9" ry="12" fill="rgba(200,168,75,0.1)"/>
+          <ellipse cx="202" cy="265" rx="9" ry="12" fill="rgba(200,168,75,0.08)"/>
+          <ellipse cx="276" cy="265" rx="9" ry="12" fill="rgba(200,168,75,0.1)"/>
+          <ellipse cx="350" cy="265" rx="9" ry="12" fill="rgba(200,168,75,0.08)"/>
+          <ellipse cx="424" cy="265" rx="9" ry="12" fill="rgba(200,168,75,0.1)"/>
+          <!-- Wheels -->
+          <circle cx="175" cy="436" r="38" fill="rgba(5,8,14,0.99)" stroke="rgba(200,168,75,0.48)" stroke-width="2.5"/>
+          <circle cx="175" cy="436" r="25" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.28)" stroke-width="1.5"/>
+          <circle cx="175" cy="436" r="9"  fill="rgba(200,168,75,0.3)"/>
+          <circle cx="648" cy="436" r="38" fill="rgba(5,8,14,0.99)" stroke="rgba(200,168,75,0.48)" stroke-width="2.5"/>
+          <circle cx="648" cy="436" r="25" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.28)" stroke-width="1.5"/>
+          <circle cx="648" cy="436" r="9"  fill="rgba(200,168,75,0.3)"/>
+          <!-- Road -->
+          <rect x="0" y="472" width="800" height="128" fill="rgba(4,8,12,0.99)"/>
+          <rect x="0" y="470" width="800" height="3" fill="rgba(200,168,75,0.15)"/>
+          <!-- Headlights -->
+          <ellipse cx="796" cy="365" rx="12" ry="9" fill="rgba(200,168,75,0.38)"/>
+          <path d="M800 356 L800 374" stroke="rgba(200,168,75,0.08)" stroke-width="18" fill="none"/>
+        </svg>
+      </div>
+      <div class="tt-overlay"></div>
+      <div class="tt-num">05</div>
+      <div class="tt-content">
+        <div class="tt-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <div class="tt-name">Group<br>Transport</div>
+        <p class="tt-desc">Fleet coordination for delegations, conferences, weddings, and large group movements.</p>
+        <span class="tt-cta">View Service <span class="tt-arrow">→</span></span>
+      </div>
+    </a>
+
+    <!-- 06 SIGHTSEEING -->
+    <a href="hospitality.html" class="tt-card">
+      <div class="tt-card-bg">
+        <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <radialGradient id="sglow" cx="75%" cy="22%" r="28%">
+              <stop offset="0%" stop-color="rgba(200,168,75,0.16)"/>
+              <stop offset="100%" stop-color="rgba(200,168,75,0)"/>
+            </radialGradient>
+          </defs>
+          <rect width="800" height="600" fill="#060e0a"/>
+          <rect width="800" height="600" fill="url(#sglow)"/>
+          <!-- Sky gradient -->
+          <rect x="0" y="0" width="800" height="360" fill="rgba(6,14,10,0.7)"/>
+          <!-- Stars -->
+          <circle cx="80"  cy="70"  r="1.5" fill="rgba(200,168,75,0.55)"/>
+          <circle cx="190" cy="45"  r="1"   fill="rgba(200,168,75,0.45)"/>
+          <circle cx="340" cy="80"  r="1.5" fill="rgba(200,168,75,0.4)"/>
+          <circle cx="480" cy="55"  r="1"   fill="rgba(200,168,75,0.5)"/>
+          <circle cx="590" cy="35"  r="1.5" fill="rgba(200,168,75,0.45)"/>
+          <circle cx="720" cy="75"  r="1"   fill="rgba(200,168,75,0.4)"/>
+          <circle cx="760" cy="120" r="1.5" fill="rgba(200,168,75,0.35)"/>
+          <circle cx="140" cy="130" r="1"   fill="rgba(200,168,75,0.3)"/>
+          <!-- Moon -->
+          <circle cx="680" cy="100" r="38" fill="rgba(200,168,75,0.05)"/>
+          <circle cx="680" cy="100" r="24" fill="rgba(200,168,75,0.07)"/>
+          <circle cx="680" cy="100" r="14" fill="rgba(200,168,75,0.14)" stroke="rgba(200,168,75,0.22)" stroke-width="1"/>
+          <!-- Mountain silhouette — Kilimanjaro -->
+          <path d="M0 400 L120 160 L210 290 L300 190 L420 380 L540 240 L660 360 L760 260 L800 300 L800 600 L0 600 Z" fill="rgba(5,12,7,0.97)"/>
+          <!-- Snow caps -->
+          <path d="M120 160 L94 218  L148 218  Z" fill="rgba(200,168,75,0.14)"/>
+          <path d="M300 190 L276 242 L324 242 Z" fill="rgba(200,168,75,0.11)"/>
+          <path d="M540 240 L518 284 L562 284 Z" fill="rgba(200,168,75,0.09)"/>
+          <!-- Trees -->
+          <rect x="42"  y="374" width="10" height="40" fill="rgba(200,168,75,0.1)"/>
+          <polygon points="47,342 32,378 62,378" fill="rgba(200,168,75,0.13)"/>
+          <rect x="100" y="364" width="10" height="50" fill="rgba(200,168,75,0.1)"/>
+          <polygon points="105,329 88,368 122,368" fill="rgba(200,168,75,0.11)"/>
+          <rect x="694" y="355" width="10" height="56" fill="rgba(200,168,75,0.1)"/>
+          <polygon points="699,318 682,360 716,360" fill="rgba(200,168,75,0.13)"/>
+          <rect x="748" y="368" width="10" height="44" fill="rgba(200,168,75,0.1)"/>
+          <polygon points="753,333 736,372 770,372" fill="rgba(200,168,75,0.11)"/>
+          <!-- Ground / road -->
+          <path d="M0 490 Q400 470 800 490 L800 600 L0 600 Z" fill="rgba(4,10,5,0.98)"/>
+          <rect x="0" y="488" width="800" height="3" fill="rgba(200,168,75,0.2)"/>
+          <!-- Safari Land Cruiser -->
+          <rect x="155" y="404" width="310" height="87" fill="rgba(8,18,10,0.98)" rx="7" stroke="rgba(200,168,75,0.32)" stroke-width="1.5"/>
+          <!-- Pop-up roof -->
+          <rect x="182" y="364" width="128" height="44" fill="rgba(6,14,8,0.98)" rx="5" stroke="rgba(200,168,75,0.25)" stroke-width="1"/>
+          <!-- Roof struts -->
+          <rect x="182" y="408" width="3" height="4" fill="rgba(200,168,75,0.2)"/>
+          <rect x="307" y="408" width="3" height="4" fill="rgba(200,168,75,0.2)"/>
+          <!-- Vehicle windows -->
+          <rect x="170" y="412" width="58" height="36" fill="rgba(200,168,75,0.13)" rx="3" stroke="rgba(200,168,75,0.3)" stroke-width="1"/>
+          <rect x="238" y="412" width="58" height="36" fill="rgba(200,168,75,0.17)" rx="3" stroke="rgba(200,168,75,0.3)" stroke-width="1"/>
+          <rect x="316" y="412" width="58" height="36" fill="rgba(200,168,75,0.13)" rx="3" stroke="rgba(200,168,75,0.3)" stroke-width="1"/>
+          <rect x="384" y="412" width="58" height="36" fill="rgba(200,168,75,0.17)" rx="3" stroke="rgba(200,168,75,0.3)" stroke-width="1"/>
+          <!-- Wheels -->
+          <circle cx="222" cy="489" r="32" fill="rgba(4,8,4,0.99)" stroke="rgba(200,168,75,0.48)" stroke-width="2"/>
+          <circle cx="222" cy="489" r="20" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.25)" stroke-width="1.5"/>
+          <circle cx="222" cy="489" r="7"  fill="rgba(200,168,75,0.28)"/>
+          <circle cx="398" cy="489" r="32" fill="rgba(4,8,4,0.99)" stroke="rgba(200,168,75,0.48)" stroke-width="2"/>
+          <circle cx="398" cy="489" r="20" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.25)" stroke-width="1.5"/>
+          <circle cx="398" cy="489" r="7"  fill="rgba(200,168,75,0.28)"/>
+          <!-- Headlights -->
+          <ellipse cx="462" cy="438" rx="10" ry="7" fill="rgba(200,168,75,0.42)"/>
+          <path d="M472 432 L560 424 L560 432" stroke="rgba(200,168,75,0.08)" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+      <div class="tt-overlay"></div>
+      <div class="tt-num">06</div>
+      <div class="tt-content">
+        <div class="tt-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+        </div>
+        <div class="tt-name">Sightseeing<br>Transport</div>
+        <p class="tt-desc">Curated guided tours, safari drives, and city exploration journeys with knowledgeable local drivers.</p>
+        <span class="tt-cta">View Service <span class="tt-arrow">→</span></span>
+      </div>
+    </a>
+
+  </div><!-- /tt-grid -->
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="reveal">
+    <div class="about-label">Who We Are</div>
+    <h2 class="section-title">Africa's Premier<br><em>Transfer Group</em></h2>
+    <p class="about-text">Furahia Transfer has been the benchmark of corporate mobility and logistics excellence for over 18 years. From seamless airport connections to complex international cargo operations, we deliver certainty in every engagement.</p>
+    <p class="about-text">Our fleet of premium vehicles and dedicated logistics network spans the region, serving multinational corporations, hospitality partners, and private clients who demand nothing but the best.</p>
+    <div class="about-divider"></div>
+    <div class="about-features">
+      <div class="about-feature">Licensed &amp; fully insured across all service categories</div>
+      <div class="about-feature">GPS-tracked fleet with real-time client visibility</div>
+      <div class="about-feature">Dedicated corporate account management</div>
+      <div class="about-feature">ISO-compliant cargo handling procedures</div>
+      <div class="about-feature">24/7 operations centre &amp; emergency response</div>
+    </div>
+  </div>
+  <div class="about-visual reveal">
+    <div class="about-visual-inner">
+      <svg class="about-visual-icon" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1"/><path d="M20 50 Q50 20 80 50 Q50 80 20 50Z" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.4)" stroke-width="1"/></svg>
+    </div>
+    <div class="about-visual-text">"The gold standard of African corporate mobility"</div>
+    <div class="about-visual-tag">EST. 2005</div>
+  </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section class="services">
+  <div class="services-header reveal">
+    <div class="about-label" style="text-align:center;margin-bottom:12px">What We Offer</div>
+    <h2 class="section-title" style="text-align:center">Our <em>Core Services</em></h2>
+  </div>
+  <div class="services-grid reveal">
+    <a href="hospitality.html" class="service-card">
+      <div class="service-num">01</div>
+      <svg class="service-icon" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+      <div class="service-title">Airport &amp; Transfer</div>
+      <p class="service-desc">Premium airport pickups, executive transfers, and VIP chauffeur services. Meet-and-greet, flight monitoring, and seamless point-to-point journeys.</p>
+      <span class="service-link">Discover More</span>
+    </a>
+    <a href="hospitality.html" class="service-card">
+      <div class="service-num">02</div>
+      <svg class="service-icon" viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg>
+      <div class="service-title">Hospitality Transfers</div>
+      <p class="service-desc">Hotel, safari, and resort logistics. Curated experiences for guests of Africa's finest establishments, delivered with discretion and local expertise.</p>
+      <span class="service-link">Discover More</span>
+    </a>
+    <a href="vehicles.html" class="service-card">
+      <div class="service-num">03</div>
+      <svg class="service-icon" viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+      <div class="service-title">Cargo &amp; Freight</div>
+      <p class="service-desc">Domestic and international cargo solutions. Temperature-controlled, oversized, and sensitive freight handled with certified care and full chain-of-custody.</p>
+      <span class="service-link">Discover More</span>
+    </a>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="process-header reveal">
+    <div class="about-label">How It Works</div>
+    <h2 class="section-title">Simple. Reliable.<br><em>Exceptional.</em></h2>
+  </div>
+  <div class="process-steps reveal">
+    <div class="step">
+      <div class="step-circle"><span class="step-num">01</span></div>
+      <div class="step-title">Request &amp; Quote</div>
+      <p class="step-desc">Submit your transfer or cargo requirements. Receive a tailored quote within the hour.</p>
+    </div>
+    <div class="step">
+      <div class="step-circle"><span class="step-num">02</span></div>
+      <div class="step-title">Confirmation</div>
+      <p class="step-desc">Your booking is confirmed with a dedicated coordinator assigned to your journey.</p>
+    </div>
+    <div class="step">
+      <div class="step-circle"><span class="step-num">03</span></div>
+      <div class="step-title">Tracking</div>
+      <p class="step-desc">Real-time GPS updates and proactive communication throughout your service.</p>
+    </div>
+    <div class="step">
+      <div class="step-circle"><span class="step-num">04</span></div>
+      <div class="step-title">Delivery</div>
+      <p class="step-desc">On-time, every time. Followed by digital confirmation and service feedback.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOMER TESTIMONIALS SLIDER -->
+<section class="testimonials">
+
+  <div class="testi-header reveal">
+    <div class="about-label">What Clients Say</div>
+    <h2 class="section-title">Trusted by Those Who<br><em>Demand the Best</em></h2>
+  </div>
+
+  <div class="testi-viewport">
+    <div class="testi-track" id="testiTrack">
+
+      <!-- Slide 1 -->
+      <div class="testi-slide">
+        <div class="testi-card">
+          <div class="testi-quote">
+            <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+          </div>
+          <div class="testi-stars">
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="testi-text">"Furahia Transfer has redefined what corporate mobility means in East Africa. Their precision is unmatched and their team's professionalism sets them apart entirely from any other operator we have used."</p>
+          <div class="testi-author-row">
+            <div class="testi-avatar">SR</div>
+            <div>
+              <div class="testi-name">Sarah Russel</div>
+              <div class="testi-role">Regional Director, Four Seasons Hotels &amp; Resorts</div>
+            </div>
+            <span class="testi-tag">Hospitality Transfer</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="testi-slide">
+        <div class="testi-card">
+          <div class="testi-quote">
+            <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+          </div>
+          <div class="testi-stars">
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="testi-text">"We moved a time-sensitive pharmaceutical consignment from Arusha to Kampala on a tight deadline. Furahia's cargo team handled every step flawlessly — documentation, customs, cold chain. Zero stress. We will never use another logistics company."</p>
+          <div class="testi-author-row">
+            <div class="testi-avatar">DM</div>
+            <div>
+              <div class="testi-name">Dr. Daniel Mwenda</div>
+              <div class="testi-role">Supply Chain Director, MedAfrica Ltd</div>
+            </div>
+            <span class="testi-tag">Cargo &amp; Freight</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="testi-slide">
+        <div class="testi-card">
+          <div class="testi-quote">
+            <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+          </div>
+          <div class="testi-stars">
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="testi-text">"Our board members fly into Kilimanjaro Airport four times a year. Since switching to Furahia Transfer for all executive pickups, not a single delay. The drivers are discreet, professional, and the vehicles are immaculate. Exactly what a corporation needs."</p>
+          <div class="testi-author-row">
+            <div class="testi-avatar">AN</div>
+            <div>
+              <div class="testi-name">Amara Nkosi</div>
+              <div class="testi-role">Executive Assistant to CEO, Serengeti Capital Group</div>
+            </div>
+            <span class="testi-tag">Corporate Transport</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="testi-slide">
+        <div class="testi-card">
+          <div class="testi-quote">
+            <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+          </div>
+          <div class="testi-stars">
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="testi-text">"We coordinated transfers for 180 delegates attending our annual sustainability summit across three Arusha venues. Furahia managed the entire operation — timing sheets, multiple pick-up points, bilingual drivers. Everything ran like clockwork. Exceptional service."</p>
+          <div class="testi-author-row">
+            <div class="testi-avatar">JO</div>
+            <div>
+              <div class="testi-name">James Ochieng</div>
+              <div class="testi-role">Events Director, East Africa Conservation Forum</div>
+            </div>
+            <span class="testi-tag">Group Transport</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="testi-slide">
+        <div class="testi-card">
+          <div class="testi-quote">
+            <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+          </div>
+          <div class="testi-stars">
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="testi-text">"Our honeymooners asked for a sightseeing transfer from Arusha to the Ngorongoro Crater. The Furahia driver was wonderful — knowledgeable, warm, and went far beyond what was expected. Every guest we've sent has come back absolutely delighted."</p>
+          <div class="testi-author-row">
+            <div class="testi-avatar">LK</div>
+            <div>
+              <div class="testi-name">Lydia Kimaro</div>
+              <div class="testi-role">Guest Relations Manager, Arusha Coffee Lodge</div>
+            </div>
+            <span class="testi-tag">Sightseeing Tour</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 6 -->
+      <div class="testi-slide">
+        <div class="testi-card">
+          <div class="testi-quote">
+            <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+          </div>
+          <div class="testi-stars">
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="testi-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="testi-text">"I travel through Arusha airport at least twice a month. Furahia has never let me down — not once in two years. The driver is always there, the car is always spotless, and the booking takes under a minute. It's the one thing I never have to worry about."</p>
+          <div class="testi-author-row">
+            <div class="testi-avatar">TH</div>
+            <div>
+              <div class="testi-name">Thomas Hargreaves</div>
+              <div class="testi-role">Partner, East Africa Advisory, PwC Nairobi</div>
+            </div>
+            <span class="testi-tag">Airport Transfer</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /testi-track -->
+  </div><!-- /testi-viewport -->
+
+  <!-- Controls -->
+  <div class="testi-controls">
+    <button class="testi-btn" id="testiBtnPrev" aria-label="Previous review">
+      <svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg>
+    </button>
+    <div class="testi-dots" id="testiDots">
+      <button class="testi-dot active" data-i="0"></button>
+      <button class="testi-dot" data-i="1"></button>
+      <button class="testi-dot" data-i="2"></button>
+      <button class="testi-dot" data-i="3"></button>
+      <button class="testi-dot" data-i="4"></button>
+      <button class="testi-dot" data-i="5"></button>
+    </div>
+    <div class="testi-progress"><div class="testi-progress-fill" id="testiProgress"></div></div>
+    <button class="testi-btn" id="testiBtnNext" aria-label="Next review">
+      <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+    </button>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">
+      
+      <img src="data:image/png;base64,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" alt="Furahia Transfers &amp; Logistics" style="height:60px;width:auto;display:block;" />
+    </div>
+      <p class="footer-desc">Africa's premier transfer and logistics group. Precision, reliability, and excellence in every engagement since 2005.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="hospitality.html">Airport Transfers</a></li>
+        <li><a href="hospitality.html">Executive Taxi</a></li>
+        <li><a href="hospitality.html">Hospitality</a></li>
+        </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="vehicles.html">Our Fleet</a></li>
+    <li><a href="impact.html">Impact</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">News</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:+255700000000">+255 700 000 000</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#3851565e57785e4d4a595051594c4a59564b5e5d4a165b57"><span class="__cf_email__" data-cfemail="1d74737b725d7b686f7c75747c696f7c736e7b786f337e72">[email&#160;protected]</span></a></li>
+        <li><a href="#">Arusha, Tanzania</a></li>
+        <li><a href="#">24/7 Dispatch</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Furahia Transfer. All rights reserved.</div>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a class="whatsapp-float" href="https://wa.me/255700000000?text=Hello%20Furahia%20Transfer!%20I%27d%20like%20to%20make%20a%20booking." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M19.11 17.29c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.14-1.12-.41-2.14-1.32-.79-.71-1.33-1.58-1.49-1.85-.16-.27-.02-.41.12-.55.12-.12.27-.31.41-.47.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.47-.07-.14-.61-1.47-.84-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27s.97 2.64 1.11 2.82c.14.18 1.91 2.92 4.63 4.1.65.28 1.15.45 1.55.58.65.21 1.24.18 1.71.11.52-.08 1.61-.66 1.84-1.29.23-.63.23-1.16.16-1.27-.06-.11-.25-.18-.52-.32zM16.02 3.2c-7.07 0-12.8 5.71-12.8 12.76 0 2.26.6 4.47 1.73 6.41L3.12 28.8l6.6-1.73a12.8 12.8 0 0 0 6.3 1.68h.01c7.06 0 12.79-5.72 12.79-12.77 0-3.41-1.33-6.62-3.74-9.02a12.73 12.73 0 0 0-9.06-3.76zm0 23.39h-.01a10.66 10.66 0 0 1-5.43-1.49l-.39-.23-3.92 1.03 1.05-3.82-.25-.39a10.6 10.6 0 0 1-1.63-5.67c0-5.88 4.8-10.67 10.7-10.67 2.85 0 5.52 1.1 7.53 3.11a10.58 10.58 0 0 1 3.12 7.54c0 5.89-4.8 10.68-10.68 10.68z"/>
+  </svg>
+</a>
+
+<script>
+  // ── Nav scroll state ──
+  (function(){
+    var n = document.querySelector('nav');
+    if(!n) return;
+    function check(){ n.classList.toggle('scrolled', window.scrollY > 36); }
+    window.addEventListener('scroll', check, {passive:true});
+    check();
+  })();
+
+  // ── Scroll reveal ──
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  // ── Testimonial Slider ──
+  (function(){
+    const track    = document.getElementById('testiTrack');
+    const dots     = document.querySelectorAll('.testi-dot');
+    const progress = document.getElementById('testiProgress');
+    const btnPrev  = document.getElementById('testiBtnPrev');
+    const btnNext  = document.getElementById('testiBtnNext');
+    if(!track) return;
+
+    const TOTAL    = dots.length;       // 6 slides
+    const DURATION = 5000;             // ms per slide
+    let   current  = 0;
+    let   timer    = null;
+    let   progTimer= null;
+
+    function goTo(idx, resetTimer) {
+      // clamp / wrap
+      if(idx < 0) idx = TOTAL - 1;
+      if(idx >= TOTAL) idx = 0;
+      current = idx;
+
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+
+      // restart progress bar animation
+      progress.style.transition = 'none';
+      progress.style.width = '0';
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          progress.style.transition = 'width ' + DURATION + 'ms linear';
+          progress.style.width = '100%';
+        });
+      });
+
+      if(resetTimer !== false) restartAuto();
+    }
+
+    function restartAuto(){
+      clearInterval(timer);
+      timer = setInterval(() => goTo(current + 1), DURATION);
+    }
+
+    // button events
+    btnNext.addEventListener('click', () => goTo(current + 1));
+    btnPrev.addEventListener('click', () => goTo(current - 1));
+
+    // dot events
+    dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.i)));
+
+    // pause on hover
+    track.closest('.testi-viewport').addEventListener('mouseenter', () => clearInterval(timer));
+    track.closest('.testi-viewport').addEventListener('mouseleave', restartAuto);
+
+    // touch / swipe support
+    let touchX = 0;
+    track.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, {passive:true});
+    track.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - touchX;
+      if(Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
+    }, {passive:true});
+
+    // kick off
+    goTo(0);
+  })();
+
+  // Hero background video fade-in
+  (function(){
+    var v = document.getElementById('heroBgVideo');
+    if(!v) return;
+    function onReady(){ v.classList.add('loaded'); }
+    if(v.readyState >= 3){ onReady(); }
+    else { v.addEventListener('canplay', onReady, {once:true}); }
+  })();
+</script>-e 
+
+<script>
+  // Mobile nav
+  (function(){
+    var ham = document.getElementById('navHam');
+    var drawer = document.getElementById('navDrawer');
+    var overlay = document.getElementById('navOverlay');
+    var close = document.getElementById('navClose');
+    if(!ham||!drawer||!overlay) return;
+    function open(){drawer.classList.add('open');overlay.classList.add('open');ham.classList.add('open');document.body.style.overflow='hidden';}
+    function shut(){drawer.classList.remove('open');overlay.classList.remove('open');ham.classList.remove('open');document.body.style.overflow='';}
+    ham.addEventListener('click',open);
+    close.addEventListener('click',shut);
+    overlay.addEventListener('click',shut);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')shut();});
+  })();
+</script>
+</body>
+</html>

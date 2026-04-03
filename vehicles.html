@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FURAHIA TRANSFER — Our Fleet, Vehicles &amp; Cargo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>  :root {
+    --bg:         #F9F7F2;
+    --bg-alt:     #EDE8DF;
+    --card:       #F4F0E8;
+    --text:       #3E2723;
+    --text-muted: #6B5851;
+    --accent:     #C05A35;
+    --accent-hover:#F2B138;
+    --link:       #5E7D67;
+    --footer-bg:  #3E2723;
+    --footer-text:#F9F7F2;
+    --border:     rgba(62,39,35,0.14);
+    --border-soft:rgba(62,39,35,0.08);
+    --glass:      rgba(249,247,242,0.88);
+    --shadow:     0 4px 24px rgba(62,39,35,0.12);
+    --shadow-lg:  0 12px 48px rgba(62,39,35,0.18);
+    --transition: 0.35s cubic-bezier(0.4,0,0.2,1);
+    --font-display:'Cormorant Garamond',serif;
+    --font-body:   'DM Sans',sans-serif;
+    --font-cond:   'Barlow Condensed',sans-serif;
+    --black:      #F4F0E8;
+    --deep:       #F9F7F2;
+    --navy:       #EDE8DF;
+    --gold:       #C05A35;
+    --gold-light: #F2B138;
+    --gold-dim:   rgba(192,90,53,0.10);
+    --white:      #F9F7F2;
+    --grey:       #6B5851;
+    --shadow-dark:0 12px 48px rgba(62,39,35,0.18);
+    --shadow-gold:0 8px 32px rgba(192,90,53,0.18);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;overflow-y:scroll;scrollbar-gutter:stable}
+  body{background:var(--bg);color:var(--text);font-family:var(--font-body);overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  nav{position:fixed;top:0;left:0;right:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:76px;background:var(--glass);backdrop-filter:blur(28px) saturate(160%);-webkit-backdrop-filter:blur(28px) saturate(160%);border-bottom:1px solid var(--border);box-shadow:var(--shadow);transition:background var(--transition),box-shadow var(--transition)}
+  nav.scrolled{background: rgba(249,247,242,0.98);box-shadow:0 2px 0 var(--border),var(--shadow)}
+  .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .nav-logo img{height:48px;width:auto;display:block;flex-shrink:0}
+  .nav-logo-text{font-family:var(--font-cond);font-size:15px;letter-spacing:2.5px;color:var(--text);font-weight:700;display:block;line-height:1.1}
+  .nav-logo-sub{font-family:var(--font-cond);font-size:9px;letter-spacing:4px;color:var(--accent);font-weight:500;display:block;margin-top:1px}
+  .nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav-links a{font-family:var(--font-cond);font-size:11px;letter-spacing:2.5px;color: var(--text-muted);text-decoration:none;text-transform:uppercase;transition:color var(--transition);position:relative;padding-bottom:4px}
+  .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--accent);transition:width var(--transition)}
+  .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+  .nav-links a:hover,.nav-links a.active{color:var(--accent)}
+  .nav-cta{font-family:var(--font-cond);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;padding:10px 24px;border:2px solid var(--accent);color:var(--accent);background:transparent;cursor:pointer;text-decoration:none;transition:all var(--transition);position:relative;overflow:hidden}
+  .nav-cta::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--accent),var(--accent-hover));transform:scaleX(0);transform-origin:left;transition:transform var(--transition);z-index:0}
+  .nav-cta span{position:relative;z-index:1}
+  .nav-cta:hover{color:#fff}
+  .nav-cta:hover::before{transform:scaleX(1)}
+  .page-hero{min-height:56vh;position:relative;display:flex;align-items:flex-end;padding:130px 60px 70px;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background:linear-gradient(150deg,#5D4037 0%,#2E1B18 65%)}
+  .hero-grid{position:absolute;inset:0;opacity:.03;background-image:linear-gradient(var(--gold) 1px,transparent 1px),linear-gradient(90deg,var(--gold) 1px,transparent 1px);background-size:80px 80px}
+  .hero-glow{position:absolute;right:-80px;top:-80px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,.07) 0%,transparent 65%)}
+  .hero-vline{position:absolute;left:0;top:0;width:4px;height:100%;background:linear-gradient(to bottom,transparent,var(--gold),transparent);opacity:.5}
+  .hero-word{position:absolute;right:40px;bottom:-10px;font-family:var(--font-display);font-size:clamp(100px,16vw,200px);font-weight:700;color:rgba(200,168,75,.04);line-height:1;pointer-events:none;white-space:nowrap}
+  .hero-content{position:relative;z-index:2;max-width:700px}
+  .breadcrumb{display:flex;align-items:center;gap:10px;font-family:var(--font-cond);font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:24px}
+  .breadcrumb a{color:rgba(200,168,75,.5);text-decoration:none}
+  .hero-eyebrow{font-family:var(--font-cond);font-size:11px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:14px}
+  .hero-eyebrow::before{content:'';width:36px;height:1px;background:var(--gold)}
+  .page-title{font-family:var(--font-display);font-size:clamp(48px,7vw,88px);font-weight:300;line-height:.94}
+  .page-title em{font-style:italic;color:var(--accent-hover)}
+  .page-title strong{font-weight:700;display:block}
+  .hero-sub{font-size:15px;color: rgba(249,247,242,0.82);font-weight:300;line-height:1.8;max-width:520px;margin-top:22px}
+  .label{font-family:var(--font-cond);font-size:11px;letter-spacing:5px;color:var(--accent);text-transform:uppercase;margin-bottom:16px}
+  .sec-title{font-family:var(--font-display);font-size:clamp(30px,4vw,50px);font-weight:300;line-height:1.08;margin-bottom:18px}
+  .sec-title em{font-style:italic;color:var(--accent)}
+  .body-text{color:var(--text-muted);line-height:1.9;font-weight:300;font-size:15px;margin-bottom:14px}
+  .fleet-tabs{background:#fff;border-bottom:1px solid var(--border);padding:0 60px;display:flex;border-bottom:1px solid var(--border-soft);position:sticky;top:76px;z-index:50;overflow-x:auto}
+  .ftab{font-family:var(--font-cond);font-size:12px;letter-spacing:3px;text-transform:uppercase;padding:22px 28px;background:none;border:none;color: var(--text-muted);cursor:pointer;position:relative;transition:color .3s;white-space:nowrap}
+  .ftab::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .3s}
+  .ftab.active{color:var(--accent)}
+  .ftab.active::after{transform:scaleX(1)}
+  .ftab:hover{color:var(--text)}
+  .fleet-section{padding:80px 60px;background:var(--bg)}
+  .fleet-section-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:56px;padding-bottom:24px;border-bottom: 1px solid var(--border)}
+  .fleet-count{font-family:var(--font-display);font-size:60px;font-weight:300;color: rgba(192,90,53,0.12);line-height:1}
+  .vehicles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+  .vehicle-card{background:#fff;overflow:hidden;position:relative;transition:background .3s;cursor:default}
+  .vehicle-card:hover{background:#f5ede8}
+  .vehicle-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light));transform:scaleX(0);transform-origin:left;transition:transform .4s;z-index:1}
+  .vehicle-card:hover::before{transform:scaleX(1)}
+  .vc-visual{aspect-ratio:16/9;background:#EDE8DF;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .vc-visual svg{width:100%;height:100%}
+  .vc-badge{position:absolute;top:14px;left:14px;font-family:var(--font-cond);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);background:rgba(8,10,14,.85);border:1px solid var(--border);padding:5px 11px;backdrop-filter:blur(8px)}
+  .vc-info{padding:22px 22px 26px}
+  .vc-name{font-family:var(--font-cond);font-size:17px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px}
+  .vc-tagline{font-size:12px;color: var(--text-muted);font-weight:300;margin-bottom:16px;line-height:1.5}
+  .vc-specs{display:flex;gap:0;border: 1px solid var(--border)}
+  .vc-spec{flex:1;display:flex;flex-direction:column;align-items:center;padding:12px 6px;border-right: 1px solid var(--border);text-align:center}
+  .vc-spec:last-child{border-right:none}
+  .vc-spec-icon{width:18px;height:18px;fill:var(--gold);margin-bottom:5px}
+  .vc-spec-val{font-family:var(--font-cond);font-size:14px;font-weight:600;color: var(--text)}
+  .vc-spec-label{font-family:var(--font-cond);font-size:9px;letter-spacing:2px;color: var(--text-muted);text-transform:uppercase;margin-top:2px}
+  .vc-features{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px}
+  .vc-feat{font-family:var(--font-cond);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);background:rgba(62,39,35,.05);border:1px solid var(--border);padding:3px 9px}
+  .vc-book{display:flex;align-items:center;justify-content:space-between;margin-top:16px;padding-top:14px;border-top: 1px solid var(--border)}
+  .vc-book a{font-family:var(--font-cond);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);text-decoration:none;display:flex;align-items:center;gap:8px;transition:gap .3s}
+  .vehicle-card:hover .vc-book a{gap:13px}
+  .vc-ideal{font-size:11px;color: var(--text-muted);font-weight:300}
+  .combo-section{background:var(--bg-alt);padding:80px 60px}
+  .combo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin-top:50px}
+  .combo-card{background:#fff;padding:26px 20px;text-align:center;position:relative;overflow:hidden;transition:background .3s}
+  .combo-card:hover{background:#f5ede8}
+  .combo-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light));transform:scaleX(0);transform-origin:center;transition:transform .4s}
+  .combo-card:hover::before{transform:scaleX(1)}
+  .combo-num{font-family:var(--font-display);font-size:52px;font-weight:300;color: var(--accent);line-height:1;margin-bottom:3px}
+  .combo-unit{font-family:var(--font-cond);font-size:9px;letter-spacing:4px;text-transform:uppercase;color: var(--text-muted);margin-bottom:12px}
+  .combo-vehicles{display:flex;justify-content:center;gap:5px;flex-wrap:wrap;margin-bottom:12px}
+  .combo-tag{font-family:var(--font-cond);font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,.6);background:rgba(200,168,75,.06);border:1px solid var(--border);padding:3px 7px}
+  .combo-specs{display:flex;justify-content:center;gap:14px;font-family:var(--font-cond);font-size:10px;letter-spacing:1px;color: var(--text-muted);border-top: 1px solid var(--border);padding-top:12px;margin-top:4px}
+  .combo-spec-item{display:flex;align-items:center;gap:4px}
+  .combo-spec-item svg{width:11px;height:11px;fill:var(--gold)}
+  .courier-section{background:var(--bg);padding:80px 60px}
+  .courier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:50px}
+  .courier-card{background:#fff;overflow:hidden;position:relative;transition:background .3s}
+  .courier-card:hover{background:#f5ede8}
+  .courier-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light));transform:scaleX(0);transform-origin:left;transition:transform .4s}
+  .courier-card:hover::before{transform:scaleX(1)}
+  .cc-visual{aspect-ratio:16/9;background:var(--bg);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .cc-visual svg{width:100%;height:100%}
+  .cc-info{padding:22px 22px 26px}
+  .cc-name{font-family:var(--font-cond);font-size:16px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}
+  .cc-specs{display:flex;flex-direction:column;gap:10px}
+  .cc-spec-row{display:flex;align-items:center;gap:12px}
+  .cc-spec-icon{width:20px;height:20px;fill:var(--gold);flex-shrink:0}
+  .cc-spec-text{font-size:13px;color: var(--text-muted);font-weight:300}
+  .cc-spec-text strong{color: var(--text);font-weight:500}
+  .promise-strip{background:var(--accent);padding:48px 60px;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .ps-item{text-align:center;padding:0 20px;border-right:1px solid rgba(255,255,255,.2)}
+  .ps-item:last-child{border-right:none}
+  .ps-icon{width:34px;height:34px;fill: #fff;margin:0 auto 10px}
+  .ps-title{font-family:var(--font-cond);font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color: #fff;margin-bottom:3px}
+  .ps-sub{font-size:12px;color: rgba(255,255,255,0.8);font-weight:300}
+  .book-cta{background:var(--card);padding:90px 60px;text-align:center;position:relative;overflow:hidden}
+  .book-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,.06) 0%,transparent 65%);pointer-events:none}
+  .cta-eyebrow{font-family:var(--font-cond);font-size:11px;letter-spacing:5px;color: var(--accent);text-transform:uppercase;margin-bottom:18px;position:relative;z-index:1}
+  .cta-title{font-family:var(--font-display);font-size:clamp(32px,5vw,58px);font-weight:300;line-height:1.1;margin-bottom:16px;position:relative;z-index:1}
+  .cta-title em{font-style:italic;color:var(--gold)}
+  .cta-sub{color:var(--text-muted);font-size:15px;font-weight:300;max-width:540px;margin:0 auto 40px;line-height:1.8;position:relative;z-index:1}
+  .cta-btns{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;position:relative;z-index:1}
+  .btn-gold{font-family:var(--font-cond);font-size:12px;letter-spacing:3px;text-transform:uppercase;padding:18px 40px;background:var(--accent);color:#fff;border:none;cursor:pointer;text-decoration:none;transition:all .3s;font-weight:600}
+  .btn-gold:hover{background:var(--accent-hover);color:var(--text);transform:translateY(-2px)}
+  .btn-outline{font-family:var(--font-cond);font-size:12px;letter-spacing:3px;text-transform:uppercase;padding:18px 40px;background:transparent;color: var(--text);border:1px solid rgba(255,255,255,.25);cursor:pointer;text-decoration:none;transition:all .3s}
+  .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+  footer{background:var(--footer-bg);border-top:none;padding:80px 60px 40px}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
+  .footer-logo{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+  .footer-desc{color: rgba(249,247,242,0.65);font-size:13px;line-height:1.8;font-weight:300}
+  .footer-col-title{font-family:var(--font-cond);font-size:11px;letter-spacing:4px;color:var(--accent-hover);text-transform:uppercase;margin-bottom:24px}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .footer-links a{font-size:13px;color: rgba(249,247,242,0.65);text-decoration:none;font-weight:300;transition:color .3s}
+  .footer-links a:hover{color:var(--accent-hover)}
+  .footer-bottom{border-top:1px solid rgba(249,247,242,0.12);padding-top:30px;display:flex;justify-content:space-between;align-items:center}
+  .footer-copy{font-size:12px;color: rgba(249,247,242,0.5);font-family:var(--font-cond);letter-spacing:1px}
+  .footer-bottom-links{display:flex;gap:30px}
+  .footer-bottom-links a{font-size:11px;color: rgba(249,247,242,0.5);text-decoration:none;font-family:var(--font-cond);letter-spacing:1px}
+  .whatsapp-float{position:fixed;bottom:28px;right:28px;z-index:9999;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.45),0 2px 8px rgba(0,0,0,.35);text-decoration:none;animation:waPopIn .6s 1.2s both cubic-bezier(.34,1.56,.64,1);transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s ease,background .25s ease}
+  .whatsapp-float:hover{background:#128C7E;transform:scale(1.12);box-shadow:0 10px 36px rgba(37,211,102,.55),0 4px 14px rgba(0,0,0,.4)}
+  .whatsapp-float svg{width:30px;height:30px;fill:#fff}
+  @keyframes waPopIn{0%{opacity:0;transform:scale(.3) translateY(20px)}100%{opacity:1;transform:scale(1) translateY(0)}}
+  .reveal{opacity:0;transform:translateY(38px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+  .fleet-panel{display:block}
+  .fleet-panel.hidden{display:none}
+  @media(max-width:1100px){.vehicles-grid{grid-template-columns:1fr 1fr}.combo-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:900px){
+    nav{padding:0 24px}.nav-links{display:none}
+    .fleet-section,.combo-section,.courier-section,.book-cta{padding:60px 24px}
+    .page-hero{padding:120px 24px 56px;min-height:auto}
+    .vehicles-grid,.courier-grid{grid-template-columns:1fr}
+    .combo-grid{grid-template-columns:1fr 1fr}
+    .promise-strip{grid-template-columns:1fr 1fr;gap:24px;padding:40px 24px}
+    .ps-item{border-right:none;padding-bottom:20px}
+    .footer-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:540px){.combo-grid{grid-template-columns:1fr}}
+
+  /* ══ MOBILE NAV ══ */
+  .nav-hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;width:44px;height:44px;background:none;border:1px solid var(--border);border-radius:2px;cursor:pointer;gap:5px;flex-shrink:0;transition:border-color var(--transition)}
+  .nav-hamburger:hover{border-color:var(--accent)}
+  .nav-hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:1px;transition:all 0.35s cubic-bezier(0.4,0,0.2,1);transform-origin:center}
+  .nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+  .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  .nav-overlay{position:fixed;inset:0;background:rgba(62,39,35,0.45);backdrop-filter:blur(4px);z-index:98;opacity:0;pointer-events:none;transition:opacity 0.35s ease}
+  .nav-overlay.open{opacity:1;pointer-events:all}
+
+  .nav-drawer{position:fixed;top:0;right:0;bottom:0;width:min(320px,88vw);background:var(--bg);z-index:99;display:flex;flex-direction:column;transform:translateX(100%);transition:transform 0.38s cubic-bezier(0.4,0,0.2,1);box-shadow:-8px 0 40px rgba(62,39,35,0.18)}
+  .nav-drawer.open{transform:translateX(0)}
+
+  .nav-drawer-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--border)}
+  .nav-drawer-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .nav-drawer-logo img{height:42px;width:auto}
+  .nav-drawer-logo-text{font-family:var(--font-cond);font-size:13px;letter-spacing:2px;color:var(--text);font-weight:700;display:block;line-height:1.1}
+  .nav-drawer-logo-sub{font-family:var(--font-cond);font-size:8px;letter-spacing:3px;color:var(--accent);font-weight:500;display:block}
+  .nav-drawer-close{width:36px;height:36px;background:none;border:1px solid var(--border);border-radius:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--transition);flex-shrink:0}
+  .nav-drawer-close:hover{border-color:var(--accent);background:rgba(192,90,53,0.06)}
+  .nav-drawer-close svg{width:16px;height:16px;fill:var(--text)}
+
+  .nav-drawer-links{flex:1;overflow-y:auto;padding:16px 0}
+  .nav-drawer-links a{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;font-family:var(--font-cond);font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);text-decoration:none;border-bottom:1px solid var(--border-soft);transition:all var(--transition)}
+  .nav-drawer-links a:hover,.nav-drawer-links a.active{color:var(--accent);background:rgba(192,90,53,0.04);padding-left:34px}
+  .nav-drawer-links a .drawer-arrow{font-size:14px;opacity:0;transition:opacity var(--transition)}
+  .nav-drawer-links a:hover .drawer-arrow,.nav-drawer-links a.active .drawer-arrow{opacity:1}
+
+  .nav-drawer-foot{padding:24px 28px;border-top:1px solid var(--border)}
+  .nav-drawer-cta{display:block;width:100%;padding:16px;background:var(--accent);color:#fff;font-family:var(--font-cond);font-size:12px;letter-spacing:3px;text-transform:uppercase;text-align:center;text-decoration:none;font-weight:600;transition:background var(--transition)}
+  .nav-drawer-cta:hover{background:var(--accent-hover);color:var(--text)}
+  .nav-drawer-contact{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+  .nav-drawer-contact a{font-family:var(--font-cond);font-size:11px;letter-spacing:2px;color:var(--text-muted);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color var(--transition)}
+  .nav-drawer-contact a:hover{color:var(--accent)}
+  .nav-drawer-contact svg{width:14px;height:14px;fill:var(--accent);flex-shrink:0}
+
+  @media(max-width:900px){
+    .nav-hamburger{display:flex}
+    .nav-links{display:none!important}
+    .nav-cta{display:none}
+    nav{padding:0 20px}
+  }
+  @media(min-width:901px){
+    .nav-overlay,.nav-drawer{display:none!important}
+  }
+
+
+  /* ── CARGO & FREIGHT SECTION ── */
+  .capabilities { background: var(--card); }
+  .cap-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; margin-top: 60px; }
+  .cap-sidebar { position: sticky; top: 120px; }
+  .cap-stat { margin-bottom: 40px; border-left: 2px solid var(--gold); padding-left: 20px; }
+  .cap-num { font-family: var(--font-display); font-size: 50px; font-weight: 300; color: var(--gold); line-height: 1; }
+  .cap-label { font-family: var(--font-cond); font-size: 11px; letter-spacing: 3px; color: var(--text-muted); text-transform: uppercase; margin-top: 6px; }
+  .cap-body { display: flex; flex-direction: column; gap: 2px; }
+  .cap-item {
+    background: var(--bg); padding: 30px 36px;
+    display: grid; grid-template-columns: 60px 1fr;
+    gap: 24px; align-items: start; transition: background 0.3s;
+    cursor: default;
+  }
+  .cap-item:hover { background: var(--steel); }
+  .cap-icon { width: 44px; height: 44px; fill: var(--gold); margin-top: 4px; }
+  .cap-title { font-family: var(--font-cond); font-size: 18px; font-weight: 600; letter-spacing: 1px; margin-bottom: 10px; }
+  .cap-desc { color: var(--text-muted); font-size: 14px; line-height: 1.8; font-weight: 300; }
+  .cargo-types { background: var(--bg-alt); }
+  .cargo-types-header { margin-bottom: 60px; }
+  .cargo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+  .cargo-tile {
+    background: var(--card); padding: 36px 28px;
+    text-align: center; position: relative; overflow: hidden;
+    transition: background 0.3s;
+  }
+  .cargo-tile:hover { background: var(--card); }
+  .cargo-tile::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(201,168,76,0.05), transparent); opacity: 0; transition: opacity 0.3s; }
+  .cargo-tile:hover::before { opacity: 1; }
+  .cargo-tile-icon { width: 40px; height: 40px; fill: var(--gold); margin: 0 auto 16px; }
+  .cargo-tile-name { font-family: var(--font-cond); font-size: 15px; font-weight: 600; letter-spacing: 1px; margin-bottom: 10px; }
+  .cargo-tile-desc { color: var(--text-muted); font-size: 12px; line-height: 1.7; }
+  .network { background: var(--bg); }
+  .network-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .network-map {
+    aspect-ratio: 1; background: var(--card); position: relative;
+    border: 1px solid var(--border); overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .network-map svg { width: 80%; height: 80%; opacity: 0.6; }
+  .network-pulse {
+    position: absolute; width: 12px; height: 12px; border-radius: 50%;
+    background: var(--gold);
+  }
+  .network-pulse::before {
+    content: ''; position: absolute; inset: -6px; border-radius: 50%;
+    border: 1px solid var(--gold); opacity: 0.5;
+    animation: pulse 2s infinite;
+  }
+  .network-pulse-1 { top: 30%; left: 28%; }
+  .network-pulse-2 { top: 45%; left: 52%; animation-delay: 0.5s; }
+  .network-pulse-3 { top: 60%; left: 38%; animation-delay: 1s; }
+  .network-pulse-4 { top: 25%; left: 65%; animation-delay: 1.5s; }
+  .network-tag {
+    position: absolute; top: 20px; left: 20px;
+    font-family: var(--font-cond); font-size: 10px; letter-spacing: 3px; color: var(--gold);
+    text-transform: uppercase;
+  }
+  .routes { display: flex; flex-direction: column; gap: 16px; margin-top: 40px; }
+  .route { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .route-from-to { font-family: var(--font-cond); font-size: 15px; letter-spacing: 1px; }
+  .route-arrow { color: var(--gold); margin: 0 12px; }
+  .route-info { font-family: var(--font-cond); font-size: 11px; letter-spacing: 2px; color: var(--text-muted); text-transform: uppercase; }
+  .process { background: var(--card); }
+  .process-timeline { display: flex; flex-direction: column; gap: 0; margin-top: 60px; position: relative; }
+  .process-timeline::before { content: ''; position: absolute; left: 31px; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--gold), rgba(201,168,76,0.1)); }
+  .pt-step { display: grid; grid-template-columns: 64px 1fr; gap: 30px; padding: 30px 0; }
+  .pt-circle {
+    width: 64px; height: 64px; border: 2px solid var(--gold);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    background: var(--card); flex-shrink: 0; position: relative; z-index: 1;
+  }
+  .pt-num { font-family: var(--font-display); font-size: 22px; color: var(--gold); }
+  .pt-content { padding-top: 12px; }
+  .pt-title { font-family: var(--font-cond); font-size: 18px; font-weight: 600; letter-spacing: 1px; margin-bottom: 10px; }
+  .pt-desc { color: var(--text-muted); font-size: 14px; line-height: 1.8; font-weight: 300; }
+  .process-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+  .cta-bar {
+    background: var(--gold); padding: 80px 60px;
+    display: flex; justify-content: space-between; align-items: center; gap: 40px;
+  }.cap-num { font-family: var(--font-display); font-size: 50px; font-weight: 300; color: var(--gold); line-height: 1; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">
+  <img src="data:image/png;base64,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" alt="Furahia" />
+  <div>
+    <span class="nav-logo-text">FURAHIA TRANSFER</span>
+    <span class="nav-logo-sub">TRANSFERS &amp; LOGISTICS</span>
+  </div>
+</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="hospitality.html">Hospitality</a></li>
+    <li><a href="vehicles.html" class="active">Our Fleet</a></li>
+    <li><a href="impact.html">Impact</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta"><span>Book Now</span></a>
+
+  <button class="nav-hamburger" id="navHam" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button></nav>
+<!-- Mobile Nav Overlay & Drawer -->
+<div class="nav-overlay" id="navOverlay"></div>
+<div class="nav-drawer" id="navDrawer">
+  <div class="nav-drawer-head">
+    <a href="index.html" class="nav-drawer-logo">
+      <img src="data:image/png;base64,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" alt="Furahia" />
+      <div>
+        <span class="nav-drawer-logo-text">FURAHIA TRANSFER</span>
+        <span class="nav-drawer-logo-sub">TRANSFERS &amp; LOGISTICS</span>
+      </div>
+    </a>
+    <button class="nav-drawer-close" id="navClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+  </div>
+  <div class="nav-drawer-links">
+      <a href="index.html">Home<span class="drawer-arrow">→</span></a>
+      <a href="about.html">About<span class="drawer-arrow">→</span></a>
+      <a href="hospitality.html">Hospitality<span class="drawer-arrow">→</span></a>
+      <a href="vehicles.html" class="active">Our Fleet<span class="drawer-arrow">→</span></a>
+      <a href="impact.html">Impact<span class="drawer-arrow">→</span></a>
+      <a href="contact.html">Contact<span class="drawer-arrow">→</span></a>
+  </div>
+  <div class="nav-drawer-foot">
+    <a href="contact.html" class="nav-drawer-cta">Book a Transfer</a>
+    <div class="nav-drawer-contact">
+      <a href="tel:+255700000000"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>+255 700 000 000</a>
+      <a href="https://wa.me/255700000000"><svg viewBox="0 0 24 24"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.3-.148-1.134-.447-2.157-1.38-.796-.8-1.333-1.788-1.49-2.087-.16-.3-.017-.462.124-.61.13-.136.3-.354.452-.527.15-.174.2-.3.3-.498.099-.204.05-.382-.025-.531l-.92-2.207c-.24-.584-.487-.51-.669-.51h-.57c-.198 0-.52.074-.792.372S6 8.35 6 9.813s1.07 2.865 1.219 3.075c.148.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345z"/><path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896.002-3.176-1.24-6.165-3.48-8.45z"/></svg>WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="page-hero">
+  <div class="hero-bg"></div><div class="hero-grid"></div><div class="hero-glow"></div><div class="hero-vline"></div>
+  <div class="hero-word">FLEET</div>
+  <div class="hero-content">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Our Fleet</span></div>
+    <div class="hero-eyebrow">80+ Vehicles &middot; 6 Countries</div>
+    <h1 class="page-title">Our <em>Fleet,</em><br><strong>Vehicles &amp; Cargo</strong></h1>
+    <p class="hero-sub">Every vehicle in our fleet is professionally maintained, GPS-tracked, and fully insured. Browse passenger vehicles, multi-vehicle combos, courier options, and full cargo &amp; freight services below.</p>
+  </div>
+</div>
+
+<div class="fleet-tabs">
+  <button class="ftab active" data-panel="passenger">Passenger Vehicles</button>
+  <button class="ftab" data-panel="multiple">Multiple Vehicles</button>
+  <button class="ftab" data-panel="cargo">Cargo &amp; Courier</button>
+  <button class="ftab" data-panel="cargo-freight">Cargo &amp; Freight</button>
+</div>
+
+<div class="fleet-panel" id="panel-passenger">
+<section class="fleet-section">
+<div class="fleet-section-header reveal"><div><div class="label">Our Vehicles</div><h2 class="sec-title">Passenger <em>Fleet</em></h2><p class="body-text" style="max-width:540px;margin-top:8px">From executive saloons to large minibuses &mdash; select the vehicle that matches your party size, luggage, and service level.</p></div><div class="fleet-count">12</div></div>
+<div class="vehicles-grid reveal">
+<div class="vehicle-card">
+  <div class="vc-visual"><svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="340" fill="#080f1a"/>
+  <rect x="0" y="218" width="600" height="122" fill="rgba(4,8,14,0.99)"/>
+  <rect x="0" y="216" width="600" height="3" fill="rgba(200,168,75,0.35)" opacity="0.7"/>
+  <rect x="60" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="190" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <rect x="330" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="460" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <path d="M105 180 Q128 148 194 140 L406 140 Q472 148 495 180 L495 216 L105 216 Z" fill="rgba(9,16,30,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5"/>
+  <path d="M194 140 Q228 104 300 100 Q372 104 406 140" fill="rgba(6,12,26,0.97)" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  <rect x="208" y="148" width="76" height="36" fill="rgba(200,168,75,0.1)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1"/>
+  <rect x="302" y="148" width="82" height="36" fill="rgba(200,168,75,0.07)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  
+  <circle cx="180" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="180" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="180" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <circle cx="420" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="420" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="420" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <ellipse cx="493" cy="188" rx="10" ry="7" fill="rgba(200,168,75,0.42)"/>
+</svg><div class="vc-badge" >Standard</div></div>
+  <div class="vc-info">
+    <div class="vc-name">Saloon Car</div>
+    <div class="vc-tagline">Perfect for individuals and couples — comfortable, clean, cost-effective</div>
+    <div class="vc-specs">
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span class="vc-spec-val">4</span><span class="vc-spec-label">Passengers</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg><span class="vc-spec-val">2</span><span class="vc-spec-label">Check-in Bags</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg><span class="vc-spec-val">2</span><span class="vc-spec-label">Hand Luggage</span></div>
+    </div>
+    <div class="vc-features"><span class="vc-feat">A/C</span><span class="vc-feat">GPS Tracked</span><span class="vc-feat">Meet &amp; Greet</span></div>
+    <div class="vc-book"><a href="contact.html">Book This Vehicle <span>&rarr;</span></a><span class="vc-ideal">Airport &middot; City</span></div>
+  </div>
+</div>
+<div class="vehicle-card">
+  <div class="vc-visual"><svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="340" fill="#080f1a"/>
+  <rect x="0" y="218" width="600" height="122" fill="rgba(4,8,14,0.99)"/>
+  <rect x="0" y="216" width="600" height="3" fill="rgba(200,168,75,0.35)" opacity="0.7"/>
+  <rect x="60" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="190" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <rect x="330" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="460" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <path d="M105 180 Q128 148 194 140 L406 140 Q472 148 495 180 L495 216 L105 216 Z" fill="rgba(9,16,30,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5"/>
+  <path d="M194 140 Q228 104 300 100 Q372 104 406 140" fill="rgba(6,12,26,0.97)" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  <rect x="208" y="148" width="76" height="36" fill="rgba(200,168,75,0.1)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1"/>
+  <rect x="302" y="148" width="82" height="36" fill="rgba(200,168,75,0.07)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  
+  <circle cx="180" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="180" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="180" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <circle cx="420" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="420" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="420" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <ellipse cx="493" cy="188" rx="10" ry="7" fill="rgba(200,168,75,0.42)"/>
+</svg><div class="vc-badge" >Eco &middot; EV</div></div>
+  <div class="vc-info">
+    <div class="vc-name">Electric Saloon</div>
+    <div class="vc-tagline">Zero-emission travel &mdash; part of our green fleet initiative</div>
+    <div class="vc-specs">
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span class="vc-spec-val">4</span><span class="vc-spec-label">Passengers</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg><span class="vc-spec-val">2</span><span class="vc-spec-label">Check-in Bags</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg><span class="vc-spec-val">2</span><span class="vc-spec-label">Hand Luggage</span></div>
+    </div>
+    <div class="vc-features"><span class="vc-feat">Zero Emission</span><span class="vc-feat">Silent Ride</span><span class="vc-feat">GPS Tracked</span></div>
+    <div class="vc-book"><a href="contact.html">Book This Vehicle <span>&rarr;</span></a><span class="vc-ideal">Eco &middot; City &middot; Airport</span></div>
+  </div>
+</div>
+<div class="vehicle-card">
+  <div class="vc-visual"><svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="340" fill="#080f1a"/>
+  <rect x="0" y="218" width="600" height="122" fill="rgba(4,8,14,0.99)"/>
+  <rect x="0" y="216" width="600" height="3" fill="rgba(200,168,75,0.35)" opacity="0.7"/>
+  <rect x="60" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="190" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <rect x="330" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="460" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <path d="M105 180 Q128 148 194 140 L406 140 Q472 148 495 180 L495 216 L105 216 Z" fill="rgba(9,16,30,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5"/>
+  <path d="M194 140 Q228 104 300 100 Q372 104 406 140" fill="rgba(6,12,26,0.97)" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  <rect x="208" y="148" width="76" height="36" fill="rgba(200,168,75,0.1)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1"/>
+  <rect x="302" y="148" width="82" height="36" fill="rgba(200,168,75,0.07)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  
+  <circle cx="180" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="180" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="180" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <circle cx="420" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="420" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="420" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <ellipse cx="493" cy="188" rx="10" ry="7" fill="rgba(200,168,75,0.42)"/>
+</svg><div class="vc-badge" >Executive</div></div>
+  <div class="vc-info">
+    <div class="vc-name">Executive Saloon</div>
+    <div class="vc-tagline">Mercedes E-Class or equivalent &mdash; the benchmark of executive travel</div>
+    <div class="vc-specs">
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span class="vc-spec-val">4</span><span class="vc-spec-label">Passengers</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg><span class="vc-spec-val">2</span><span class="vc-spec-label">Check-in Bags</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg><span class="vc-spec-val">2</span><span class="vc-spec-label">Hand Luggage</span></div>
+    </div>
+    <div class="vc-features"><span class="vc-feat">Leather Interior</span><span class="vc-feat">Climate Control</span><span class="vc-feat">Wi-Fi</span><span class="vc-feat">Corporate</span></div>
+    <div class="vc-book"><a href="contact.html">Book This Vehicle <span>&rarr;</span></a><span class="vc-ideal">VIP &middot; Business</span></div>
+  </div>
+</div>
+<div class="vehicle-card">
+  <div class="vc-visual"><svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="340" fill="#080f1a"/>
+  <rect x="0" y="218" width="600" height="122" fill="rgba(4,8,14,0.99)"/>
+  <rect x="0" y="216" width="600" height="3" fill="rgba(200,168,75,0.35)" opacity="0.7"/>
+  <rect x="60" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="190" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <rect x="330" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="460" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <path d="M105 180 Q128 148 194 140 L406 140 Q472 148 495 180 L495 216 L105 216 Z" fill="rgba(9,16,30,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5"/>
+  <path d="M194 140 Q228 104 300 100 Q372 104 406 140" fill="rgba(6,12,26,0.97)" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  <rect x="208" y="148" width="76" height="36" fill="rgba(200,168,75,0.1)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1"/>
+  <rect x="302" y="148" width="82" height="36" fill="rgba(200,168,75,0.07)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  
+  <circle cx="180" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="180" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="180" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <circle cx="420" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="420" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="420" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <ellipse cx="493" cy="188" rx="10" ry="7" fill="rgba(200,168,75,0.42)"/>
+</svg><div class="vc-badge" >Premium VIP</div></div>
+  <div class="vc-info">
+    <div class="vc-name">S-Class</div>
+    <div class="vc-tagline">Mercedes S-Class or equivalent &mdash; pinnacle of prestige and comfort</div>
+    <div class="vc-specs">
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span class="vc-spec-val">3</span><span class="vc-spec-label">Passengers</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg><span class="vc-spec-val">2</span><span class="vc-spec-label">Check-in Bags</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg><span class="vc-spec-val">2</span><span class="vc-spec-label">Hand Luggage</span></div>
+    </div>
+    <div class="vc-features"><span class="vc-feat">Massage Seats</span><span class="vc-feat">Privacy Glass</span><span class="vc-feat">Chauffeur</span><span class="vc-feat">VIP</span></div>
+    <div class="vc-book"><a href="contact.html">Book This Vehicle <span>&rarr;</span></a><span class="vc-ideal">Diplomatic &middot; VIP</span></div>
+  </div>
+</div>
+<div class="vehicle-card">
+  <div class="vc-visual"><svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="340" fill="#080f1a"/>
+  <rect x="0" y="218" width="600" height="122" fill="rgba(4,8,14,0.99)"/>
+  <rect x="0" y="216" width="600" height="3" fill="rgba(200,168,75,0.35)" opacity="0.7"/>
+  <rect x="60" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="190" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <rect x="330" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="460" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <path d="M105 180 Q128 148 194 140 L406 140 Q472 148 495 180 L495 216 L105 216 Z" fill="rgba(9,16,30,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5"/>
+  <path d="M194 140 Q228 104 300 100 Q372 104 406 140" fill="rgba(6,12,26,0.97)" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  <rect x="208" y="148" width="76" height="36" fill="rgba(200,168,75,0.1)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1"/>
+  <rect x="302" y="148" width="82" height="36" fill="rgba(200,168,75,0.07)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  
+  <circle cx="180" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="180" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="180" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <circle cx="420" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="420" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="420" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <ellipse cx="493" cy="188" rx="10" ry="7" fill="rgba(200,168,75,0.42)"/>
+</svg><div class="vc-badge" >Estate</div></div>
+  <div class="vc-info">
+    <div class="vc-name">Estate Car</div>
+    <div class="vc-tagline">Extra boot space &mdash; ideal for travelers with more luggage</div>
+    <div class="vc-specs">
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span class="vc-spec-val">3</span><span class="vc-spec-label">Passengers</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg><span class="vc-spec-val">3</span><span class="vc-spec-label">Check-in Bags</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg><span class="vc-spec-val">3</span><span class="vc-spec-label">Hand Luggage</span></div>
+    </div>
+    <div class="vc-features"><span class="vc-feat">Large Boot</span><span class="vc-feat">A/C</span><span class="vc-feat">GPS Tracked</span></div>
+    <div class="vc-book"><a href="contact.html">Book This Vehicle <span>&rarr;</span></a><span class="vc-ideal">Family &middot; Heavy Luggage</span></div>
+  </div>
+</div>
+<div class="vehicle-card">
+  <div class="vc-visual"><svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="340" fill="#080f1a"/>
+  <rect x="0" y="218" width="600" height="122" fill="rgba(4,8,14,0.99)"/>
+  <rect x="0" y="216" width="600" height="3" fill="rgba(200,168,75,0.35)" opacity="0.7"/>
+  <rect x="60" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="190" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <rect x="330" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="460" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <path d="M105 180 Q128 148 194 140 L406 140 Q472 148 495 180 L495 216 L105 216 Z" fill="rgba(9,16,30,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5"/>
+  <path d="M194 140 Q228 104 300 100 Q372 104 406 140" fill="rgba(6,12,26,0.97)" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  <rect x="208" y="148" width="76" height="36" fill="rgba(200,168,75,0.1)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1"/>
+  <rect x="302" y="148" width="82" height="36" fill="rgba(200,168,75,0.07)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  
+  <circle cx="180" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="180" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="180" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <circle cx="420" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="420" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="420" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <ellipse cx="493" cy="188" rx="10" ry="7" fill="rgba(200,168,75,0.42)"/>
+</svg><div class="vc-badge" >MPV</div></div>
+  <div class="vc-info">
+    <div class="vc-name">MPV</div>
+    <div class="vc-tagline">Multi-purpose vehicle &mdash; generous space for passengers and luggage</div>
+    <div class="vc-specs">
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span class="vc-spec-val">4</span><span class="vc-spec-label">Passengers</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg><span class="vc-spec-val">4</span><span class="vc-spec-label">Check-in Bags</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg><span class="vc-spec-val">4</span><span class="vc-spec-label">Hand Luggage</span></div>
+    </div>
+    <div class="vc-features"><span class="vc-feat">Sliding Door</span><span class="vc-feat">A/C</span><span class="vc-feat">GPS</span></div>
+    <div class="vc-book"><a href="contact.html">Book This Vehicle <span>&rarr;</span></a><span class="vc-ideal">Family &middot; Groups</span></div>
+  </div>
+</div>
+<div class="vehicle-card">
+  <div class="vc-visual"><svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="340" fill="#080f1a"/>
+  <rect x="0" y="218" width="600" height="122" fill="rgba(4,8,14,0.99)"/>
+  <rect x="0" y="216" width="600" height="3" fill="rgba(200,168,75,0.35)" opacity="0.7"/>
+  <rect x="60" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="190" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <rect x="330" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="460" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <path d="M105 180 Q128 148 194 140 L406 140 Q472 148 495 180 L495 216 L105 216 Z" fill="rgba(9,16,30,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5"/>
+  <path d="M194 140 Q228 104 300 100 Q372 104 406 140" fill="rgba(6,12,26,0.97)" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  <rect x="208" y="148" width="76" height="36" fill="rgba(200,168,75,0.1)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1"/>
+  <rect x="302" y="148" width="82" height="36" fill="rgba(200,168,75,0.07)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  
+  <circle cx="180" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="180" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="180" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <circle cx="420" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="420" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="420" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <ellipse cx="493" cy="188" rx="10" ry="7" fill="rgba(200,168,75,0.42)"/>
+</svg><div class="vc-badge" >Executive MPV</div></div>
+  <div class="vc-info">
+    <div class="vc-name">Executive MPV</div>
+    <div class="vc-tagline">Premium multi-purpose vehicle with first-class passenger amenities</div>
+    <div class="vc-specs">
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span class="vc-spec-val">4</span><span class="vc-spec-label">Passengers</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg><span class="vc-spec-val">4</span><span class="vc-spec-label">Check-in Bags</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg><span class="vc-spec-val">4</span><span class="vc-spec-label">Hand Luggage</span></div>
+    </div>
+    <div class="vc-features"><span class="vc-feat">Leather</span><span class="vc-feat">Wi-Fi</span><span class="vc-feat">Refreshments</span><span class="vc-feat">VIP</span></div>
+    <div class="vc-book"><a href="contact.html">Book This Vehicle <span>&rarr;</span></a><span class="vc-ideal">VIP Groups &middot; Corporate</span></div>
+  </div>
+</div>
+<div class="vehicle-card">
+  <div class="vc-visual"><svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="340" fill="#080f1a"/>
+  <rect x="0" y="218" width="600" height="122" fill="rgba(4,8,14,0.99)"/>
+  <rect x="0" y="216" width="600" height="3" fill="rgba(200,168,75,0.35)" opacity="0.7"/>
+  <rect x="60" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="190" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <rect x="330" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="460" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <path d="M105 180 Q128 148 194 140 L406 140 Q472 148 495 180 L495 216 L105 216 Z" fill="rgba(9,16,30,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5"/>
+  <path d="M194 140 Q228 104 300 100 Q372 104 406 140" fill="rgba(6,12,26,0.97)" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  <rect x="208" y="148" width="76" height="36" fill="rgba(200,168,75,0.1)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1"/>
+  <rect x="302" y="148" width="82" height="36" fill="rgba(200,168,75,0.07)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  
+  <circle cx="180" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="180" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="180" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <circle cx="420" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="420" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="420" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <ellipse cx="493" cy="188" rx="10" ry="7" fill="rgba(200,168,75,0.42)"/>
+</svg><div class="vc-badge" >MPV Plus</div></div>
+  <div class="vc-info">
+    <div class="vc-name">MPV+</div>
+    <div class="vc-tagline">Extended MPV for larger families and groups with generous luggage</div>
+    <div class="vc-specs">
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span class="vc-spec-val">6</span><span class="vc-spec-label">Passengers</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg><span class="vc-spec-val">6</span><span class="vc-spec-label">Check-in Bags</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg><span class="vc-spec-val">6</span><span class="vc-spec-label">Hand Luggage</span></div>
+    </div>
+    <div class="vc-features"><span class="vc-feat">3 Rows</span><span class="vc-feat">A/C</span><span class="vc-feat">GPS</span></div>
+    <div class="vc-book"><a href="contact.html">Book This Vehicle <span>&rarr;</span></a><span class="vc-ideal">Large Family &middot; Lodge</span></div>
+  </div>
+</div>
+<div class="vehicle-card">
+  <div class="vc-visual"><svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="340" fill="#080f1a"/>
+  <rect x="0" y="218" width="600" height="122" fill="rgba(4,8,14,0.99)"/>
+  <rect x="0" y="216" width="600" height="3" fill="rgba(200,168,75,0.35)" opacity="0.7"/>
+  <rect x="60" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="190" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <rect x="330" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="460" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <path d="M105 180 Q128 148 194 140 L406 140 Q472 148 495 180 L495 216 L105 216 Z" fill="rgba(9,16,30,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5"/>
+  <path d="M194 140 Q228 104 300 100 Q372 104 406 140" fill="rgba(6,12,26,0.97)" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  <rect x="208" y="148" width="76" height="36" fill="rgba(200,168,75,0.1)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1"/>
+  <rect x="302" y="148" width="82" height="36" fill="rgba(200,168,75,0.07)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  
+  <circle cx="180" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="180" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="180" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <circle cx="420" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="420" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="420" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <ellipse cx="493" cy="188" rx="10" ry="7" fill="rgba(200,168,75,0.42)"/>
+</svg><div class="vc-badge" >Premium 7-Seater</div></div>
+  <div class="vc-info">
+    <div class="vc-name">V-Class / EQV</div>
+    <div class="vc-tagline">Mercedes V-Class &mdash; the pinnacle of group luxury travel</div>
+    <div class="vc-specs">
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span class="vc-spec-val">7</span><span class="vc-spec-label">Passengers</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg><span class="vc-spec-val">7</span><span class="vc-spec-label">Check-in Bags</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg><span class="vc-spec-val">7</span><span class="vc-spec-label">Hand Luggage</span></div>
+    </div>
+    <div class="vc-features"><span class="vc-feat">Business Lounge</span><span class="vc-feat">Wi-Fi</span><span class="vc-feat">Facing Seats</span></div>
+    <div class="vc-book"><a href="contact.html">Book This Vehicle <span>&rarr;</span></a><span class="vc-ideal">VIP &middot; Corporate Delegation</span></div>
+  </div>
+</div>
+<div class="vehicle-card">
+  <div class="vc-visual"><svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="340" fill="#080f1a"/>
+  <rect x="0" y="218" width="600" height="122" fill="rgba(4,8,14,0.99)"/>
+  <rect x="0" y="216" width="600" height="3" fill="rgba(200,168,75,0.35)" opacity="0.7"/>
+  <rect x="60" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="190" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <rect x="330" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="460" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <path d="M105 180 Q128 148 194 140 L406 140 Q472 148 495 180 L495 216 L105 216 Z" fill="rgba(9,16,30,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5"/>
+  <path d="M194 140 Q228 104 300 100 Q372 104 406 140" fill="rgba(6,12,26,0.97)" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  <rect x="208" y="148" width="76" height="36" fill="rgba(200,168,75,0.1)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1"/>
+  <rect x="302" y="148" width="82" height="36" fill="rgba(200,168,75,0.07)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  
+  <circle cx="180" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="180" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="180" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <circle cx="420" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="420" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="420" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <ellipse cx="493" cy="188" rx="10" ry="7" fill="rgba(200,168,75,0.42)"/>
+</svg><div class="vc-badge" >8-Seater</div></div>
+  <div class="vc-info">
+    <div class="vc-name">8-Seater Minibus</div>
+    <div class="vc-tagline">Compact minibus &mdash; perfect for medium-sized groups and hotel transfers</div>
+    <div class="vc-specs">
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span class="vc-spec-val">8</span><span class="vc-spec-label">Passengers</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg><span class="vc-spec-val">8</span><span class="vc-spec-label">Check-in Bags</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg><span class="vc-spec-val">8</span><span class="vc-spec-label">Hand Luggage</span></div>
+    </div>
+    <div class="vc-features"><span class="vc-feat">A/C</span><span class="vc-feat">Underfloor Storage</span><span class="vc-feat">GPS</span></div>
+    <div class="vc-book"><a href="contact.html">Book This Vehicle <span>&rarr;</span></a><span class="vc-ideal">Groups &middot; Hotels &middot; Events</span></div>
+  </div>
+</div>
+<div class="vehicle-card">
+  <div class="vc-visual"><svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="340" fill="#080f1a"/>
+  <rect x="0" y="218" width="600" height="122" fill="rgba(4,8,14,0.99)"/>
+  <rect x="0" y="216" width="600" height="3" fill="rgba(200,168,75,0.35)" opacity="0.7"/>
+  <rect x="60" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="190" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <rect x="330" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="460" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <path d="M105 180 Q128 148 194 140 L406 140 Q472 148 495 180 L495 216 L105 216 Z" fill="rgba(9,16,30,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5"/>
+  <path d="M194 140 Q228 104 300 100 Q372 104 406 140" fill="rgba(6,12,26,0.97)" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  <rect x="208" y="148" width="76" height="36" fill="rgba(200,168,75,0.1)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1"/>
+  <rect x="302" y="148" width="82" height="36" fill="rgba(200,168,75,0.07)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  
+  <circle cx="180" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="180" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="180" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <circle cx="420" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="420" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="420" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <ellipse cx="493" cy="188" rx="10" ry="7" fill="rgba(200,168,75,0.42)"/>
+</svg><div class="vc-badge" >Executive 8-Seater</div></div>
+  <div class="vc-info">
+    <div class="vc-name">Executive 8-Seater</div>
+    <div class="vc-tagline">Luxury minibus with executive-class interior for VIP group travel</div>
+    <div class="vc-specs">
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span class="vc-spec-val">8</span><span class="vc-spec-label">Passengers</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg><span class="vc-spec-val">8</span><span class="vc-spec-label">Check-in Bags</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg><span class="vc-spec-val">8</span><span class="vc-spec-label">Hand Luggage</span></div>
+    </div>
+    <div class="vc-features"><span class="vc-feat">Leather Seating</span><span class="vc-feat">Wi-Fi</span><span class="vc-feat">AV System</span><span class="vc-feat">VIP</span></div>
+    <div class="vc-book"><a href="contact.html">Book This Vehicle <span>&rarr;</span></a><span class="vc-ideal">VIP Groups &middot; Delegations</span></div>
+  </div>
+</div>
+<div class="vehicle-card">
+  <div class="vc-visual"><svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="340" fill="#080f1a"/>
+  <rect x="0" y="218" width="600" height="122" fill="rgba(4,8,14,0.99)"/>
+  <rect x="0" y="216" width="600" height="3" fill="rgba(200,168,75,0.35)" opacity="0.7"/>
+  <rect x="60" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="190" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <rect x="330" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.4" rx="2"/>
+  <rect x="460" y="252" width="48" height="4" fill="rgba(200,168,75,0.35)" opacity="0.3" rx="2"/>
+  <path d="M105 180 Q128 148 194 140 L406 140 Q472 148 495 180 L495 216 L105 216 Z" fill="rgba(9,16,30,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5"/>
+  <path d="M194 140 Q228 104 300 100 Q372 104 406 140" fill="rgba(6,12,26,0.97)" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  <rect x="208" y="148" width="76" height="36" fill="rgba(200,168,75,0.1)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1"/>
+  <rect x="302" y="148" width="82" height="36" fill="rgba(200,168,75,0.07)" rx="3" stroke="rgba(200,168,75,0.35)" stroke-width="1" opacity="0.8"/>
+  
+  <circle cx="180" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="180" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="180" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <circle cx="420" cy="216" r="28" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2"/>
+  <circle cx="420" cy="216" r="17" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="420" cy="216" r="6" fill="rgba(200,168,75,0.38)"/>
+  <ellipse cx="493" cy="188" rx="10" ry="7" fill="rgba(200,168,75,0.42)"/>
+</svg><div class="vc-badge" >Large Groups</div></div>
+  <div class="vc-info">
+    <div class="vc-name">Coach</div>
+    <div class="vc-tagline">Ideal for large groups, conferences, delegations, and events</div>
+    <div class="vc-specs">
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span class="vc-spec-val">14&ndash;50</span><span class="vc-spec-label">Passengers</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg><span class="vc-spec-val">Full Bay</span><span class="vc-spec-label">Check-in Bags</span></div>
+      <div class="vc-spec"><svg class="vc-spec-icon" viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg><span class="vc-spec-val">Custom</span><span class="vc-spec-label">Hand Luggage</span></div>
+    </div>
+    <div class="vc-features"><span class="vc-feat">Underfloor Bay</span><span class="vc-feat">A/C</span><span class="vc-feat">Reclining Seats</span><span class="vc-feat">PA System</span></div>
+    <div class="vc-book"><a href="contact.html">Book This Vehicle <span>&rarr;</span></a><span class="vc-ideal">Events &middot; Conferences</span></div>
+  </div>
+</div>
+</div>
+</section>
+</div>
+<div class="promise-strip">
+  <div class="ps-item"><svg class="ps-icon" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg><div class="ps-title">Fully Insured</div><div class="ps-sub">Every vehicle covered</div></div>
+  <div class="ps-item"><svg class="ps-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><div class="ps-title">GPS Tracked</div><div class="ps-sub">Real-time on every trip</div></div>
+  <div class="ps-item"><svg class="ps-icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg><div class="ps-title">Inspected Daily</div><div class="ps-sub">Pre-trip safety checks</div></div>
+  <div class="ps-item"><svg class="ps-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><div class="ps-title">Pro Drivers</div><div class="ps-sub">Trained &amp; uniformed</div></div>
+</div>
+
+<div class="fleet-panel hidden" id="panel-multiple">
+<section class="combo-section">
+<div class="fleet-section-header reveal"><div><div class="label">Fleet Combinations</div><h2 class="sec-title">Multiple <em>Vehicles</em></h2><p class="body-text" style="max-width:580px;margin-top:8px">For groups larger than 8, we coordinate multiple vehicles into a seamless convoy. All vehicles travel together with a lead coordinator.</p></div><div class="fleet-count" style="font-size:48px">9&ndash;32+</div></div>
+<div class="combo-grid reveal">
+<div class="combo-card">
+  <div class="combo-num">9</div><div class="combo-unit">Passengers</div>
+  <div class="combo-vehicles"><span class="combo-tag">Estate</span><span class="combo-tag">MPV+</span></div>
+  <div class="combo-specs">
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg>9 Bags</span>
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>9 Hand</span>
+  </div>
+</div>
+<div class="combo-card">
+  <div class="combo-num">10</div><div class="combo-unit">Passengers</div>
+  <div class="combo-vehicles"><span class="combo-tag">MPV</span><span class="combo-tag">MPV+</span></div>
+  <div class="combo-specs">
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg>10 Bags</span>
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>10 Hand</span>
+  </div>
+</div>
+<div class="combo-card">
+  <div class="combo-num">11</div><div class="combo-unit">Passengers</div>
+  <div class="combo-vehicles"><span class="combo-tag">MPV+</span><span class="combo-tag">MPV+</span></div>
+  <div class="combo-specs">
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg>11 Bags</span>
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>11 Hand</span>
+  </div>
+</div>
+<div class="combo-card">
+  <div class="combo-num">12</div><div class="combo-unit">Passengers</div>
+  <div class="combo-vehicles"><span class="combo-tag">MPV+</span><span class="combo-tag">MPV+</span></div>
+  <div class="combo-specs">
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg>12 Bags</span>
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>12 Hand</span>
+  </div>
+</div>
+<div class="combo-card">
+  <div class="combo-num">14</div><div class="combo-unit">Passengers</div>
+  <div class="combo-vehicles"><span class="combo-tag">8-Seater</span><span class="combo-tag">MPV+</span></div>
+  <div class="combo-specs">
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg>14 Bags</span>
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>14 Hand</span>
+  </div>
+</div>
+<div class="combo-card">
+  <div class="combo-num">16</div><div class="combo-unit">Passengers</div>
+  <div class="combo-vehicles"><span class="combo-tag">8-Seater</span><span class="combo-tag">8-Seater</span></div>
+  <div class="combo-specs">
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg>16 Bags</span>
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>16 Hand</span>
+  </div>
+</div>
+<div class="combo-card">
+  <div class="combo-num">18</div><div class="combo-unit">Passengers</div>
+  <div class="combo-vehicles"><span class="combo-tag">Estate</span><span class="combo-tag">8-Seater</span><span class="combo-tag">8-Seater</span></div>
+  <div class="combo-specs">
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg>18 Bags</span>
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>18 Hand</span>
+  </div>
+</div>
+<div class="combo-card">
+  <div class="combo-num">22</div><div class="combo-unit">Passengers</div>
+  <div class="combo-vehicles"><span class="combo-tag">8-Seater</span><span class="combo-tag">8-Seater</span><span class="combo-tag">MPV+</span></div>
+  <div class="combo-specs">
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg>22 Bags</span>
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>22 Hand</span>
+  </div>
+</div>
+<div class="combo-card">
+  <div class="combo-num">24</div><div class="combo-unit">Passengers</div>
+  <div class="combo-vehicles"><span class="combo-tag">8-Seater</span><span class="combo-tag">8-Seater</span><span class="combo-tag">8-Seater</span></div>
+  <div class="combo-specs">
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg>24 Bags</span>
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>24 Hand</span>
+  </div>
+</div>
+<div class="combo-card">
+  <div class="combo-num">30</div><div class="combo-unit">Passengers</div>
+  <div class="combo-vehicles"><span class="combo-tag">3× 8-Seater</span><span class="combo-tag">MPV+</span></div>
+  <div class="combo-specs">
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg>30 Bags</span>
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>30 Hand</span>
+  </div>
+</div>
+<div class="combo-card">
+  <div class="combo-num">32</div><div class="combo-unit">Passengers</div>
+  <div class="combo-vehicles"><span class="combo-tag">4× 8-Seater</span></div>
+  <div class="combo-specs">
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg>32 Bags</span>
+    <span class="combo-spec-item"><svg viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>32 Hand</span>
+  </div>
+</div>
+<div class="combo-card" style="border:1px dashed rgba(200,168,75,0.3);background:transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px">
+  <div style="font-family:var(--font-display);font-size:44px;font-weight:300;color:rgba(200,168,75,0.4);margin-bottom:8px">50+</div>
+  <div style="font-family:var(--font-cond);font-size:9px;letter-spacing:3px;color:var(--grey);text-transform:uppercase;margin-bottom:16px;text-align:center">Custom Fleet</div>
+  <a href="contact.html" style="font-family:var(--font-cond);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid var(--border);padding:8px 16px">Enquire &rarr;</a>
+</div>
+</div>
+</section>
+</div>
+
+<div class="fleet-panel hidden" id="panel-cargo">
+<section class="courier-section">
+<div class="fleet-section-header reveal"><div><div class="label">Cargo &amp; Courier Fleet</div><h2 class="sec-title">Delivery &amp; <em>Freight Vehicles</em></h2><p class="body-text" style="max-width:560px;margin-top:8px">From urgent document delivery to full palletised freight &mdash; our cargo fleet is sized for every consignment. All vehicles GPS-tracked with digital proof of delivery.</p></div><div class="fleet-count">3</div></div>
+<div class="courier-grid reveal">
+<div class="courier-card">
+  <div class="cc-visual"><svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="340" fill="#080f18"/>
+  <rect x="0" y="240" width="600" height="100" fill="rgba(5,8,14,0.99)"/>
+  <rect x="0" y="238" width="600" height="3" fill="rgba(200,168,75,0.18)"/>
+  <path d="M200 195 Q220 158 260 150 L340 150 Q380 158 400 195 L400 238 L200 238 Z" fill="rgba(9,16,28,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="1.5"/>
+  <ellipse cx="300" cy="160" rx="46" ry="18" fill="rgba(200,168,75,0.12)" stroke="rgba(200,168,75,0.3)" stroke-width="1"/>
+  <path d="M235 162 L220 188" stroke="rgba(200,168,75,0.35)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M365 162 L380 188" stroke="rgba(200,168,75,0.35)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M260 147 Q300 140 340 147" stroke="rgba(200,168,75,0.4)" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <rect x="330" y="162" width="50" height="36" fill="rgba(200,168,75,0.15)" stroke="rgba(200,168,75,0.35)" stroke-width="1" rx="2"/>
+  <circle cx="225" cy="238" r="36" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.45)" stroke-width="2"/>
+  <circle cx="225" cy="238" r="22" fill="rgba(200,168,75,0.08)" stroke="rgba(200,168,75,0.28)" stroke-width="1.5"/>
+  <circle cx="225" cy="238" r="8" fill="rgba(200,168,75,0.35)"/>
+  <circle cx="375" cy="238" r="36" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.45)" stroke-width="2"/>
+  <circle cx="375" cy="238" r="22" fill="rgba(200,168,75,0.08)" stroke="rgba(200,168,75,0.28)" stroke-width="1.5"/>
+  <circle cx="375" cy="238" r="8" fill="rgba(200,168,75,0.35)"/>
+</svg></div>
+  <div class="cc-info">
+    <div class="cc-name">Motorcycle Courier</div>
+    <div class="cc-specs">
+      <div class="cc-spec-row"><svg class="cc-spec-icon" viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg><span class="cc-spec-text">Carries up to <strong>8 KG</strong></span></div>
+      <div class="cc-spec-row"><svg class="cc-spec-icon" viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg><span class="cc-spec-text">Size of <strong>3 standard shoe boxes</strong></span></div>
+      <div class="cc-spec-row"><svg class="cc-spec-icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg><span class="cc-spec-text">Ideal for <strong>urgent documents, parcels &amp; small packages</strong></span></div>
+      <div class="cc-spec-row"><svg class="cc-spec-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><span class="cc-spec-text"><strong>GPS tracked</strong> &middot; digital proof of delivery</span></div>
+    </div>
+  </div>
+</div>
+<div class="courier-card">
+  <div class="cc-visual"><svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="340" fill="#090f18"/>
+  <rect x="0" y="240" width="600" height="100" fill="rgba(5,8,14,0.98)"/>
+  <rect x="0" y="238" width="600" height="3" fill="rgba(200,168,75,0.2)"/>
+  <rect x="120" y="130" width="380" height="110" fill="rgba(9,16,30,0.99)" stroke="rgba(200,168,75,0.3)" stroke-width="1.5" rx="4"/>
+  <rect x="120" y="110" width="130" height="22" fill="rgba(8,14,26,0.99)" stroke="rgba(200,168,75,0.22)" stroke-width="1" rx="3"/>
+  <rect x="126" y="113" width="118" height="18" fill="rgba(200,168,75,0.1)" rx="2" stroke="rgba(200,168,75,0.25)" stroke-width="1"/>
+  <rect x="130" y="138" width="52" height="36" fill="rgba(200,168,75,0.1)" rx="3" stroke="rgba(200,168,75,0.28)" stroke-width="1"/>
+  <rect x="196" y="140" width="280" height="75" fill="rgba(200,168,75,0.04)" stroke="rgba(200,168,75,0.15)" stroke-width="1"/>
+  <circle cx="468" cy="178" r="5" fill="rgba(200,168,75,0.3)"/>
+  <rect x="120" y="170" width="380" height="5" fill="rgba(200,168,75,0.15)" rx="2"/>
+  <circle cx="188" cy="240" r="34" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.44)" stroke-width="2"/>
+  <circle cx="188" cy="240" r="21" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.28)" stroke-width="1.5"/>
+  <circle cx="188" cy="240" r="7" fill="rgba(200,168,75,0.38)"/>
+  <circle cx="434" cy="240" r="34" fill="rgba(4,7,12,0.99)" stroke="rgba(200,168,75,0.44)" stroke-width="2"/>
+  <circle cx="434" cy="240" r="21" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.28)" stroke-width="1.5"/>
+  <circle cx="434" cy="240" r="7" fill="rgba(200,168,75,0.38)"/>
+  <ellipse cx="498" cy="175" rx="11" ry="8" fill="rgba(200,168,75,0.4)"/>
+</svg></div>
+  <div class="cc-info">
+    <div class="cc-name">Small Van</div>
+    <div class="cc-specs">
+      <div class="cc-spec-row"><svg class="cc-spec-icon" viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg><span class="cc-spec-text">Carries up to <strong>500 KG</strong></span></div>
+      <div class="cc-spec-row"><svg class="cc-spec-icon" viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg><span class="cc-spec-text">Size of <strong>30 standard shoe boxes</strong></span></div>
+      <div class="cc-spec-row"><svg class="cc-spec-icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg><span class="cc-spec-text">Ideal for <strong>commercial goods, retail stock &amp; equipment</strong></span></div>
+      <div class="cc-spec-row"><svg class="cc-spec-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><span class="cc-spec-text"><strong>GPS tracked</strong> &middot; digital proof of delivery</span></div>
+    </div>
+  </div>
+</div>
+<div class="courier-card">
+  <div class="cc-visual"><svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="340" fill="#07101c"/>
+  <rect x="0" y="240" width="600" height="100" fill="rgba(4,7,12,0.99)"/>
+  <rect x="0" y="238" width="600" height="3" fill="rgba(200,168,75,0.22)"/>
+  <rect x="80" y="115" width="450" height="125" fill="rgba(8,14,28,0.99)" stroke="rgba(200,168,75,0.35)" stroke-width="2" rx="5"/>
+  <rect x="80" y="88" width="148" height="30" fill="rgba(7,12,24,0.99)" stroke="rgba(200,168,75,0.25)" stroke-width="1" rx="3"/>
+  <rect x="88" y="92" width="134" height="25" fill="rgba(200,168,75,0.1)" rx="2" stroke="rgba(200,168,75,0.28)" stroke-width="1"/>
+  <rect x="90" y="122" width="60" height="42" fill="rgba(200,168,75,0.1)" rx="3" stroke="rgba(200,168,75,0.3)" stroke-width="1"/>
+  <rect x="165" y="120" width="340" height="95" fill="rgba(200,168,75,0.04)" stroke="rgba(200,168,75,0.14)" stroke-width="1"/>
+  <line x1="385" y1="120" x2="385" y2="240" stroke="rgba(200,168,75,0.2)" stroke-width="1"/>
+  <circle cx="492" cy="178" r="6" fill="rgba(200,168,75,0.32)"/>
+  <rect x="80" y="165" width="450" height="4" fill="rgba(200,168,75,0.2)" rx="2"/>
+  <rect x="80" y="172" width="450" height="2" fill="rgba(200,168,75,0.1)" rx="1"/>
+  <circle cx="164" cy="240" r="36" fill="rgba(3,6,10,0.99)" stroke="rgba(200,168,75,0.48)" stroke-width="2.5"/>
+  <circle cx="164" cy="240" r="22" fill="rgba(200,168,75,0.1)" stroke="rgba(200,168,75,0.3)" stroke-width="1.5"/>
+  <circle cx="164" cy="240" r="8" fill="rgba(200,168,75,0.42)"/>
+  <circle cx="448" cy="240" r="36" fill="rgba(3,6,10,0.99)" stroke="rgba(200,168,75,0.48)" stroke-width="2.5"/>
+  <circle cx="448" cy="240" r="22" fill="rgba(200,168,75,0.1)" stroke="rgba(200,168,75,0.3)" stroke-width="1.5"/>
+  <circle cx="448" cy="240" r="8" fill="rgba(200,168,75,0.42)"/>
+  <circle cx="474" cy="240" r="26" fill="rgba(3,6,10,0.95)" stroke="rgba(200,168,75,0.3)" stroke-width="1.5"/>
+  <circle cx="474" cy="240" r="15" fill="rgba(200,168,75,0.08)"/>
+  <ellipse cx="528" cy="185" rx="13" ry="10" fill="rgba(200,168,75,0.48)"/>
+</svg></div>
+  <div class="cc-info">
+    <div class="cc-name">Large Van / Transit</div>
+    <div class="cc-specs">
+      <div class="cc-spec-row"><svg class="cc-spec-icon" viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg><span class="cc-spec-text">Carries up to <strong>1,000 KG</strong></span></div>
+      <div class="cc-spec-row"><svg class="cc-spec-icon" viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg><span class="cc-spec-text">Size of <strong>50 standard shoe boxes</strong></span></div>
+      <div class="cc-spec-row"><svg class="cc-spec-icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg><span class="cc-spec-text">Ideal for <strong>bulk shipments, palletised goods &amp; furniture</strong></span></div>
+      <div class="cc-spec-row"><svg class="cc-spec-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><span class="cc-spec-text"><strong>GPS tracked</strong> &middot; digital proof of delivery</span></div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     CARGO & FREIGHT PANEL
+     ═══════════════════════════════════════ -->
+<div class="fleet-panel hidden" id="panel-cargo-freight">
+
+<section class="capabilities">
+  <div class="reveal">
+    <div class="label">What We Do</div>
+    <h2 class="section-title">End-to-End<br><em>Cargo Excellence</em></h2>
+  </div>
+  <div class="cap-grid reveal">
+    <div class="cap-sidebar">
+      <div class="cap-stat"><div class="cap-num">150+</div><div class="cap-label">Tonnes Moved Monthly</div></div>
+      <div class="cap-stat"><div class="cap-num">30+</div><div class="cap-label">Active Destinations</div></div>
+      <div class="cap-stat"><div class="cap-num">100%</div><div class="cap-label">Customs Compliance</div></div>
+      <div class="cap-stat"><div class="cap-num">48h</div><div class="cap-label">Max Domestic Transit</div></div>
+    </div>
+    <div class="cap-body">
+      <div class="cap-item">
+        <svg class="cap-icon" viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+        <div>
+          <div class="cap-title">Road Freight</div>
+          <p class="cap-desc">A modern fleet of freight vehicles across multiple weight classes. Full-load and part-load options, with dedicated runs for time-sensitive cargo across Tanzania, Kenya, Uganda, and beyond.</p>
+        </div>
+      </div>
+      <div class="cap-item">
+        <svg class="cap-icon" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+        <div>
+          <div class="cap-title">Air Cargo Coordination</div>
+          <p class="cap-desc">Strategic partnerships with regional and international carriers. We manage documentation, handling, and last-mile delivery for air freight shipments into and out of major East African hubs.</p>
+        </div>
+      </div>
+      <div class="cap-item">
+        <svg class="cap-icon" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4.99L18 9v4.99c0 3.72-2.56 7.2-6 8.32-3.44-1.12-6-4.6-6-8.32V9l6-3.01z"/></svg>
+        <div>
+          <div class="cap-title">Secure & Sensitive Cargo</div>
+          <p class="cap-desc">Specialized protocols for pharmaceuticals, medical equipment, electronics, valuables, and documents. Full chain-of-custody records, tamper-evident sealing, and security-cleared handlers.</p>
+        </div>
+      </div>
+      <div class="cap-item">
+        <svg class="cap-icon" viewBox="0 0 24 24"><path d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.89 2-2V5c0-1.11-.89-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4z"/></svg>
+        <div>
+          <div class="cap-title">Cold Chain & Perishables</div>
+          <p class="cap-desc">Temperature-controlled vehicles and monitoring ensure the integrity of fresh produce, frozen goods, and cold-chain pharmaceuticals throughout the full transit journey.</p>
+        </div>
+      </div>
+      <div class="cap-item">
+        <svg class="cap-icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+        <div>
+          <div class="cap-title">Customs & Documentation</div>
+          <p class="cap-desc">In-house customs clearance expertise and a dedicated documentation team. We navigate cross-border regulations seamlessly, minimizing delays and ensuring full compliance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cargo-types">
+  <div class="cargo-types-header reveal">
+    <div class="label">Cargo Categories</div>
+    <h2 class="section-title">We Handle<br><em>Every Cargo Type</em></h2>
+  </div>
+  <div class="cargo-grid reveal">
+    <div class="cargo-tile">
+      <svg class="cargo-tile-icon" viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.72.5 13 .5c-1.7 0-3.17.88-4 2.2C8.17 1.38 6.7.5 5 .5 2.28.5 0 2.53 0 4.64c0 .48.11.92.18 1.36H0v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-2 2V6z"/></svg>
+      <div class="cargo-tile-name">Perishables</div>
+      <p class="cargo-tile-desc">Fresh produce, dairy, and temperature-sensitive goods with cold chain integrity</p>
+    </div>
+    <div class="cargo-tile">
+      <svg class="cargo-tile-icon" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+      <div class="cargo-tile-name">Valuables</div>
+      <p class="cargo-tile-desc">High-value goods, art, and sensitive items with full security protocol</p>
+    </div>
+    <div class="cargo-tile">
+      <svg class="cargo-tile-icon" viewBox="0 0 24 24"><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z"/></svg>
+      <div class="cargo-tile-name">Pharmaceuticals</div>
+      <p class="cargo-tile-desc">Medical and pharmaceutical cargo with certified handling and documentation</p>
+    </div>
+    <div class="cargo-tile">
+      <svg class="cargo-tile-icon" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 12.5v-9l6 4.5-6 4.5z"/></svg>
+      <div class="cargo-tile-name">Electronics</div>
+      <p class="cargo-tile-desc">ESD-protected handling for tech equipment and sensitive electronics</p>
+    </div>
+    <div class="cargo-tile">
+      <svg class="cargo-tile-icon" viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg>
+      <div class="cargo-tile-name">General Freight</div>
+      <p class="cargo-tile-desc">Palletised, bulk, and containerised general cargo for all industries</p>
+    </div>
+    <div class="cargo-tile">
+      <svg class="cargo-tile-icon" viewBox="0 0 24 24"><path d="M21 3L3 10.53v.98l6.84 2.65L12.48 21h.98L21 3z"/></svg>
+      <div class="cargo-tile-name">Hazardous Materials</div>
+      <p class="cargo-tile-desc">ADR-compliant transport for classified hazardous goods with certified drivers</p>
+    </div>
+    <div class="cargo-tile">
+      <svg class="cargo-tile-icon" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      <div class="cargo-tile-name">Oversized & Heavy</div>
+      <p class="cargo-tile-desc">Project cargo, machinery, and oversized loads with route surveys and escorts</p>
+    </div>
+    <div class="cargo-tile">
+      <svg class="cargo-tile-icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+      <div class="cargo-tile-name">Documents & Legal</div>
+      <p class="cargo-tile-desc">Same-day document courier for legal, financial, and government correspondence</p>
+    </div>
+  </div>
+</section>
+<section class="network">
+  <div class="network-inner">
+    <div class="reveal">
+      <div class="label">Our Network</div>
+      <h2 class="section-title">Connected Across<br><em>East Africa</em></h2>
+      <p class="body-text">Our logistics network spans the East African corridor, with established routes and trusted partners from Dar es Salaam to Nairobi, Kampala to Bujumbura.</p>
+      <div class="routes">
+        <div class="route">
+          <span class="route-from-to">Arusha <span class="route-arrow">→</span> Nairobi</span>
+          <span class="route-info">Daily Run · 6–8 hrs</span>
+        </div>
+        <div class="route">
+          <span class="route-from-to">Dar es Salaam <span class="route-arrow">→</span> Kampala</span>
+          <span class="route-info">3× Weekly · 2 Days</span>
+        </div>
+        <div class="route">
+          <span class="route-from-to">Mombasa <span class="route-arrow">→</span> Kigali</span>
+          <span class="route-info">Weekly · 3 Days</span>
+        </div>
+        <div class="route">
+          <span class="route-from-to">Nairobi <span class="route-arrow">→</span> Bujumbura</span>
+          <span class="route-info">2× Weekly · 2 Days</span>
+        </div>
+        <div class="route">
+          <span class="route-from-to">Regional <span class="route-arrow">→</span> International</span>
+          <span class="route-info">Via Air Partners · Custom</span>
+        </div>
+      </div>
+    </div>
+    <div class="network-map reveal">
+      <div class="network-tag">Coverage Network</div>
+      <svg viewBox="0 0 300 300" fill="none">
+        <circle cx="150" cy="150" r="140" stroke="rgba(201,168,76,0.15)" stroke-width="1"/>
+        <circle cx="150" cy="150" r="100" stroke="rgba(201,168,76,0.1)" stroke-width="1"/>
+        <circle cx="150" cy="150" r="60" stroke="rgba(201,168,76,0.08)" stroke-width="1"/>
+        <line x1="30" y1="150" x2="270" y2="150" stroke="rgba(201,168,76,0.1)" stroke-width="1"/>
+        <line x1="150" y1="30" x2="150" y2="270" stroke="rgba(201,168,76,0.1)" stroke-width="1"/>
+        <line x1="85" y1="85" x2="215" y2="215" stroke="rgba(201,168,76,0.06)" stroke-width="1"/>
+        <line x1="215" y1="85" x2="85" y2="215" stroke="rgba(201,168,76,0.06)" stroke-width="1"/>
+        <path d="M150 80 L130 120 L100 110 L120 140 L95 160 L130 155 L140 190 L150 155 L165 190 L170 155 L205 160 L180 140 L200 110 L170 120 Z" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.25)" stroke-width="1"/>
+      </svg>
+      <div class="network-pulse network-pulse-1"></div>
+      <div class="network-pulse network-pulse-2"></div>
+      <div class="network-pulse network-pulse-3"></div>
+      <div class="network-pulse network-pulse-4"></div>
+    </div>
+  </div>
+</section>
+<section class="process">
+  <div class="process-split">
+    <div class="reveal">
+      <div class="label">How It Works</div>
+      <h2 class="section-title">From Booking<br>to <em>Delivery</em></h2>
+      <p class="body-text" style="margin-top:20px">Our streamlined cargo process ensures maximum transparency and minimum delays from the first call to final delivery.</p>
+    </div>
+    <div class="process-timeline reveal">
+      <div class="pt-step">
+        <div class="pt-circle"><span class="pt-num">1</span></div>
+        <div class="pt-content">
+          <div class="pt-title">Inquiry & Quote</div>
+          <p class="pt-desc">Submit cargo details — weight, dimensions, destination, and timeline. Receive a confirmed quote within 2 hours.</p>
+        </div>
+      </div>
+      <div class="pt-step">
+        <div class="pt-circle"><span class="pt-num">2</span></div>
+        <div class="pt-content">
+          <div class="pt-title">Documentation</div>
+          <p class="pt-desc">Our team prepares all customs, transport, and compliance documentation. Zero paperwork burden on your side.</p>
+        </div>
+      </div>
+      <div class="pt-step">
+        <div class="pt-circle"><span class="pt-num">3</span></div>
+        <div class="pt-content">
+          <div class="pt-title">Collection & Dispatch</div>
+          <p class="pt-desc">Professional handlers collect your cargo and dispatch on the scheduled route. GPS tracking activates immediately.</p>
+        </div>
+      </div>
+      <div class="pt-step">
+        <div class="pt-circle"><span class="pt-num">4</span></div>
+        <div class="pt-content">
+          <div class="pt-title">Delivery & Confirmation</div>
+          <p class="pt-desc">Cargo delivered with signed proof-of-delivery. Digital confirmation and invoicing sent to your account within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-bar reveal">
+  <h2 class="cta-title">Need a Cargo Quote? <em>Let's Talk.</em></h2>
+  <a href="tel:+255700000000" class="btn-dark">Request a Quote →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">
+      
+      <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCACgAKADASIAAhEBAxEB/8QAHQABAAIDAQEBAQAAAAAAAAAAAAYHBAUIAwkCAf/EADsQAAICAQQBAwIEAwUHBQEAAAECAwQFAAYREhMHITEUIghBUWEVIzIWUnGRwRckQkOBoeEzVbHR8GL/xAAaAQEAAwEBAQAAAAAAAAAAAAAAAgMEBQEG/8QAMBEAAgIBAwIDBgUFAAAAAAAAAAECAxEEEiExQQUTFCIyUWGx0TNCcZGhgcHh8PH/2gAMAwEAAhEDEQA/AOMtNNNANNNNANNNNANNNNANNNNANNNNANNNNANNNNANNNNANNNNANNNNANNNNANNNNANNNNANSz0r2BnPUfc7YHAyUoZY672Z57kpSKGNSq9jwGY8s6KAqk8sCeACRE9d++imwIfTLYkGFf78zcKXMzIyR9lnKAfThkJ7JF7qPuYFmkYcB+B7FZZXZPZHJwrdwOYqbon2vLj5nzMN1qDU4AJnawr+Mxr057nsOB155Pxzq3dgfha9WN2YxsjNj6W2oTx4kzkkkEsv3Mp4iVHdOCv/MVeQylewPOur9p+nmBseudb1OCD+Kw4yaCcPZflp+sUUMyJxx7QeeNwT1/9Mhe3ZtW9LKSTyTzrNff5TwX0x81bkc0bX/BfsiPb1Ibp3NuCbNePm42NmhjrByeSsYkhZio9h2J5bjnheeo/u6fwXbIk29dG1tzbghzXj5ptkpoZKxce/WQRwqwU+47A8rzzw3HU9Imb3921+lmPPsdZfWvJf6c+Ynq76Rbx9LPof7Ww0ov4hZtQ0/p7Al8yQePmYcfCN5R1DcP9rdlX25gGvsFDZZfgnXGH41vQ/a21tuQeoGycZNjUa8IMpQrRs9ZBL3ZbA9z4FD9Y+o4T74woUjh9dV8bOO5TOtxOTNNNNXlY0000A0000A0000A0000A01LtoenO6907Uz26MTQU4rCQNNYnmkEaylAHeOLn+t1j7SMo+FX+8yK0dwmMu5rNUcPjYRPev2I61aMuqd5HYKq9mIA5JA5JAH5nQFwfhL2NYzW+Yd5Xqkww2Bk80MxUhJr68GGMMGU8oSJjx2A6KrDiQc9obYpi/YkmtctAg9/f3Zj/wDudQraO28TtLAUNq7fih8FVFjedIyhuT8ASWHBLHs5HPBJ6qFUfaoAsah0p0468bDhR9x/U/mdWpYRinLfP5I00j2MPmftYl4X5B/vL/5GptFdjtVknhblHHI/b9tRbcCLYreYe8sXJ5/Vf014bWyHidqbtwkv3Jz8Bvz/AM9c/wARqc6t8eq+hr0FqhZsfRkuab99fpJvfUX3RnRiY4hGokmkcfYfyQfJ/wDrW1qWo7EEc8D9o3Xsp/bXzjnKKUn0Z3o7JScE+UbuKXn89ZleUqwIPvrTQOdZ1dufnWum0psrOAvxW+hNr0wy0m5cKkB2bkbogop9UZJ6kjR9/FIGAJXlZehBc9UHduxHaidfTf8AE1tPDbw9C9yxZhJi2Ioz5ek8UnVo7NeGRlP6FSCykEH2Y8cNww+ZGu/VPfFM5c47XgaaaasIjTTTQDTTTQDXtRqWr92CjRrTWrViRYoIIULySux4VVUe5YkgAD3JOvHXQ34WfT6P6f8A2h5qvDIhkevhYJ4X7eRCve4pPCkIeY0P3ff3P2tECfUsvBGUlFZZefp5hE2DtXDbcxkkPmxY8lixCQRYuN7zS9gql17fYpYdvGiA/Gq62B6e7c2H642m62zPlqU1zaHhSX6eFOJRcqux5LTxRewJZlMbFm4d4wLkxGIe7jbNpWKsg4gX++w+dQzfe3Z9zYeuMXN9LuLE21ymAsCGFyl6McpE3l9hHIyorckL2WNm5CFTa48cdjFXY9z3dye4KMKfq5Pn4jH/AMnW4Fk/HOoXjN+bWzOxod818hSo4V6wnuAyl1x0oA8tdz1DF1dgqjqC/ZCoPdeYx/aTdW7IY7ePku7I2nbqQz17bwRPm8mj9lkES92SnGVJKSkF+VjkQsHIWEppLLJRqa4LhnWzFCk00EiRyc9Sy8BtYWMpRi1PenbrUrDvyfjn54/6aq3Z9fG4L1lq1cJUalS3xj7aTVhaltyvlachsNZmlnZpArV52H2sezk9l9g2rI9Rr8dGrW25TfnqoktEfn+gP7k+/wDlrFqrd0NkfzfQ01QjW/NfKX1I1mL8mTyctohuGPEa/PCj41Itg5MrI2Mlb7W++Hk/n+a61O3IUjja1IvLSDqv7L+f+esK3HJj74eu5UowkiYH44+NY7dPGyrYRp1E6rfN/ctyA8e+thX+BrTbayEeWxUF2MBS/wBsqj/gcfI1uJAy1JyjFGETFW/MHg8HXMpg4vDO/Oamso/echzNjbOUrbdtw081LRmTHWJhzHDYKEROwKtyofqT9rew+D8a+R2vrTjc7Tp7MO58xP4KdOi9y7N0ZukcalpG6qCTwFJ4AJ/Qa+S2u/pPwzmXrE8DTTTWopGmmmgGmmmgJB6dbYsbz3tittV5hX+tm4lnIU+CFQXll4ZlDdI1duvILdeB7ka7cp06ERrYjAY+LG42uvhpVYgesEQ9/k+5Y8lmYklmZiSSSdVl+HzaD7N2E2RvRQDMbkihslldJGgodQ8MfIXlGkLeR1DEdVg5AZWAtvAJ4IjYcffJ7L+y/wDnV0I4WTFqJ7ntRK60sdavHXi+1I1AGo3uOBYrRsRAiOX3IH5N+f8AnrMNr99ZGLjjyGUqU5gCks6KR+3Ya96clPvcFT57ARSerG5ZrrZf+AQw0pshhJZWixmSzksUU3kMKDxzIsSwyyhz2MzJ2DI3B25ltXWs355WlbyDyyueWd2/f9fk/wCA1g1PJPgsPZl/h8dnLU33HkJYYhWhWW8zW5Xcsx4WNJEj8jt/RCpJAHA3memho062Cp2VsV4ituWQ03ryeSSJPskWQ9uyHv8AKoR36leykty75Ns27XNvPREi9OdyXMJPUpwRwPBlcm1awZQT1RMfcsArwRw3aug9+ftJ9ueCNB55sjfks2XLSzuZJGP7/wDj21q++4k3ftWri8Rlb2KpC7ks1JXFVIopJajV6sflnljUTqs7SGEupMc6Pww449qWVpfX/wAOkqZrFXpJJ0gq5eh4HtrAF8kkEiM8M6Dt/wAuRjwC3HXhj64cIjKMvLXwJMk4UBQOABwP2GvO7/PjH94e41gCxz+Z1+/N7D31DJRkkHp7mBis0Ks7f7pdYK3J/of/AIW/0OrH3daGN23cncgO6GFB+rN7f/HJ1SFy61GzXWDC39wZGYq9fD494xYkVuwSaTswMNXyKEewQVQsPn8pBltw2qOzqk+8s3/Eq+28f9Xmb6CKMWpgPvWEBYkPZz4ogQpblOeSSTmvhhZXV8I7Hhu5r2vdXJX/AOMrf9Pb/o1jPTGIeTM52GC5bV4W6wU1lLqwbkDu0sSgDhvtWTnryhPFWt/6hbty++t5ZHdedaA378itIsEfSNFVQiIo/uqiqo5JJA5JJ5J0GurXBVwUV2KbJucnJ9xpppqZAaaaaAan3obslt5b0ga9Smm29jXWxlpACEKe5SAsGUhpWXoOp7AFnAIRuIDrrfZGDxfpP6eQU925LG4WzPO0+SnllEhlmDKgiiEa+SYQq6AhBIFZ5WDdW517FZfJCyTiuOpPHsT5LJTWrb95JpDJK36knWw8w9uCPbWjqZGc0UnTBLgBJ4T5N2TNFaHMzLL0xtYtK4VU5Bklg7F1I5Ucnxu56V4chAdzZlRb7Iow2Op4yKGMxqnEZnjs2A/PZu/lBBYdQvUa8t1tNfEmRo8K1V/MYkqrxWp2CwVp5CfgLGT/AKawb28MTs3dVOlkfrMhnEk8keAxEBuZKXqFcjwqf5fCN5P5hTlVYr2441Fcp9BmtvDAXMXn8zVeKOOZMlunJ2VssvBDyRrMsZYsob2UKD7gDgakm19o5K21mP6bC7LxtvqbKUKEVT6gLz1BjiAaQDs3HYkDk/qdY5+K1dI/b6m+HgNlb3WtL+f4RH9mncWNw2LwuYhxGQ3FTq1atWrh0klSuIIo1jew7MyzWI2X7Vj4hRx5OXcRGKA789UsDtSqq4q1jNy5xpVLV1kaanCnCuWlljIEpYN1CRueD27spXo1vbu9KcJmvq8NPvPNDa00MXbG42nFWmnnQgiSe1J3MicliIgioCIzx2Ts0m2HtraewjPkNnbZxu360Xaa7cZ2d1gHVpBJZmYssQEYYr2CgrzxzydYHr6FNOUt0vhHnBpt0jlHbCOIrlt93/vRFaZvIyyZ6OGbI0sxWprH47FaCOGtdLASS2Fji+weZ3aUleee/wAn51utw5Xak0lbO2a9Pb0FHM4k05Jb3h+laa3HFbVH5X7Javm8iH7SkZZh9nIrPYOY3Du7I3sHtH09tbyxGHkbH4XNxXVxbz04G6xLO8qCKSYQtBwFWN+oJYNySJf6Q5hdxSW81uPZNjCVKkcGR2hBbtM3ltrE3M7jr3lLiaMxTfTvHEqsY+H7GTTHT2wuc88Fl2sos06rS5xj5fNm5oXKuQksLhPrtxeG3HVIwNGW7E0j9DwLYAqL1WRWYvMoUc88H21vsfiszGTdyseI21jIRMthp5Tlcl7zLHAEhhH08Uzgkqve3y7xoI3PKnd38/k8htgH+y25BuBvflqVq/Tj+/8ARvpmcMg//jqT/wAQH3Vzu3PZKhjpv47Vzla8siI5GPFSCjSnQxfya7Wpes79bXFlvvYPJH2CL1E1vTy0kv3f2OZDTV9uWbjbFvb1Bsy+E2rlreXq48yXLGRzOPmvZUoIohFPf+rkaND0RmUBY1EbdV7dVb09Rdmba3fiMkW3nua/ttLBealhMvTjgQO6tGsqLWDOqlF6GUuVK/PJJMbx8eGu7MXDY7D78/hAla1Ma+OgAsED2aR+eWCj4HwP316+nuNmrY/I2cZgt4z1cmhjSWvQikD1wQVPLMB255+ORrxS9rcly+5pnButxUv6fcp31M/DnlcFJn8jtrcGLyeMxtM5JKdiV48gtUKHfsOgiZo1JJIcdgvIUEhNUTrufczSWL0NbLYvdQgzKDG3YZqBgaWv1+5IzDKGJPUcryAylgeQSDVnqR6C7btXL+U2pkcptyAiEV8bk8FaFaEgIjl7PeRx2Idx9h4JC+w9xpqt3Z3cFNtSjjbzx/JzXprZbpw1nbu58rt+7JDLaxl2anM8JJjZ4nKMVJAJUlTxyAePyGtbq8oGmmvahUtX70FGjWmtW7MixQQQxl5JXY8KqqPdmJIAA9yToCaehAz0Xqfi8jt3FYnIW8eWssctGzUqqBSv1ExUhlEZZWUqe3cIFDMVU3rhMbBidwz56petZXc1qWby7gni8VmRX4UJDCrFKyhAFHTlwCyhlQ9AxWDx+08JDtHCRRMYzGcnZiYu2RvKOGfsVUmJGLLEvAAXliOzMTauzduxYWsJrIWTIyDl2+fEP7i/6nXz3ifinl+zD/p9LoPDoVQVtyy30RosJse3YP1GWlNVHPZowe0rk/mx+Af++pvgtlUxC01LFo8Se72bLcqP35P+msDcebnxU2KxuMpQX9wZ2WaDDVbTGOszQp3mnncfEMKEMyry7nhVHuSu4SCpWlnNOW7OZyvntXJ2lnsdeeCxP2ogLOywxhIkMj9EXseeJJS8lXXvGeiXf5/oaZ6qdlnl19uvwX+T1aGCv/LryIQPYmNAi/8AT9da/JZnBYi9Uo5fKpVu3R2rUoa0tu5MnV2MiVoFaUxgRPzJ16jqRzzrC3juNtt06k0EKy37M3aHzUnsVq9aF4zbtTgPH9kccgCr3DPJJGqg8nVBZbdGSyWQygxlnKBcxbM9qW1Mr3r7e4j87xqq8Ip6pEgWONRwByWJ1aHwyFsVdd0fRLuY79XJScK+q6sne7vUnPWZyMFYx218bLGgWXI1RezKP0WTv9MrmtErMRF0kYuoDsQCVUa+9Jms8cbHuyZrLWpfLBPuib+TNKsCwt9Hik6wyMAxKpHDLJ2l/qZiDr02LteTEJBduQvLdu1bUlcV+3kQQyVYmjjK8Mru1teZU5dEjkEfWRlkjyMvt/cHSxgl9UdqYivNL5pqnkmovZlZQDLMGTySysAOzuzM3HLEnX0VNMao+xHC+X3OVKzzHy8/N/2Ro/UnJNjcNlctv7I2MnjbMsSY6tJYEk1+aI+Qjt7q5V2AdV71IlVfazIUY88743zn932WfJWPDXbxs1SCSTxNIikeV+7MzyHu5LuWI7lQQoCjo+3tbd2Awq/Seo1a1Uro3Wri7cxCoqknqWCoo9uPdlHJHJHzr2v083jNl43cVjcO9LBuiRvBNKmPhrqkkaEyzmSQEssvdFhWVnCt9o6txpjNrsUygn+Y5x2j6f5/OClkLNC9jcBZLEZWWm5hkCt1ZYfgTS9gVEan555KqGZehcbtahiPT+1Ji9w4TB5LHWGr46ne/wB4goXo3rPKbJ8TrPaaGQhj0IRiEATxhUheQ3BkJ84uQgyuUkFafyUpLc/kliAP2nn4DfHPGveDcVqJa0cWNwkUFYP44IcZDFCWbqGkKIApkIRQWI54UD8tUy1KZdHTNEUx+3Nz4v1s2TltwZyDcC5HP0ooMtHdaz9QYpK4ZT5OJR0Dxrw6r8fbyBzr+etGOy+4Ny7Pw+Hx9/LX/wCAGGCtVheaZ1jt3CeqKCSAqk+w9gDqz8B6kblrPDjmzlvE4dnbzxYqGONuG+SAR7n/AB1ivuGCth7dHFZXc0cn1TPU7WgkIib3bui+/cn8x7a99Sspj0zw0fn8N22tz7KwuZyu5dv5fAtBnsLPAcjUkq+VVNpZOvcDsAJF54+ARz86jPpB6Zby2h6m4vKbiw+K/himaneI3DR5hhsQvA8nCSsx6LKX6gct14HBPOsuzkL1oEWrtqxyeT5ZWb3/AF9z863FbcUENOCCHbeD7xL1M0tcyM/7nk8c6h6pZfBL0jwuSqPX+jJDvevlmWki5nG17oWsOPuVTBK7+wHd5YJZCRzz3DE8k8V5q2PX2t58VtTPGVVeSK3jjAkXVVEMonDg8/n9X168Djx/J59qn1sreYJmOxYm0NWl+G3FPLvG3ud4e0G36b2EaSp5Yjak/lQKWPsjgu0yH3PMB4Ht2WrdX3+FfDZ7O7c3dRwePsXT9ZjZJ1i49lCW+OeT8cn/ALaje3GuTj1LdJGMroqfTJbHprTWbNNccErSTlOfzc+w1ZCyE8Af1E8AnWq2FsnduPx9pbWBtwySTAgMB7gD9jqTJtrcSMrfwez9rA/A/X/HXwuq0187fceP0Z9XdqanLiS/cg+zL4zfqx6l50Ubq18Kae0sXZmi8aokRke7EpU9X5nRZOW5cLIn9IbrqYB/f/DVUej2ai/24eruwxlGtW8hnpcrja6yFYTKk0v1MSrJ1PnCyIG6qQwrOexVVJuX+zm4P/abH+Q/+9bPGtPdLULZFuKSxhHM8OtrVT3SSeSu/WjDXbe3JsxVgvW40wUkLyCSQQY8Q3oZJlK89C9hZoW9wGAo+3YE9aS2pYhq5uGSwQqkFQ5P9JPwf/3666lzuyc5mcV9C2JlFiKYXKDyyvHCltEdE83T3aB1keKVODzHI/HBAI5s2ttHM75xS5/Y237tzETkgRCZJXpyAkNXkbn3ZfYgkAsjRsVXtwOvo3Oeng3Fpx4ax8DHcob5wzw+c/qTnc1wUc9twKaqY6WthPqnsuRCH+py3UuVIPAPY+x/IH8tTc5bG4+VI1xl+K0n+8yfRHL2ljkn/mv/ADK8E0JfvIxYpI4LlvuJ51pTtvcGC9NruUzO3biVsfWh+urPjK9lhTrQzOwKzSxoVSRpphIrtKxtMhTrEpNb2ZsddwdXcGB2Dt/P4S4oVLlStNE8EwA7wTRq58Uq8+49wQVZSVYE9TLismGEFjbnoTT1h9Q8rRo42rhreVp2nd3kksTX0lTrxx/KtRx+x7ezBSOQQDyDqnc7bz+SsPdzc+StSKQGlts7Fe3uo5b45+RqcCttysaEG5dqbV27fyitLSrZTMT1WmhQe8jFuVijPBVTIy9ypC8kazvUe5kt4Y6vTizvp2oryLJHTx+5K9m5el6CKMf18yMF4VVA/P8AM8aqnCUuS+ucYYRqNhY/a82IM+R2nuHcDM/jmsVLSwCBgjSFIU4JnkEaO5Xn+lWPHAJ1HN1YibBy0pX4+kyNUW6cnlWQPGWK8hhxyOVPBIViCpZI2JRTYeruIbLvtvI4ODbtpkyVMWWr2oB5mnNup7N3mdQsXCr2V44SeU5ZJZnN1bIx2Oxou73x2MzeIrW/Pijh5bsiNLK0ywA9fCJAGCkFx0clWK8Hg6lKCx1PfOcZvPQgVVZrT9a0MszfpGhY/wDYa2V3BZrHUI8hlMdNjKMkohS1f4qws5BIUPIVUkhWPHPPAP6ak+3/AFVmzFacYH1ZgwEFaN5Z4cpjosdN4kCkunh7rKeW4EaMZWKnhCPcx3cPrfhpMXA1Xc/qfmLxkAsQWb0dCDoVPYqyPMSe3A6leOCfcccGK03xJPU/DB7Xtu5fGYWhuK5USxhLj8Q26dqOeKYhipRXjZh25DD9iD+mrf3bsyzX2UFz21cDhZpsfJcxU+NDiWJ4k8j17LMf5jNGGIb8iDqisVu/bG+BNQS3ktu5mLiepLnM8tira68l0aV44xDIOAyluVbhl5DFQ1iesHr1dt7IqSWZ9uNlIK8lajXpW4sgJrDqI5LMyo3WONYmforc9pGX7WRX4nGnDaaK53ZSaZTnrPO8uxtrIeDGmRyXRuPnlKfI5/bgaqnW73XuzcO6Z45c7k5LSwkmCBVWKCAlVVjHCgEcZYIvbqo7Ecnk++tJrTXHbFRM1kt8nIaaaamQGmmmgGmmmgGmmmgGmmmgGmmmgJ8/rF6iPCEfPRNKK/04tHHVvquvXr28/j8vk/Pydu/Pv2599QHTTTAGmmmgGmmmgGmmmgGmmmgGmmmgGmmmgGmmmgGmmmgGmmmgGmmmgGmmmgGmmmgGmmmgP//Z" alt="Furahia Transfers &amp; Logistics" style="height:60px;width:auto;display:block;" />
+    </div>
+      <p class="footer-desc">Africa's premier transfer and logistics group. Precision, reliability, and excellence in every engagement since 2005.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="hospitality.html">Airport Transfers</a></li>
+        <li><a href="hospitality.html">Executive Taxi</a></li>
+        <li><a href="hospitality.html">Hospitality</a></li>
+        <li><a href="vehicles.html">Cargo & Freight</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="index.html">About Us</a></li>
+        <li><a href="vehicles.html">Our Fleet</a></li>
+    <li><a href="impact.html">Impact</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">News</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="#">+255 700 000 000</a></li>
+        <li><a href="#"><span class="__cf_email__" data-cfemail="167f7870795678736e63656264777865707364387579">[email&#160;protected]</span></a></li>
+        <li><a href="#">Arusha, Tanzania</a></li>
+        <li><a href="#">24/7 Dispatch</a></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<section class="book-cta">
+  <div class="cta-eyebrow reveal">Ready to Travel or Ship?</div>
+  <h2 class="cta-title reveal">Choose Your Vehicle.<br><em>Book in Minutes.</em></h2>
+  <p class="cta-sub reveal">Not sure which vehicle is right for your journey? Our team is available 24/7 to help you select the perfect option and confirm your booking within the hour.</p>
+  <div class="cta-btns reveal">
+    <a href="contact.html" class="btn-gold">Book a Vehicle</a>
+    <a href="tel:+255700000000" class="btn-outline">Call +255 700 000 000</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">
+      
+      <img src="data:image/png;base64,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" alt="Furahia Transfers &amp; Logistics" style="height:60px;width:auto;display:block;" />
+    </div>
+      <p class="footer-desc">Africa's premier transfer and logistics group. Precision, reliability, and excellence in every engagement since 2005.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="hospitality.html">Airport Transfers</a></li>
+        <li><a href="hospitality.html">Executive Taxi</a></li>
+        <li><a href="hospitality.html">Hospitality</a></li>
+        </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="vehicles.html">Our Fleet</a></li>
+        <li><a href="impact.html">Impact</a></li>
+    <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:+255700000000">+255 700 000 000</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#325b5c545d72544740535a5b534640535c415457401c515d"><span class="__cf_email__" data-cfemail="9bf2f5fdf4dbfdeee9faf3f2faefe9faf5e8fdfee9b5f8f4">[email&#160;protected]</span></a></li>
+        <li><a href="#">Arusha, Tanzania</a></li>
+        <li><a href="#">24/7 Dispatch</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2025 Furahia Transfer Group. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/255700000000?text=Hello%20Furahia%20Transfer!%20I%27d%20like%20to%20make%20a%20booking." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.29c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.14-1.12-.41-2.14-1.32-.79-.71-1.33-1.58-1.49-1.85-.16-.27-.02-.41.12-.55.12-.12.27-.31.41-.47.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.47-.07-.14-.61-1.47-.84-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27s.97 2.64 1.11 2.82c.14.18 1.91 2.92 4.63 4.1.65.28 1.15.45 1.55.58.65.21 1.24.18 1.71.11.52-.08 1.61-.66 1.84-1.29.23-.63.23-1.16.16-1.27-.06-.11-.25-.18-.52-.32zM16.02 3.2c-7.07 0-12.8 5.71-12.8 12.76 0 2.26.6 4.47 1.73 6.41L3.12 28.8l6.6-1.73a12.8 12.8 0 0 0 6.3 1.68h.01c7.06 0 12.79-5.72 12.79-12.77 0-3.41-1.33-6.62-3.74-9.02a12.73 12.73 0 0 0-9.06-3.76zm0 23.39h-.01a10.66 10.66 0 0 1-5.43-1.49l-.39-.23-3.92 1.03 1.05-3.82-.25-.39a10.6 10.6 0 0 1-1.63-5.67c0-5.88 4.8-10.67 10.7-10.67 2.85 0 5.52 1.1 7.53 3.11a10.58 10.58 0 0 1 3.12 7.54c0 5.89-4.8 10.68-10.68 10.68z"/></svg>
+</a>
+
+<script>
+  // Nav scroll
+  (function(){
+    var n = document.querySelector('nav');
+    if (!n) return;
+    function chk() { n.classList.toggle('scrolled', window.scrollY > 36); }
+    window.addEventListener('scroll', chk, {passive: true});
+    chk();
+  })();
+
+  // Scroll reveal
+  (function(){
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal, .reveal-l, .reveal-r').forEach(function(el) {
+      obs.observe(el);
+    });
+  })();
+
+  // Fleet tab switching
+  document.querySelectorAll('.ftab').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.ftab').forEach(function(b) { b.classList.remove('active'); });
+      document.querySelectorAll('.fleet-panel').forEach(function(p) { p.classList.add('hidden'); });
+      btn.classList.add('active');
+      var panel = document.getElementById('panel-' + btn.dataset.panel);
+      if (panel) {
+        panel.classList.remove('hidden');
+        window.scrollTo({ top: document.querySelector('.fleet-tabs').offsetTop - 76, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Mobile nav
+  (function(){
+    var ham = document.getElementById('navHam');
+    var drawer = document.getElementById('navDrawer');
+    var overlay = document.getElementById('navOverlay');
+    var close = document.getElementById('navClose');
+    if(!ham||!drawer||!overlay) return;
+    function open(){drawer.classList.add('open');overlay.classList.add('open');ham.classList.add('open');document.body.style.overflow='hidden';}
+    function shut(){drawer.classList.remove('open');overlay.classList.remove('open');ham.classList.remove('open');document.body.style.overflow='';}
+    ham.addEventListener('click',open);
+    close.addEventListener('click',shut);
+    overlay.addEventListener('click',shut);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')shut();});
+  })();
+</script>
+</body>
+</html>

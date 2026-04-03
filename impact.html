@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FURAHIA TRANSFER GROUP — Community Impact</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>  :root {
+    --bg:         #F9F7F2;
+    --bg-alt:     #EDE8DF;
+    --card:       #F4F0E8;
+    --text:       #3E2723;
+    --text-muted: #6B5851;
+    --accent:     #C05A35;
+    --accent-hover:#F2B138;
+    --link:       #5E7D67;
+    --footer-bg:  #3E2723;
+    --footer-text:#F9F7F2;
+    --border:     rgba(62,39,35,0.14);
+    --border-soft:rgba(62,39,35,0.08);
+    --glass:      rgba(249,247,242,0.88);
+    --shadow:     0 4px 24px rgba(62,39,35,0.12);
+    --shadow-lg:  0 12px 48px rgba(62,39,35,0.18);
+    --transition: 0.35s cubic-bezier(0.4,0,0.2,1);
+    --font-display:'Cormorant Garamond',serif;
+    --font-body:   'DM Sans',sans-serif;
+    --font-cond:   'Barlow Condensed',sans-serif;
+    --black:      #F4F0E8;
+    --deep:       #F9F7F2;
+    --navy:       #EDE8DF;
+    --gold:       #C05A35;
+    --gold-light: #F2B138;
+    --gold-dim:   rgba(192,90,53,0.10);
+    --white:      #F9F7F2;
+    --grey:       #6B5851;
+    --shadow-dark:0 12px 48px rgba(62,39,35,0.18);
+    --shadow-gold:0 8px 32px rgba(192,90,53,0.18);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;overflow-y:scroll;scrollbar-gutter:stable}
+  body{background:var(--bg);color:var(--text);font-family:var(--font-body);overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:76px;background:var(--glass);backdrop-filter:blur(28px) saturate(160%);-webkit-backdrop-filter:blur(28px) saturate(160%);border-bottom:1px solid var(--border);box-shadow:var(--shadow);transition:background var(--transition),box-shadow var(--transition)}
+  nav.scrolled{background: rgba(249,247,242,0.98);box-shadow:0 2px 0 var(--border),var(--shadow)}
+  .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .nav-logo img{height:48px;width:auto;display:block;flex-shrink:0}
+  .nav-logo-text{font-family:var(--font-cond);font-size:15px;letter-spacing:2.5px;color:var(--text);font-weight:700;display:block;line-height:1.1}
+  .nav-logo-sub{font-family:var(--font-cond);font-size:9px;letter-spacing:4px;color:var(--accent);font-weight:500;display:block;margin-top:1px}
+  .nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+  .nav-links a{font-family:var(--font-cond);font-size:11.5px;letter-spacing:2.5px;color: var(--text-muted);text-decoration:none;text-transform:uppercase;transition:color var(--transition);position:relative;padding-bottom:4px}
+  .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--accent);transition:width var(--transition)}
+  .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+  .nav-links a:hover,.nav-links a.active{color:var(--accent)}
+  .nav-cta{font-family:var(--font-cond);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;padding:10px 26px;border:2px solid var(--accent);color:var(--accent);background:transparent;cursor:pointer;text-decoration:none;transition:all var(--transition);position:relative;overflow:hidden}
+  .nav-cta::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--accent),var(--accent-hover));transform:scaleX(0);transform-origin:left;transition:transform var(--transition);z-index:0}
+  .nav-cta span{position:relative;z-index:1}
+  .nav-cta:hover{color:#fff}
+  .nav-cta:hover::before{transform:scaleX(1)}
+
+  /* SHARED */
+  .label{font-family:var(--font-cond);font-size:11px;letter-spacing:5px;color:var(--accent);text-transform:uppercase;margin-bottom:16px}
+  .sec-title{font-family:var(--font-display);font-size:clamp(32px,4vw,54px);font-weight:300;line-height:1.08;margin-bottom:20px}
+  .sec-title em{font-style:italic;color:var(--accent)}
+  .body-text{color: var(--text-muted);line-height:1.9;font-weight:300;font-size:15px;margin-bottom:14px}
+  .gold-rule{width:56px;height:2px;background:var(--accent);margin:28px 0}
+  section{padding:100px 60px}
+
+  /* HERO */
+  .page-hero{
+    min-height:82vh;position:relative;
+    display:flex;align-items:flex-end;
+    padding:140px 60px 80px;overflow:hidden;
+  }
+  .hero-bg{
+    position:absolute;inset:0;
+    background:linear-gradient(160deg,#5D4037 0%,#2E1B18 65%);
+  }
+  .hero-grid{position:absolute;inset:0;opacity:.03;background-image:linear-gradient(var(--accent) 1px,transparent 1px),linear-gradient(90deg,var(--accent) 1px,transparent 1px);background-size:80px 80px}
+  .hero-glow{position:absolute;left:-100px;bottom:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,.07) 0%,transparent 65%)}
+  .hero-glow-2{position:absolute;right:10%;top:20%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(14,34,51,.6) 0%,transparent 70%)}
+  .hero-vline{position:absolute;left:0;top:0;width:4px;height:100%;background:linear-gradient(to bottom,transparent,var(--accent),transparent);opacity:.5}
+
+  /* Water animation in hero background */
+  .hero-water{
+    position:absolute;right:0;top:0;bottom:0;width:45%;
+    overflow:hidden;opacity:.35;
+  }
+  .hero-water svg{width:100%;height:100%}
+
+  .hero-content{position:relative;z-index:2;max-width:760px}
+  .breadcrumb{display:flex;align-items:center;gap:10px;font-family:var(--font-cond);font-size:11px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:28px}
+  .breadcrumb a{color:rgba(200,168,75,.5);text-decoration:none;transition:color .3s}
+  .breadcrumb a:hover{color:var(--accent)}
+  .hero-tag{font-family:var(--font-cond);font-size:11px;letter-spacing:5px;color:var(--accent);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:14px}
+  .hero-tag::before{content:'';width:36px;height:1px;background:var(--accent)}
+  .page-title{font-family:var(--font-display);font-size:clamp(50px,7.5vw,96px);font-weight:300;line-height:.93}
+  .page-title em{font-style:italic;color:var(--accent-hover)}
+  .page-title strong{font-weight:700;display:block}
+  .hero-tagline{font-size:16px;color: rgba(249,247,242,0.82);font-weight:300;line-height:1.8;max-width:560px;margin-top:22px}
+  .hero-well-name{
+    display:inline-flex;align-items:center;gap:12px;
+    margin-top:32px;
+    background:rgba(200,168,75,.08);border:1px solid var(--border);
+    padding:12px 22px;
+    font-family:var(--font-cond);font-size:13px;letter-spacing:3px;
+    color:var(--accent);text-transform:uppercase;
+  }
+  .hero-well-name svg{width:18px;height:18px;fill:var(--accent)}
+
+  /* INTRO STATEMENT */
+  .intro-statement{
+    background:var(--bg-alt);
+    padding:80px 60px;
+    text-align:center;
+    position:relative;overflow:hidden;
+  }
+  .intro-statement::before{
+    content:'"';font-family:var(--font-display);font-size:480px;font-weight:700;
+    color:rgba(200,168,75,.03);position:absolute;top:-80px;left:50%;transform:translateX(-50%);
+    line-height:1;pointer-events:none;
+  }
+  .intro-statement-text{
+    font-family:var(--font-display);font-size:clamp(22px,3vw,38px);
+    font-weight:300;font-style:italic;line-height:1.45;
+    max-width:860px;margin:0 auto 24px;
+    color: var(--text);position:relative;z-index:1;
+  }
+  .intro-statement-text em{color:var(--accent)}
+  .intro-statement-attr{
+    font-family:var(--font-cond);font-size:11px;letter-spacing:4px;
+    color:rgba(200,168,75,.6);text-transform:uppercase;
+    position:relative;z-index:1;
+  }
+
+  /* PHOTO SECTION */
+  .photo-section{background:var(--card);padding:0}
+  .photo-grid{display:grid;grid-template-columns:1fr 1fr 1fr;height:500px}
+  .photo-cell{position:relative;overflow:hidden;background:var(--bg-alt)}
+  .photo-cell-main{grid-column:span 2}
+  .photo-svg{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+  .photo-svg svg{width:100%;height:100%}
+  .photo-caption{
+    position:absolute;bottom:0;left:0;right:0;
+    padding:20px 24px;
+    background:linear-gradient(to top,rgba(8,8,8,.92),transparent);
+    font-family:var(--font-cond);font-size:10px;letter-spacing:3px;
+    color:var(--accent);text-transform:uppercase;
+  }
+  .photo-label{
+    position:absolute;top:20px;left:20px;
+    background:rgba(200,168,75,.15);border:1px solid var(--border);
+    padding:6px 14px;
+    font-family:var(--font-cond);font-size:9px;letter-spacing:3px;
+    color:var(--accent);text-transform:uppercase;
+  }
+
+  /* STORY SECTION */
+  .story{background:var(--bg);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  .story-aside{position:sticky;top:120px}
+  .story-aside-card{background:var(--card);border:1px solid var(--border);padding:40px;position:relative;overflow:hidden;margin-bottom:24px}
+  .story-aside-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-hover))}
+  .aside-icon{width:42px;height:42px;fill:var(--accent);margin-bottom:18px}
+  .aside-title{font-family:var(--font-cond);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .aside-text{font-size:13px;color: var(--text-muted);font-weight:300;line-height:1.8}
+
+  /* PROBLEM SECTION */
+  .problem{background:var(--bg-alt);position:relative;overflow:hidden}
+  .problem::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;pointer-events:none}
+  .problem-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
+  .problem-visual{
+    position:relative;aspect-ratio:1;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .problem-circle{
+    width:220px;height:220px;border-radius:50%;
+    background:rgba(200,168,75,.06);border:1px solid var(--border);
+    display:flex;align-items:center;justify-content:center;
+    position:relative;
+  }
+  .problem-circle::before{
+    content:'';position:absolute;inset:-16px;border-radius:50%;
+    border:1px dashed rgba(200,168,75,.2);
+    animation:spinRing 30s linear infinite;
+  }
+  .problem-circle::after{
+    content:'';position:absolute;inset:-36px;border-radius:50%;
+    border:1px solid rgba(200,168,75,.08);
+  }
+  .problem-circle-icon{width:70px;height:70px;fill:rgba(200,168,75,.35)}
+  .problem-stat{position:absolute;background:var(--card);border:1px solid var(--border);padding:14px 18px;text-align:center}
+  .problem-stat-1{top:10%;right:-10px}
+  .problem-stat-2{bottom:10%;left:-10px}
+  .pstat-num{font-family:var(--font-display);font-size:32px;font-weight:300;color:var(--accent);line-height:1}
+  .pstat-label{font-family:var(--font-cond);font-size:9px;letter-spacing:2px;color: var(--text-muted);text-transform:uppercase;margin-top:4px}
+  .before-after{display:flex;flex-direction:column;gap:2px;margin-top:36px}
+  .ba-item{background:var(--card);padding:20px 24px;display:flex;align-items:flex-start;gap:16px}
+  .ba-label{font-family:var(--font-cond);font-size:9px;letter-spacing:3px;text-transform:uppercase;color: var(--text-muted);margin-bottom:6px}
+  .ba-text{font-size:14px;color: var(--text-muted);font-weight:300;line-height:1.6}
+  .ba-icon{width:28px;height:28px;flex-shrink:0;margin-top:2px}
+  .ba-icon-before{fill:rgba(200,168,75,.35)}
+  .ba-icon-after{fill:var(--accent)}
+
+  /* IMPACT NUMBERS */
+  .impact-nums{background:var(--accent);padding:80px 60px}
+  .impact-nums-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .imp-item{text-align:center;padding:0 20px;border-right:1px solid rgba(255,255,255,.2)}
+  .imp-item:last-child{border-right:none}
+  .imp-val{font-family:var(--font-display);font-size:clamp(50px,5vw,72px);font-weight:300;color:#fff;line-height:1}
+  .imp-label{font-family:var(--font-cond);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.75);margin-top:10px}
+
+  /* IMPACT POINTS */
+  .impact-points{background:var(--card)}
+  .impact-points-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  .impact-list{display:flex;flex-direction:column;gap:2px;margin-top:40px}
+  .impact-item{
+    background:var(--bg);padding:28px 32px;
+    display:flex;align-items:flex-start;gap:20px;
+    transition:background .3s;cursor:default;
+  }
+  .impact-item:hover{background:#101820}
+  .impact-item-icon{width:42px;height:42px;border-radius:50%;background:rgba(200,168,75,.1);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .impact-item-icon svg{width:20px;height:20px;fill:var(--accent)}
+  .impact-item-title{font-family:var(--font-cond);font-size:14px;font-weight:600;letter-spacing:1px;margin-bottom:6px}
+  .impact-item-text{font-size:13px;color: var(--text-muted);font-weight:300;line-height:1.7}
+  .impact-visual{position:relative}
+  .impact-visual-map{
+    background:var(--bg-alt);border:1px solid var(--border);
+    padding:50px 40px;text-align:center;position:relative;overflow:hidden;
+    margin-bottom:20px;
+  }
+  .impact-visual-map::before{
+    content:'';position:absolute;inset:0;
+    background-image:linear-gradient(rgba(200,168,75,.04) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(200,168,75,.04) 1px,transparent 1px);
+    background-size:30px 30px;
+  }
+  .map-pin-group{position:relative;z-index:1;display:inline-flex;flex-direction:column;align-items:center;gap:8px}
+  .map-pin-icon{width:56px;height:56px;fill:var(--accent)}
+  .map-pin-label{font-family:var(--font-cond);font-size:11px;letter-spacing:3px;color:var(--accent);text-transform:uppercase}
+  .map-pin-sub{font-size:12px;color:var(--text-muted);font-weight:300}
+  .map-pulse{
+    width:80px;height:80px;border-radius:50%;
+    border:1px solid rgba(200,168,75,.3);
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    animation:mapPulse 2.5s infinite;
+  }
+  .map-pulse-2{animation-delay:.8s;opacity:.5}
+
+  /* QUOTE */
+  .quote-section{
+    background:var(--bg-alt);padding:100px 60px;
+    text-align:center;position:relative;overflow:hidden;
+  }
+  .quote-section::before{
+    content:'"';font-family:var(--font-display);font-size:500px;
+    color:rgba(200,168,75,.03);position:absolute;top:-80px;left:50%;
+    transform:translateX(-50%);line-height:1;pointer-events:none;
+  }
+  .q-icon{width:52px;height:52px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 30px;background:rgba(200,168,75,.08)}
+  .q-icon svg{width:24px;height:24px;fill:var(--accent)}
+  .q-text{
+    font-family:var(--font-display);font-size:clamp(22px,3vw,38px);
+    font-weight:300;font-style:italic;line-height:1.45;
+    max-width:860px;margin:0 auto 32px;
+    color: var(--text);position:relative;z-index:1;
+  }
+  .q-text em{color:var(--accent)}
+  .q-divider{width:56px;height:1px;background:var(--accent);margin:0 auto 24px}
+  .q-name{font-family:var(--font-cond);font-size:12px;letter-spacing:4px;color:var(--accent);text-transform:uppercase;margin-bottom:4px}
+  .q-role{font-size:13px;color: var(--text-muted);font-weight:300}
+
+  /* VALUES */
+  .values{background:var(--bg)}
+  .values-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .values-right{display:flex;flex-direction:column;gap:2px}
+  .value-item{background:var(--card);padding:30px 36px;display:flex;align-items:flex-start;gap:20px;transition:background .3s;cursor:default}
+  .value-item:hover{background:#EDE8DF}
+  .value-dot{width:10px;height:10px;background:var(--accent);flex-shrink:0;margin-top:6px}
+  .value-title{font-family:var(--font-cond);font-size:15px;font-weight:600;letter-spacing:1px;margin-bottom:8px}
+  .value-text{font-size:14px;color: var(--text-muted);font-weight:300;line-height:1.7}
+
+  /* FUTURE */
+  .future{background:var(--bg-alt);position:relative;overflow:hidden}
+  .future::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(200,168,75,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(200,168,75,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+  .future-inner{position:relative;z-index:1}
+  .future-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px}
+  .future-card{background:var(--card);padding:40px 32px;position:relative;overflow:hidden;transition:background .3s;cursor:default}
+  .future-card:hover{background:#EDE8DF}
+  .future-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-hover));transform:scaleX(0);transform-origin:left;transition:transform .45s}
+  .future-card:hover::before{transform:scaleX(1)}
+  .future-num{font-family:var(--font-display);font-size:64px;font-weight:300;color:rgba(200,168,75,.08);position:absolute;top:16px;right:20px;line-height:1}
+  .future-icon{width:40px;height:40px;fill:var(--accent);margin-bottom:18px}
+  .future-title{font-family:var(--font-cond);font-size:16px;font-weight:600;letter-spacing:1px;margin-bottom:10px}
+  .future-text{font-size:13px;color: var(--text-muted);font-weight:300;line-height:1.8}
+  .future-status{margin-top:14px;font-family:var(--font-cond);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--accent)}
+
+  /* OTHER INITIATIVES */
+  .other-init{background:var(--card)}
+  .init-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px}
+  .init-card{background:var(--bg);padding:36px 30px;position:relative;overflow:hidden;transition:background .3s}
+  .init-card:hover{background:#101820}
+  .init-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:center;transition:transform .4s}
+  .init-card:hover::after{transform:scaleX(1)}
+  .init-year{font-family:var(--font-cond);font-size:10px;letter-spacing:4px;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
+  .init-icon{width:36px;height:36px;fill:var(--accent);margin-bottom:14px}
+  .init-name{font-family:var(--font-cond);font-size:16px;font-weight:600;letter-spacing:1px;margin-bottom:10px}
+  .init-text{font-size:13px;color: var(--text-muted);font-weight:300;line-height:1.8}
+
+  /* CTA */
+  .cta-bar{background:var(--accent);padding:80px 60px;display:flex;justify-content:space-between;align-items:center;gap:40px}
+  .cta-left-title{font-family:var(--font-display);font-size:clamp(28px,4vw,50px);font-weight:400;color:var(--black);max-width:600px;line-height:1.1}
+  .cta-left-title em{font-style:italic}
+  .cta-actions{display:flex;gap:16px;flex-wrap:wrap;flex-shrink:0}
+  .btn-dark{font-family:var(--font-cond);font-size:12px;letter-spacing:3px;text-transform:uppercase;padding:16px 36px;background:#fff;color:var(--accent);border:none;cursor:pointer;text-decoration:none;transition:all .3s;white-space:nowrap}
+  .btn-dark:hover{background:#EDE8DF}
+  .btn-outline-dark{font-family:var(--font-cond);font-size:12px;letter-spacing:3px;text-transform:uppercase;padding:16px 36px;background:transparent;color:#fff;border:2px solid #fff;cursor:pointer;text-decoration:none;transition:all .3s;white-space:nowrap}
+  .btn-outline-dark:hover{background:rgba(255,255,255,.15)}
+
+  /* FOOTER */
+  footer{background:var(--footer-bg);border-top:none;padding:80px 60px 40px}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
+  .footer-logo{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+  .footer-desc{color: rgba(249,247,242,0.65);font-size:13px;line-height:1.8;font-weight:300}
+  .footer-col-title{font-family:var(--font-cond);font-size:11px;letter-spacing:4px;color:var(--accent-hover);text-transform:uppercase;margin-bottom:24px}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .footer-links a{font-size:13px;color: rgba(249,247,242,0.65);text-decoration:none;font-weight:300;transition:color .3s}
+  .footer-links a:hover{color:var(--accent-hover)}
+  .footer-bottom{border-top:1px solid rgba(249,247,242,0.12);padding-top:30px;display:flex;justify-content:space-between;align-items:center}
+  .footer-copy{font-size:12px;color: rgba(249,247,242,0.5);font-family:var(--font-cond);letter-spacing:1px}
+  .footer-bottom-links{display:flex;gap:30px}
+  .footer-bottom-links a{font-size:11px;color: rgba(249,247,242,0.5);text-decoration:none;font-family:var(--font-cond);letter-spacing:1px}
+
+  /* WA */
+  .whatsapp-float{position:fixed;bottom:28px;right:28px;z-index:9999;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.45),0 2px 8px rgba(0,0,0,.35);text-decoration:none;animation:waPopIn .6s 1.2s both cubic-bezier(.34,1.56,.64,1);transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s ease,background .25s ease}
+  .whatsapp-float:hover{background:#128C7E;transform:scale(1.12);box-shadow:0 10px 36px rgba(37,211,102,.55),0 4px 14px rgba(0,0,0,.4)}
+  .whatsapp-float svg{width:30px;height:30px;fill:#fff}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+  .reveal-l{opacity:0;transform:translateX(-36px);transition:opacity .8s ease,transform .8s ease}
+  .reveal-l.visible{opacity:1;transform:translateX(0)}
+  .reveal-r{opacity:0;transform:translateX(36px);transition:opacity .8s ease,transform .8s ease}
+  .reveal-r.visible{opacity:1;transform:translateX(0)}
+
+  @keyframes waPopIn{0%{opacity:0;transform:scale(.3) translateY(20px)}100%{opacity:1;transform:scale(1) translateY(0)}}
+  @keyframes spinRing{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+  @keyframes mapPulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.6}100%{transform:translate(-50%,-50%) scale(2.4);opacity:0}}
+
+  @media(max-width:900px){
+    nav{padding:0 24px}
+    .nav-links{display:none}
+    section{padding:70px 24px}
+    .page-hero{padding:120px 24px 60px;min-height:auto}
+    .hero-water{display:none}
+    .photo-grid{grid-template-columns:1fr;height:auto}
+    .photo-cell-main{grid-column:span 1}
+    .photo-cell{height:260px}
+    .story,.problem-inner,.impact-points-inner,.values-inner{grid-template-columns:1fr;gap:40px}
+    .story-aside{position:static}
+    .impact-nums-inner{grid-template-columns:1fr 1fr;gap:30px}
+    .imp-item{border-right:none;border-bottom:1px solid rgba(0,0,0,.1);padding-bottom:20px}
+    .future-grid,.init-grid{grid-template-columns:1fr 1fr}
+    .cta-bar{flex-direction:column;align-items:flex-start}
+    .footer-grid{grid-template-columns:1fr 1fr}
+    .intro-statement{padding:60px 24px}
+    .impact-nums{padding:60px 24px}
+  }
+  @media(max-width:500px){
+    .future-grid,.init-grid{grid-template-columns:1fr}
+    .whatsapp-float{bottom:18px;right:16px;width:52px;height:52px}
+    .whatsapp-float svg{width:26px;height:26px}
+  }
+
+  /* ── HERO VIDEO BACKGROUND ── */
+  .hero-video-bg {
+    position: absolute; inset: 0; z-index: 0;
+    overflow: hidden;
+  }
+  .hero-video-bg video {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+  }
+  .hero-video-bg video.loaded { opacity: 1; }
+  /* dark overlay so text stays legible */
+  .hero-video-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(6,9,14,0.72) 0%,
+      rgba(6,9,14,0.55) 50%,
+      rgba(6,9,14,0.80) 100%
+    );
+  }
+
+
+  /* ══ MOBILE NAV ══ */
+  .nav-hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;width:44px;height:44px;background:none;border:1px solid var(--border);border-radius:2px;cursor:pointer;gap:5px;flex-shrink:0;transition:border-color var(--transition)}
+  .nav-hamburger:hover{border-color:var(--accent)}
+  .nav-hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:1px;transition:all 0.35s cubic-bezier(0.4,0,0.2,1);transform-origin:center}
+  .nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+  .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  .nav-overlay{position:fixed;inset:0;background:rgba(62,39,35,0.45);backdrop-filter:blur(4px);z-index:98;opacity:0;pointer-events:none;transition:opacity 0.35s ease}
+  .nav-overlay.open{opacity:1;pointer-events:all}
+
+  .nav-drawer{position:fixed;top:0;right:0;bottom:0;width:min(320px,88vw);background:var(--bg);z-index:99;display:flex;flex-direction:column;transform:translateX(100%);transition:transform 0.38s cubic-bezier(0.4,0,0.2,1);box-shadow:-8px 0 40px rgba(62,39,35,0.18)}
+  .nav-drawer.open{transform:translateX(0)}
+
+  .nav-drawer-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--border)}
+  .nav-drawer-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .nav-drawer-logo img{height:42px;width:auto}
+  .nav-drawer-logo-text{font-family:var(--font-cond);font-size:13px;letter-spacing:2px;color:var(--text);font-weight:700;display:block;line-height:1.1}
+  .nav-drawer-logo-sub{font-family:var(--font-cond);font-size:8px;letter-spacing:3px;color:var(--accent);font-weight:500;display:block}
+  .nav-drawer-close{width:36px;height:36px;background:none;border:1px solid var(--border);border-radius:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--transition);flex-shrink:0}
+  .nav-drawer-close:hover{border-color:var(--accent);background:rgba(192,90,53,0.06)}
+  .nav-drawer-close svg{width:16px;height:16px;fill:var(--text)}
+
+  .nav-drawer-links{flex:1;overflow-y:auto;padding:16px 0}
+  .nav-drawer-links a{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;font-family:var(--font-cond);font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);text-decoration:none;border-bottom:1px solid var(--border-soft);transition:all var(--transition)}
+  .nav-drawer-links a:hover,.nav-drawer-links a.active{color:var(--accent);background:rgba(192,90,53,0.04);padding-left:34px}
+  .nav-drawer-links a .drawer-arrow{font-size:14px;opacity:0;transition:opacity var(--transition)}
+  .nav-drawer-links a:hover .drawer-arrow,.nav-drawer-links a.active .drawer-arrow{opacity:1}
+
+  .nav-drawer-foot{padding:24px 28px;border-top:1px solid var(--border)}
+  .nav-drawer-cta{display:block;width:100%;padding:16px;background:var(--accent);color:#fff;font-family:var(--font-cond);font-size:12px;letter-spacing:3px;text-transform:uppercase;text-align:center;text-decoration:none;font-weight:600;transition:background var(--transition)}
+  .nav-drawer-cta:hover{background:var(--accent-hover);color:var(--text)}
+  .nav-drawer-contact{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+  .nav-drawer-contact a{font-family:var(--font-cond);font-size:11px;letter-spacing:2px;color:var(--text-muted);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color var(--transition)}
+  .nav-drawer-contact a:hover{color:var(--accent)}
+  .nav-drawer-contact svg{width:14px;height:14px;fill:var(--accent);flex-shrink:0}
+
+  @media(max-width:900px){
+    .nav-hamburger{display:flex}
+    .nav-links{display:none!important}
+    .nav-cta{display:none}
+    nav{padding:0 20px}
+  }
+  @media(min-width:901px){
+    .nav-overlay,.nav-drawer{display:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+  <img src="data:image/png;base64,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" alt="Furahia" />
+  <div>
+    <span class="nav-logo-text">FURAHIA TRANSFER</span>
+    <span class="nav-logo-sub">TRANSFERS &amp; LOGISTICS</span>
+  </div>
+</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="hospitality.html">Hospitality</a></li>
+    <li><a href="vehicles.html">Our Fleet</a></li>
+    <li><a href="impact.html" class="active">Impact</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta"><span>Book Now</span></a>
+
+  <button class="nav-hamburger" id="navHam" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button></nav>
+<!-- Mobile Nav Overlay & Drawer -->
+<div class="nav-overlay" id="navOverlay"></div>
+<div class="nav-drawer" id="navDrawer">
+  <div class="nav-drawer-head">
+    <a href="index.html" class="nav-drawer-logo">
+      <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCACgAKADASIAAhEBAxEB/8QAHQABAAIDAQEBAQAAAAAAAAAAAAYHBAUIAwkCAf/EADsQAAICAQQBAwIEAwUHBQEAAAECAwQFAAYREhMHITEUIghBUWEVIzIWUnGRwRckQkOBoeEzVbHR8GL/xAAaAQEAAwEBAQAAAAAAAAAAAAAAAgMEBQEG/8QAMBEAAgIBAwIDBgUFAAAAAAAAAAECAxEEEiExQQUTFCIyUWGx0TNCcZGhgcHh8PH/2gAMAwEAAhEDEQA/AOMtNNNANNNNANNNNANNNNANNNNANNNNANNNNANNNNANNNNANNNNANNNNANNNNANNNNANNNNANSz0r2BnPUfc7YHAyUoZY672Z57kpSKGNSq9jwGY8s6KAqk8sCeACRE9d++imwIfTLYkGFf78zcKXMzIyR9lnKAfThkJ7JF7qPuYFmkYcB+B7FZZXZPZHJwrdwOYqbon2vLj5nzMN1qDU4AJnawr+Mxr057nsOB155Pxzq3dgfha9WN2YxsjNj6W2oTx4kzkkkEsv3Mp4iVHdOCv/MVeQylewPOur9p+nmBseudb1OCD+Kw4yaCcPZflp+sUUMyJxx7QeeNwT1/9Mhe3ZtW9LKSTyTzrNff5TwX0x81bkc0bX/BfsiPb1Ibp3NuCbNePm42NmhjrByeSsYkhZio9h2J5bjnheeo/u6fwXbIk29dG1tzbghzXj5ptkpoZKxce/WQRwqwU+47A8rzzw3HU9Imb3921+lmPPsdZfWvJf6c+Ynq76Rbx9LPof7Ww0ov4hZtQ0/p7Al8yQePmYcfCN5R1DcP9rdlX25gGvsFDZZfgnXGH41vQ/a21tuQeoGycZNjUa8IMpQrRs9ZBL3ZbA9z4FD9Y+o4T74woUjh9dV8bOO5TOtxOTNNNNXlY0000A0000A0000A0000A01LtoenO6907Uz26MTQU4rCQNNYnmkEaylAHeOLn+t1j7SMo+FX+8yK0dwmMu5rNUcPjYRPev2I61aMuqd5HYKq9mIA5JA5JAH5nQFwfhL2NYzW+Yd5Xqkww2Bk80MxUhJr68GGMMGU8oSJjx2A6KrDiQc9obYpi/YkmtctAg9/f3Zj/wDudQraO28TtLAUNq7fih8FVFjedIyhuT8ASWHBLHs5HPBJ6qFUfaoAsah0p0468bDhR9x/U/mdWpYRinLfP5I00j2MPmftYl4X5B/vL/5GptFdjtVknhblHHI/b9tRbcCLYreYe8sXJ5/Vf014bWyHidqbtwkv3Jz8Bvz/AM9c/wARqc6t8eq+hr0FqhZsfRkuab99fpJvfUX3RnRiY4hGokmkcfYfyQfJ/wDrW1qWo7EEc8D9o3Xsp/bXzjnKKUn0Z3o7JScE+UbuKXn89ZleUqwIPvrTQOdZ1dufnWum0psrOAvxW+hNr0wy0m5cKkB2bkbogop9UZJ6kjR9/FIGAJXlZehBc9UHduxHaidfTf8AE1tPDbw9C9yxZhJi2Ioz5ek8UnVo7NeGRlP6FSCykEH2Y8cNww+ZGu/VPfFM5c47XgaaaasIjTTTQDTTTQDXtRqWr92CjRrTWrViRYoIIULySux4VVUe5YkgAD3JOvHXQ34WfT6P6f8A2h5qvDIhkevhYJ4X7eRCve4pPCkIeY0P3ff3P2tECfUsvBGUlFZZefp5hE2DtXDbcxkkPmxY8lixCQRYuN7zS9gql17fYpYdvGiA/Gq62B6e7c2H642m62zPlqU1zaHhSX6eFOJRcqux5LTxRewJZlMbFm4d4wLkxGIe7jbNpWKsg4gX++w+dQzfe3Z9zYeuMXN9LuLE21ymAsCGFyl6McpE3l9hHIyorckL2WNm5CFTa48cdjFXY9z3dye4KMKfq5Pn4jH/AMnW4Fk/HOoXjN+bWzOxod818hSo4V6wnuAyl1x0oA8tdz1DF1dgqjqC/ZCoPdeYx/aTdW7IY7ePku7I2nbqQz17bwRPm8mj9lkES92SnGVJKSkF+VjkQsHIWEppLLJRqa4LhnWzFCk00EiRyc9Sy8BtYWMpRi1PenbrUrDvyfjn54/6aq3Z9fG4L1lq1cJUalS3xj7aTVhaltyvlachsNZmlnZpArV52H2sezk9l9g2rI9Rr8dGrW25TfnqoktEfn+gP7k+/wDlrFqrd0NkfzfQ01QjW/NfKX1I1mL8mTyctohuGPEa/PCj41Itg5MrI2Mlb7W++Hk/n+a61O3IUjja1IvLSDqv7L+f+esK3HJj74eu5UowkiYH44+NY7dPGyrYRp1E6rfN/ctyA8e+thX+BrTbayEeWxUF2MBS/wBsqj/gcfI1uJAy1JyjFGETFW/MHg8HXMpg4vDO/Oamso/echzNjbOUrbdtw081LRmTHWJhzHDYKEROwKtyofqT9rew+D8a+R2vrTjc7Tp7MO58xP4KdOi9y7N0ZukcalpG6qCTwFJ4AJ/Qa+S2u/pPwzmXrE8DTTTWopGmmmgGmmmgJB6dbYsbz3tittV5hX+tm4lnIU+CFQXll4ZlDdI1duvILdeB7ka7cp06ERrYjAY+LG42uvhpVYgesEQ9/k+5Y8lmYklmZiSSSdVl+HzaD7N2E2RvRQDMbkihslldJGgodQ8MfIXlGkLeR1DEdVg5AZWAtvAJ4IjYcffJ7L+y/wDnV0I4WTFqJ7ntRK60sdavHXi+1I1AGo3uOBYrRsRAiOX3IH5N+f8AnrMNr99ZGLjjyGUqU5gCks6KR+3Ya96clPvcFT57ARSerG5ZrrZf+AQw0pshhJZWixmSzksUU3kMKDxzIsSwyyhz2MzJ2DI3B25ltXWs355WlbyDyyueWd2/f9fk/wCA1g1PJPgsPZl/h8dnLU33HkJYYhWhWW8zW5Xcsx4WNJEj8jt/RCpJAHA3memho062Cp2VsV4ituWQ03ryeSSJPskWQ9uyHv8AKoR36leykty75Ns27XNvPREi9OdyXMJPUpwRwPBlcm1awZQT1RMfcsArwRw3aug9+ftJ9ueCNB55sjfks2XLSzuZJGP7/wDj21q++4k3ftWri8Rlb2KpC7ks1JXFVIopJajV6sflnljUTqs7SGEupMc6Pww449qWVpfX/wAOkqZrFXpJJ0gq5eh4HtrAF8kkEiM8M6Dt/wAuRjwC3HXhj64cIjKMvLXwJMk4UBQOABwP2GvO7/PjH94e41gCxz+Z1+/N7D31DJRkkHp7mBis0Ks7f7pdYK3J/of/AIW/0OrH3daGN23cncgO6GFB+rN7f/HJ1SFy61GzXWDC39wZGYq9fD494xYkVuwSaTswMNXyKEewQVQsPn8pBltw2qOzqk+8s3/Eq+28f9Xmb6CKMWpgPvWEBYkPZz4ogQpblOeSSTmvhhZXV8I7Hhu5r2vdXJX/AOMrf9Pb/o1jPTGIeTM52GC5bV4W6wU1lLqwbkDu0sSgDhvtWTnryhPFWt/6hbty++t5ZHdedaA378itIsEfSNFVQiIo/uqiqo5JJA5JJ5J0GurXBVwUV2KbJucnJ9xpppqZAaaaaAan3obslt5b0ga9Smm29jXWxlpACEKe5SAsGUhpWXoOp7AFnAIRuIDrrfZGDxfpP6eQU925LG4WzPO0+SnllEhlmDKgiiEa+SYQq6AhBIFZ5WDdW517FZfJCyTiuOpPHsT5LJTWrb95JpDJK36knWw8w9uCPbWjqZGc0UnTBLgBJ4T5N2TNFaHMzLL0xtYtK4VU5Bklg7F1I5Ucnxu56V4chAdzZlRb7Iow2Op4yKGMxqnEZnjs2A/PZu/lBBYdQvUa8t1tNfEmRo8K1V/MYkqrxWp2CwVp5CfgLGT/AKawb28MTs3dVOlkfrMhnEk8keAxEBuZKXqFcjwqf5fCN5P5hTlVYr2441Fcp9BmtvDAXMXn8zVeKOOZMlunJ2VssvBDyRrMsZYsob2UKD7gDgakm19o5K21mP6bC7LxtvqbKUKEVT6gLz1BjiAaQDs3HYkDk/qdY5+K1dI/b6m+HgNlb3WtL+f4RH9mncWNw2LwuYhxGQ3FTq1atWrh0klSuIIo1jew7MyzWI2X7Vj4hRx5OXcRGKA789UsDtSqq4q1jNy5xpVLV1kaanCnCuWlljIEpYN1CRueD27spXo1vbu9KcJmvq8NPvPNDa00MXbG42nFWmnnQgiSe1J3MicliIgioCIzx2Ts0m2HtraewjPkNnbZxu360Xaa7cZ2d1gHVpBJZmYssQEYYr2CgrzxzydYHr6FNOUt0vhHnBpt0jlHbCOIrlt93/vRFaZvIyyZ6OGbI0sxWprH47FaCOGtdLASS2Fji+weZ3aUleee/wAn51utw5Xak0lbO2a9Pb0FHM4k05Jb3h+laa3HFbVH5X7Javm8iH7SkZZh9nIrPYOY3Du7I3sHtH09tbyxGHkbH4XNxXVxbz04G6xLO8qCKSYQtBwFWN+oJYNySJf6Q5hdxSW81uPZNjCVKkcGR2hBbtM3ltrE3M7jr3lLiaMxTfTvHEqsY+H7GTTHT2wuc88Fl2sos06rS5xj5fNm5oXKuQksLhPrtxeG3HVIwNGW7E0j9DwLYAqL1WRWYvMoUc88H21vsfiszGTdyseI21jIRMthp5Tlcl7zLHAEhhH08Uzgkqve3y7xoI3PKnd38/k8htgH+y25BuBvflqVq/Tj+/8ARvpmcMg//jqT/wAQH3Vzu3PZKhjpv47Vzla8siI5GPFSCjSnQxfya7Wpes79bXFlvvYPJH2CL1E1vTy0kv3f2OZDTV9uWbjbFvb1Bsy+E2rlreXq48yXLGRzOPmvZUoIohFPf+rkaND0RmUBY1EbdV7dVb09Rdmba3fiMkW3nua/ttLBealhMvTjgQO6tGsqLWDOqlF6GUuVK/PJJMbx8eGu7MXDY7D78/hAla1Ma+OgAsED2aR+eWCj4HwP316+nuNmrY/I2cZgt4z1cmhjSWvQikD1wQVPLMB255+ORrxS9rcly+5pnButxUv6fcp31M/DnlcFJn8jtrcGLyeMxtM5JKdiV48gtUKHfsOgiZo1JJIcdgvIUEhNUTrufczSWL0NbLYvdQgzKDG3YZqBgaWv1+5IzDKGJPUcryAylgeQSDVnqR6C7btXL+U2pkcptyAiEV8bk8FaFaEgIjl7PeRx2Idx9h4JC+w9xpqt3Z3cFNtSjjbzx/JzXprZbpw1nbu58rt+7JDLaxl2anM8JJjZ4nKMVJAJUlTxyAePyGtbq8oGmmvahUtX70FGjWmtW7MixQQQxl5JXY8KqqPdmJIAA9yToCaehAz0Xqfi8jt3FYnIW8eWssctGzUqqBSv1ExUhlEZZWUqe3cIFDMVU3rhMbBidwz56petZXc1qWby7gni8VmRX4UJDCrFKyhAFHTlwCyhlQ9AxWDx+08JDtHCRRMYzGcnZiYu2RvKOGfsVUmJGLLEvAAXliOzMTauzduxYWsJrIWTIyDl2+fEP7i/6nXz3ifinl+zD/p9LoPDoVQVtyy30RosJse3YP1GWlNVHPZowe0rk/mx+Af++pvgtlUxC01LFo8Se72bLcqP35P+msDcebnxU2KxuMpQX9wZ2WaDDVbTGOszQp3mnncfEMKEMyry7nhVHuSu4SCpWlnNOW7OZyvntXJ2lnsdeeCxP2ogLOywxhIkMj9EXseeJJS8lXXvGeiXf5/oaZ6qdlnl19uvwX+T1aGCv/LryIQPYmNAi/8AT9da/JZnBYi9Uo5fKpVu3R2rUoa0tu5MnV2MiVoFaUxgRPzJ16jqRzzrC3juNtt06k0EKy37M3aHzUnsVq9aF4zbtTgPH9kccgCr3DPJJGqg8nVBZbdGSyWQygxlnKBcxbM9qW1Mr3r7e4j87xqq8Ip6pEgWONRwByWJ1aHwyFsVdd0fRLuY79XJScK+q6sne7vUnPWZyMFYx218bLGgWXI1RezKP0WTv9MrmtErMRF0kYuoDsQCVUa+9Jms8cbHuyZrLWpfLBPuib+TNKsCwt9Hik6wyMAxKpHDLJ2l/qZiDr02LteTEJBduQvLdu1bUlcV+3kQQyVYmjjK8Mru1teZU5dEjkEfWRlkjyMvt/cHSxgl9UdqYivNL5pqnkmovZlZQDLMGTySysAOzuzM3HLEnX0VNMao+xHC+X3OVKzzHy8/N/2Ro/UnJNjcNlctv7I2MnjbMsSY6tJYEk1+aI+Qjt7q5V2AdV71IlVfazIUY88743zn932WfJWPDXbxs1SCSTxNIikeV+7MzyHu5LuWI7lQQoCjo+3tbd2Awq/Seo1a1Uro3Wri7cxCoqknqWCoo9uPdlHJHJHzr2v083jNl43cVjcO9LBuiRvBNKmPhrqkkaEyzmSQEssvdFhWVnCt9o6txpjNrsUygn+Y5x2j6f5/OClkLNC9jcBZLEZWWm5hkCt1ZYfgTS9gVEan555KqGZehcbtahiPT+1Ji9w4TB5LHWGr46ne/wB4goXo3rPKbJ8TrPaaGQhj0IRiEATxhUheQ3BkJ84uQgyuUkFafyUpLc/kliAP2nn4DfHPGveDcVqJa0cWNwkUFYP44IcZDFCWbqGkKIApkIRQWI54UD8tUy1KZdHTNEUx+3Nz4v1s2TltwZyDcC5HP0ooMtHdaz9QYpK4ZT5OJR0Dxrw6r8fbyBzr+etGOy+4Ny7Pw+Hx9/LX/wCAGGCtVheaZ1jt3CeqKCSAqk+w9gDqz8B6kblrPDjmzlvE4dnbzxYqGONuG+SAR7n/AB1ivuGCth7dHFZXc0cn1TPU7WgkIib3bui+/cn8x7a99Sspj0zw0fn8N22tz7KwuZyu5dv5fAtBnsLPAcjUkq+VVNpZOvcDsAJF54+ARz86jPpB6Zby2h6m4vKbiw+K/himaneI3DR5hhsQvA8nCSsx6LKX6gct14HBPOsuzkL1oEWrtqxyeT5ZWb3/AF9z863FbcUENOCCHbeD7xL1M0tcyM/7nk8c6h6pZfBL0jwuSqPX+jJDvevlmWki5nG17oWsOPuVTBK7+wHd5YJZCRzz3DE8k8V5q2PX2t58VtTPGVVeSK3jjAkXVVEMonDg8/n9X168Djx/J59qn1sreYJmOxYm0NWl+G3FPLvG3ud4e0G36b2EaSp5Yjak/lQKWPsjgu0yH3PMB4Ht2WrdX3+FfDZ7O7c3dRwePsXT9ZjZJ1i49lCW+OeT8cn/ALaje3GuTj1LdJGMroqfTJbHprTWbNNccErSTlOfzc+w1ZCyE8Af1E8AnWq2FsnduPx9pbWBtwySTAgMB7gD9jqTJtrcSMrfwez9rA/A/X/HXwuq0187fceP0Z9XdqanLiS/cg+zL4zfqx6l50Ubq18Kae0sXZmi8aokRke7EpU9X5nRZOW5cLIn9IbrqYB/f/DVUej2ai/24eruwxlGtW8hnpcrja6yFYTKk0v1MSrJ1PnCyIG6qQwrOexVVJuX+zm4P/abH+Q/+9bPGtPdLULZFuKSxhHM8OtrVT3SSeSu/WjDXbe3JsxVgvW40wUkLyCSQQY8Q3oZJlK89C9hZoW9wGAo+3YE9aS2pYhq5uGSwQqkFQ5P9JPwf/3666lzuyc5mcV9C2JlFiKYXKDyyvHCltEdE83T3aB1keKVODzHI/HBAI5s2ttHM75xS5/Y237tzETkgRCZJXpyAkNXkbn3ZfYgkAsjRsVXtwOvo3Oeng3Fpx4ax8DHcob5wzw+c/qTnc1wUc9twKaqY6WthPqnsuRCH+py3UuVIPAPY+x/IH8tTc5bG4+VI1xl+K0n+8yfRHL2ljkn/mv/ADK8E0JfvIxYpI4LlvuJ51pTtvcGC9NruUzO3biVsfWh+urPjK9lhTrQzOwKzSxoVSRpphIrtKxtMhTrEpNb2ZsddwdXcGB2Dt/P4S4oVLlStNE8EwA7wTRq58Uq8+49wQVZSVYE9TLismGEFjbnoTT1h9Q8rRo42rhreVp2nd3kksTX0lTrxx/KtRx+x7ezBSOQQDyDqnc7bz+SsPdzc+StSKQGlts7Fe3uo5b45+RqcCttysaEG5dqbV27fyitLSrZTMT1WmhQe8jFuVijPBVTIy9ypC8kazvUe5kt4Y6vTizvp2oryLJHTx+5K9m5el6CKMf18yMF4VVA/P8AM8aqnCUuS+ucYYRqNhY/a82IM+R2nuHcDM/jmsVLSwCBgjSFIU4JnkEaO5Xn+lWPHAJ1HN1YibBy0pX4+kyNUW6cnlWQPGWK8hhxyOVPBIViCpZI2JRTYeruIbLvtvI4ODbtpkyVMWWr2oB5mnNup7N3mdQsXCr2V44SeU5ZJZnN1bIx2Oxou73x2MzeIrW/Pijh5bsiNLK0ywA9fCJAGCkFx0clWK8Hg6lKCx1PfOcZvPQgVVZrT9a0MszfpGhY/wDYa2V3BZrHUI8hlMdNjKMkohS1f4qws5BIUPIVUkhWPHPPAP6ak+3/AFVmzFacYH1ZgwEFaN5Z4cpjosdN4kCkunh7rKeW4EaMZWKnhCPcx3cPrfhpMXA1Xc/qfmLxkAsQWb0dCDoVPYqyPMSe3A6leOCfcccGK03xJPU/DB7Xtu5fGYWhuK5USxhLj8Q26dqOeKYhipRXjZh25DD9iD+mrf3bsyzX2UFz21cDhZpsfJcxU+NDiWJ4k8j17LMf5jNGGIb8iDqisVu/bG+BNQS3ktu5mLiepLnM8tira68l0aV44xDIOAyluVbhl5DFQ1iesHr1dt7IqSWZ9uNlIK8lajXpW4sgJrDqI5LMyo3WONYmforc9pGX7WRX4nGnDaaK53ZSaZTnrPO8uxtrIeDGmRyXRuPnlKfI5/bgaqnW73XuzcO6Z45c7k5LSwkmCBVWKCAlVVjHCgEcZYIvbqo7Ecnk++tJrTXHbFRM1kt8nIaaaamQGmmmgGmmmgGmmmgGmmmgGmmmgJ8/rF6iPCEfPRNKK/04tHHVvquvXr28/j8vk/Pydu/Pv2599QHTTTAGmmmgGmmmgGmmmgGmmmgGmmmgGmmmgGmmmgGmmmgGmmmgGmmmgGmmmgGmmmgGmmmgP//Z" alt="Furahia" />
+      <div>
+        <span class="nav-drawer-logo-text">FURAHIA TRANSFER</span>
+        <span class="nav-drawer-logo-sub">TRANSFERS &amp; LOGISTICS</span>
+      </div>
+    </a>
+    <button class="nav-drawer-close" id="navClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+  </div>
+  <div class="nav-drawer-links">
+      <a href="index.html">Home<span class="drawer-arrow">→</span></a>
+      <a href="about.html">About<span class="drawer-arrow">→</span></a>
+      <a href="hospitality.html">Hospitality<span class="drawer-arrow">→</span></a>
+      <a href="vehicles.html">Our Fleet<span class="drawer-arrow">→</span></a>
+      <a href="impact.html" class="active">Impact<span class="drawer-arrow">→</span></a>
+      <a href="contact.html">Contact<span class="drawer-arrow">→</span></a>
+  </div>
+  <div class="nav-drawer-foot">
+    <a href="contact.html" class="nav-drawer-cta">Book a Transfer</a>
+    <div class="nav-drawer-contact">
+      <a href="tel:+255700000000"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>+255 700 000 000</a>
+      <a href="https://wa.me/255700000000"><svg viewBox="0 0 24 24"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.3-.148-1.134-.447-2.157-1.38-.796-.8-1.333-1.788-1.49-2.087-.16-.3-.017-.462.124-.61.13-.136.3-.354.452-.527.15-.174.2-.3.3-.498.099-.204.05-.382-.025-.531l-.92-2.207c-.24-.584-.487-.51-.669-.51h-.57c-.198 0-.52.074-.792.372S6 8.35 6 9.813s1.07 2.865 1.219 3.075c.148.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345z"/><path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896.002-3.176-1.24-6.165-3.48-8.45z"/></svg>WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ═══════════════════════════════════════
+     HERO — STRONG HEADLINE
+     ═══════════════════════════════════════ -->
+<div class="page-hero">
+  <div class="hero-video-bg">
+    <video autoplay muted loop playsinline preload="auto" id="heroBgVideo">
+      <source src="Video.mp4" type="video/mp4"/>
+    </video>
+  </div>
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+  <div class="hero-vline"></div>
+  <!-- Decorative water SVG right side -->
+  <div class="hero-water">
+    <svg viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <radialGradient id="wg1" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="rgba(14,100,160,0.25)"/>
+          <stop offset="100%" stop-color="rgba(8,20,40,0)"/>
+        </radialGradient>
+      </defs>
+      <rect width="400" height="800" fill="url(#wg1)"/>
+      <!-- Ripple circles -->
+      <circle cx="200" cy="400" r="60"  fill="none" stroke="rgba(200,168,75,0.12)" stroke-width="1"/>
+      <circle cx="200" cy="400" r="120" fill="none" stroke="rgba(200,168,75,0.08)" stroke-width="1"/>
+      <circle cx="200" cy="400" r="180" fill="none" stroke="rgba(200,168,75,0.05)" stroke-width="1"/>
+      <circle cx="200" cy="400" r="240" fill="none" stroke="rgba(200,168,75,0.03)" stroke-width="1"/>
+      <!-- Water droplet -->
+      <path d="M200 320 Q230 360 200 410 Q170 360 200 320Z" fill="rgba(200,168,75,0.18)" stroke="rgba(200,168,75,0.4)" stroke-width="1.5"/>
+      <circle cx="200" cy="400" r="8" fill="rgba(200,168,75,0.4)"/>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/ Community Impact</span></div>
+    <div class="hero-tag">Corporate Social Responsibility</div>
+    <h1 class="page-title">
+      Bringing <em>Clean Water</em><br>
+      <strong>to Our Community</strong>
+    </h1>
+    <p class="hero-tagline">At Furahia Transfer, we believe businesses should play a meaningful role in the communities around them. This is our story of how we went from transporting people — to transforming lives.</p>
+    <div class="hero-well-name">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      The Furahia Community Well — Arusha, Tanzania
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     INTRO STATEMENT
+     ═══════════════════════════════════════ -->
+<div class="intro-statement">
+  <p class="intro-statement-text reveal">
+    "A business that moves people has a responsibility to <em>move communities forward</em> — not just from A to B, but toward a better tomorrow."
+  </p>
+  <div class="intro-statement-attr reveal">— Founder &amp; CEO, Furahia Transfer Group</div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PHOTO SECTION — Visual documentation
+     ═══════════════════════════════════════ -->
+<div class="photo-section">
+  <div class="photo-grid">
+    <!-- Main photo — the well -->
+    <div class="photo-cell photo-cell-main">
+      <div class="photo-svg">
+        <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%">
+          <rect width="800" height="500" fill="#0a120a"/>
+          <!-- Sky -->
+          <rect width="800" height="280" fill="rgba(8,18,30,0.95)"/>
+          <!-- Ground -->
+          <rect x="0" y="280" width="800" height="220" fill="rgba(10,14,8,0.98)"/>
+          <!-- Sunlight glow -->
+          <ellipse cx="400" cy="160" rx="300" ry="120" fill="rgba(200,168,75,0.06)"/>
+          <ellipse cx="400" cy="160" rx="160" ry="60" fill="rgba(200,168,75,0.05)"/>
+          <!-- Distant hills silhouette -->
+          <path d="M0 280 Q100 220 200 250 Q300 200 400 240 Q500 210 600 245 Q700 215 800 255 L800 280 Z" fill="rgba(6,12,6,0.9)"/>
+          <!-- Well structure — stone base -->
+          <ellipse cx="400" cy="340" rx="110" ry="28" fill="rgba(50,40,30,0.9)" stroke="rgba(200,168,75,0.25)" stroke-width="1.5"/>
+          <rect x="290" y="295" width="220" height="48" fill="rgba(45,35,25,0.95)" rx="4" stroke="rgba(200,168,75,0.2)" stroke-width="1"/>
+          <!-- Stone texture lines -->
+          <line x1="310" y1="310" x2="490" y2="310" stroke="rgba(200,168,75,0.08)" stroke-width="1"/>
+          <line x1="310" y1="325" x2="490" y2="325" stroke="rgba(200,168,75,0.06)" stroke-width="1"/>
+          <line x1="350" y1="295" x2="350" y2="343" stroke="rgba(200,168,75,0.06)" stroke-width="1"/>
+          <line x1="400" y1="295" x2="400" y2="343" stroke="rgba(200,168,75,0.06)" stroke-width="1"/>
+          <line x1="450" y1="295" x2="450" y2="343" stroke="rgba(200,168,75,0.06)" stroke-width="1"/>
+          <!-- Well opening -->
+          <ellipse cx="400" cy="302" rx="75" ry="18" fill="rgba(4,14,24,0.95)" stroke="rgba(200,168,75,0.3)" stroke-width="1.5"/>
+          <!-- Water surface shine -->
+          <ellipse cx="400" cy="302" rx="55" ry="10" fill="rgba(14,60,100,0.6)"/>
+          <ellipse cx="390" cy="300" rx="20" ry="4" fill="rgba(200,168,75,0.12)"/>
+          <!-- Well frame / posts -->
+          <rect x="310" y="200" width="14" height="96" fill="rgba(80,60,40,0.95)" rx="3" stroke="rgba(200,168,75,0.2)" stroke-width="1"/>
+          <rect x="476" y="200" width="14" height="96" fill="rgba(80,60,40,0.95)" rx="3" stroke="rgba(200,168,75,0.2)" stroke-width="1"/>
+          <!-- Crossbeam -->
+          <rect x="305" y="195" width="190" height="16" fill="rgba(90,70,50,0.95)" rx="4" stroke="rgba(200,168,75,0.25)" stroke-width="1"/>
+          <!-- Roof -->
+          <polygon points="270,195 400,140 530,195" fill="rgba(100,80,55,0.9)" stroke="rgba(200,168,75,0.2)" stroke-width="1.5"/>
+          <!-- Roof tiles hint -->
+          <line x1="310" y1="182" x2="400" y2="148" stroke="rgba(200,168,75,0.07)" stroke-width="1"/>
+          <line x1="350" y1="192" x2="400" y2="157" stroke="rgba(200,168,75,0.07)" stroke-width="1"/>
+          <line x1="450" y1="182" x2="400" y2="148" stroke="rgba(200,168,75,0.07)" stroke-width="1"/>
+          <line x1="490" y1="192" x2="400" y2="157" stroke="rgba(200,168,75,0.07)" stroke-width="1"/>
+          <!-- Handle / winch -->
+          <rect x="370" y="200" width="60" height="8" fill="rgba(120,90,60,0.9)" rx="4"/>
+          <circle cx="370" cy="204" r="6" fill="rgba(200,168,75,0.3)" stroke="rgba(200,168,75,0.5)" stroke-width="1"/>
+          <circle cx="430" cy="204" r="6" fill="rgba(200,168,75,0.3)" stroke="rgba(200,168,75,0.5)" stroke-width="1"/>
+          <!-- Rope / bucket -->
+          <line x1="400" y1="210" x2="400" y2="292" stroke="rgba(200,168,75,0.2)" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <!-- Ground foliage -->
+          <ellipse cx="250" cy="360" rx="50" ry="18" fill="rgba(10,20,10,0.9)"/>
+          <ellipse cx="560" cy="355" rx="45" ry="16" fill="rgba(10,20,10,0.9)"/>
+          <!-- Person silhouettes -->
+          <ellipse cx="220" cy="342" rx="10" ry="28" fill="rgba(200,168,75,0.15)"/>
+          <circle  cx="220" cy="308" r="12" fill="rgba(200,168,75,0.12)"/>
+          <ellipse cx="570" cy="340" rx="10" ry="26" fill="rgba(200,168,75,0.12)"/>
+          <circle  cx="570" cy="308" r="11" fill="rgba(200,168,75,0.1)"/>
+          <!-- Tree left -->
+          <rect x="120" y="240" width="8" height="80" fill="rgba(50,40,25,0.8)"/>
+          <ellipse cx="124" cy="225" rx="28" ry="40" fill="rgba(14,30,14,0.8)"/>
+          <!-- Tree right -->
+          <rect x="660" y="250" width="8" height="70" fill="rgba(50,40,25,0.8)"/>
+          <ellipse cx="664" cy="235" rx="24" ry="36" fill="rgba(14,30,14,0.8)"/>
+          <!-- Gold glow on well -->
+          <ellipse cx="400" cy="300" rx="90" ry="30" fill="rgba(200,168,75,0.04)"/>
+          <!-- Stars -->
+          <circle cx="150" cy="60"  r="1.5" fill="rgba(200,168,75,0.5)"/>
+          <circle cx="300" cy="40"  r="1"   fill="rgba(200,168,75,0.4)"/>
+          <circle cx="500" cy="70"  r="1.5" fill="rgba(200,168,75,0.45)"/>
+          <circle cx="650" cy="45"  r="1"   fill="rgba(200,168,75,0.4)"/>
+          <circle cx="720" cy="80"  r="1.5" fill="rgba(200,168,75,0.35)"/>
+          <!-- Moon -->
+          <circle cx="680" cy="80" r="22" fill="rgba(200,168,75,0.08)" stroke="rgba(200,168,75,0.15)" stroke-width="1"/>
+          <circle cx="680" cy="80" r="14" fill="rgba(200,168,75,0.1)"/>
+        </svg>
+      </div>
+      <div class="photo-label">The Well</div>
+      <div class="photo-caption">The Furahia Community Well — constructed 2024, Arusha region, Tanzania</div>
+    </div>
+    <!-- Side photo — community using it -->
+    <div class="photo-cell">
+      <div class="photo-svg">
+        <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%">
+          <rect width="400" height="500" fill="#0a0e0a"/>
+          <!-- Sky at dusk -->
+          <rect width="400" height="250" fill="rgba(10,22,14,0.95)"/>
+          <rect x="0" y="250" width="400" height="250" fill="rgba(8,12,6,0.98)"/>
+          <!-- Warm glow -->
+          <ellipse cx="200" cy="200" rx="180" ry="100" fill="rgba(200,168,75,0.06)"/>
+          <!-- Community gathering — figure group -->
+          <!-- Background figures -->
+          <ellipse cx="100" cy="330" rx="14" ry="40" fill="rgba(200,168,75,0.1)"/>
+          <circle  cx="100" cy="284" r="16" fill="rgba(200,168,75,0.09)"/>
+          <ellipse cx="310" cy="335" rx="13" ry="38" fill="rgba(200,168,75,0.1)"/>
+          <circle  cx="310" cy="291" r="15" fill="rgba(200,168,75,0.09)"/>
+          <!-- Foreground figure with water container -->
+          <ellipse cx="200" cy="345" rx="18" ry="50" fill="rgba(200,168,75,0.18)"/>
+          <circle  cx="200" cy="288" r="20" fill="rgba(200,168,75,0.15)"/>
+          <!-- Water container -->
+          <rect x="182" y="370" width="36" height="45" fill="rgba(14,60,100,0.5)" rx="4" stroke="rgba(200,168,75,0.25)" stroke-width="1"/>
+          <!-- Water shine in container -->
+          <ellipse cx="200" cy="374" rx="14" ry="5" fill="rgba(200,168,75,0.12)"/>
+          <!-- Child figure -->
+          <ellipse cx="260" cy="355" rx="10" ry="32" fill="rgba(200,168,75,0.13)"/>
+          <circle  cx="260" cy="317" r="13" fill="rgba(200,168,75,0.11)"/>
+          <!-- Ground -->
+          <ellipse cx="200" cy="400" rx="180" ry="18" fill="rgba(6,10,4,0.8)"/>
+          <!-- Trees/foliage -->
+          <rect x="40"  y="220" width="7" height="80" fill="rgba(40,30,15,0.8)"/>
+          <ellipse cx="44" cy="205" rx="22" ry="32" fill="rgba(12,26,12,0.8)"/>
+          <rect x="340" y="225" width="7" height="75" fill="rgba(40,30,15,0.8)"/>
+          <ellipse cx="344" cy="210" rx="20" ry="30" fill="rgba(12,26,12,0.8)"/>
+          <!-- Smiling figures — head dots suggesting happiness -->
+          <circle cx="100" cy="278" r="4" fill="rgba(200,168,75,0.3)"/>
+          <circle cx="310" cy="285" r="3.5" fill="rgba(200,168,75,0.25)"/>
+          <!-- Stars -->
+          <circle cx="80"  cy="50" r="1.5" fill="rgba(200,168,75,0.5)"/>
+          <circle cx="200" cy="30" r="1"   fill="rgba(200,168,75,0.4)"/>
+          <circle cx="330" cy="60" r="1.5" fill="rgba(200,168,75,0.45)"/>
+          <!-- Light emanating from well area (off screen) -->
+          <rect x="0" y="390" width="400" height="4" fill="rgba(200,168,75,0.08)"/>
+        </svg>
+      </div>
+      <div class="photo-label">Community</div>
+      <div class="photo-caption">Families accessing clean water from the Furahia Community Well</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     STORY SECTION
+     ═══════════════════════════════════════ -->
+<section class="story">
+  <div class="story-aside reveal-l">
+    <div class="story-aside-card">
+      <svg class="aside-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <div class="aside-title">The Furahia Community Well</div>
+      <p class="aside-text">Funded and constructed by Furahia Transfer Group in 2024, this well provides reliable access to clean water for families in the Arusha region — named in our community's honour.</p>
+    </div>
+    <div class="story-aside-card">
+      <svg class="aside-icon" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+      <div class="aside-title">Our Responsibility</div>
+      <p class="aside-text">We operate in this community. Our drivers live here. Our clients pass through here. Improving life in this area is not charity — it is the right thing for a responsible business to do.</p>
+    </div>
+    <div class="story-aside-card">
+      <svg class="aside-icon" viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+      <div class="aside-title">Project Year</div>
+      <p class="aside-text">Funded in 2023, completed and inaugurated in early 2024. The well is now fully operational and maintained by a community water committee supported by Furahia Transfer.</p>
+    </div>
+  </div>
+  <div class="reveal-r">
+    <div class="label">Our Community Water Initiative</div>
+    <h2 class="sec-title">A Well That Serves<br><em>Our Neighbours</em></h2>
+    <p class="body-text">At Furahia Transfer, we believe businesses should play a positive role in the communities around them. Transport brought us here, but it is the people of this community — our neighbours, our employees' families, the households our drivers pass every day — who make this a place worth investing in.</p>
+    <p class="body-text">To act on that belief, we funded and constructed a water well near our operational headquarters in the Arusha region. The Furahia Community Well now provides reliable, year-round access to clean water for families in the surrounding area — addressing a daily challenge that many had faced for years.</p>
+    <p class="body-text">Access to water is not a luxury. It is a basic necessity of life. And we are proud that this project helps improve daily life — and daily dignity — for many households in our community.</p>
+    <div class="gold-rule"></div>
+    <p class="body-text" style="font-family:var(--font-display);font-size:18px;font-style:italic;color: var(--text-muted)">"We didn't build this well because it was required of us. We built it because it was the right thing to do — and because these are our neighbours."</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     PROBLEM — WHY THIS MATTERS
+     ═══════════════════════════════════════ -->
+<section class="problem">
+  <div class="problem-inner">
+    <div class="reveal-l">
+      <div class="label">Why This Project Matters</div>
+      <h2 class="sec-title">The Problem<br>We Helped <em>Solve</em></h2>
+      <p class="body-text">Many members of the surrounding community previously had to travel long distances — sometimes over 3 kilometres each way — to access water. For families without vehicles, this meant hours of daily effort, often carried by women and children on foot.</p>
+      <p class="body-text">During the dry season, the challenge became even more acute. Water sources became unreliable, and competition for access increased. Children missed school. Adults lost productive hours. The burden was silent but significant.</p>
+      <p class="body-text">By constructing a well close to residential areas and our operational base, we aimed to reduce that burden — making clean water accessible, convenient, and dependable for the families who needed it most.</p>
+      <div class="before-after">
+        <div class="ba-item">
+          <svg class="ba-icon ba-icon-before" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+          <div>
+            <div class="ba-label">Before</div>
+            <div class="ba-text">Families walking 3+ km each way to reach water — daily, every season, in all weather conditions.</div>
+          </div>
+        </div>
+        <div class="ba-item">
+          <svg class="ba-icon ba-icon-after" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <div>
+            <div class="ba-label">After</div>
+            <div class="ba-text">Clean water accessible within metres of home — reliable year-round, maintained, and free for community members.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="problem-visual reveal-r">
+      <div class="problem-circle">
+        <div class="problem-circle-before" style="position:absolute;inset:-16px;border-radius:50%;border:1px dashed rgba(200,168,75,.2)"></div>
+        <svg class="problem-circle-icon" viewBox="0 0 24 24"><path d="M12 1a11 11 0 1 0 0 22A11 11 0 0 0 12 1zm0 4a7 7 0 1 1 0 14A7 7 0 0 1 12 5zm0 2a5 5 0 1 0 0 10A5 5 0 0 0 12 7zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg>
+      </div>
+      <div class="problem-stat problem-stat-1">
+        <div class="pstat-num">3km+</div>
+        <div class="pstat-label">Previous water<br>travel distance</div>
+      </div>
+      <div class="problem-stat problem-stat-2">
+        <div class="pstat-num">2hrs</div>
+        <div class="pstat-label">Daily time lost<br>per household</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     IMPACT NUMBERS
+     ═══════════════════════════════════════ -->
+<div class="impact-nums reveal">
+  <div class="impact-nums-inner">
+    <div class="imp-item">
+      <div class="imp-val">200+</div>
+      <div class="imp-label">Families Served</div>
+    </div>
+    <div class="imp-item">
+      <div class="imp-val">1,000+</div>
+      <div class="imp-label">People Benefiting</div>
+    </div>
+    <div class="imp-item">
+      <div class="imp-val">3km</div>
+      <div class="imp-label">Distance Saved Daily</div>
+    </div>
+    <div class="imp-item">
+      <div class="imp-val">365</div>
+      <div class="imp-label">Days a Year, Operational</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     IMPACT POINTS
+     ═══════════════════════════════════════ -->
+<section class="impact-points">
+  <div class="impact-points-inner">
+    <div class="reveal-l">
+      <div class="label">Community Impact</div>
+      <h2 class="sec-title">What This Well<br><em>Changes Every Day</em></h2>
+      <p class="body-text">Impact is not just a number — it is the hours given back to families, the children who arrive at school on time, the mothers who no longer carry heavy loads for kilometres before dawn. These are the real results of the Furahia Community Well.</p>
+      <div class="impact-list">
+        <div class="impact-item">
+          <div class="impact-item-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+          <div>
+            <div class="impact-item-title">Reliable Water Access</div>
+            <p class="impact-item-text">Clean water is now available to nearby households year-round — dry season and wet season — without travel or waiting.</p>
+          </div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-item-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+          <div>
+            <div class="impact-item-title">Hours Given Back</div>
+            <p class="impact-item-text">Families save up to 2 hours every day previously spent walking to collect water — time now available for work, education, and rest.</p>
+          </div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-item-icon"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9z"/></svg></div>
+          <div>
+            <div class="impact-item-title">Children in School on Time</div>
+            <p class="impact-item-text">With water no longer requiring early morning journeys, children can reach school on time and with more energy to learn.</p>
+          </div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-item-icon"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+          <div>
+            <div class="impact-item-title">Healthier Living Conditions</div>
+            <p class="impact-item-text">Clean, safe water reduces waterborne illness risk and supports better hygiene practices for all households in the area.</p>
+          </div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-item-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+          <div>
+            <div class="impact-item-title">Stronger Community Bonds</div>
+            <p class="impact-item-text">The well has become a gathering point — strengthening the relationship between Furahia Transfer and the people who surround us.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal-r">
+      <div class="impact-visual-map">
+        <div class="map-pin-group">
+          <div style="position:relative;width:80px;height:80px;margin:0 auto 16px">
+            <div class="map-pulse"></div>
+            <div class="map-pulse map-pulse-2"></div>
+            <svg class="map-pin-icon" viewBox="0 0 24 24" style="position:relative;z-index:1"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div class="map-pin-label">Furahia Community Well</div>
+          <div class="map-pin-sub">Arusha Region, Tanzania</div>
+        </div>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);padding:32px">
+        <div class="label" style="margin-bottom:20px">Project Details</div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border-soft);padding-bottom:14px">
+            <span style="font-family:var(--font-cond);font-size:11px;letter-spacing:2px;color: var(--text-muted);text-transform:uppercase">Project Name</span>
+            <span style="font-size:13px;color: var(--text)">Furahia Community Well</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border-soft);padding-bottom:14px">
+            <span style="font-family:var(--font-cond);font-size:11px;letter-spacing:2px;color: var(--text-muted);text-transform:uppercase">Location</span>
+            <span style="font-size:13px;color: var(--text)">Arusha Region</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border-soft);padding-bottom:14px">
+            <span style="font-family:var(--font-cond);font-size:11px;letter-spacing:2px;color: var(--text-muted);text-transform:uppercase">Completed</span>
+            <span style="font-size:13px;color: var(--text)">Early 2024</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border-soft);padding-bottom:14px">
+            <span style="font-family:var(--font-cond);font-size:11px;letter-spacing:2px;color: var(--text-muted);text-transform:uppercase">Households</span>
+            <span style="font-size:13px;color:var(--accent)">200+ families</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border-soft);padding-bottom:14px">
+            <span style="font-family:var(--font-cond);font-size:11px;letter-spacing:2px;color: var(--text-muted);text-transform:uppercase">Funded By</span>
+            <span style="font-size:13px;color: var(--text)">Furahia Transfer Group</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span style="font-family:var(--font-cond);font-size:11px;letter-spacing:2px;color: var(--text-muted);text-transform:uppercase">Status</span>
+            <span style="font-size:13px;color:var(--accent);font-family:var(--font-cond);letter-spacing:1px">● Fully Operational</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     QUOTE — FROM OUR TEAM
+     ═══════════════════════════════════════ -->
+<div class="quote-section">
+  <div class="q-icon reveal">
+    <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+  </div>
+  <p class="q-text reveal">
+    "Supporting the community that supports our business is <em>very important to us.</em> This well is a small step toward improving everyday life for our neighbours — and a reminder that the most meaningful journeys are not always the ones in our vehicles."
+  </p>
+  <div class="q-divider reveal"></div>
+  <div class="q-name reveal">James Mwangi</div>
+  <div class="q-role reveal">Founder &amp; CEO, Furahia Transfer Group</div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     OUR COMMITMENT — BRAND VALUES
+     ═══════════════════════════════════════ -->
+<section class="values">
+  <div class="values-inner">
+    <div class="reveal-l">
+      <div class="label">Our Commitment to Community</div>
+      <h2 class="sec-title">Transport is Our Business.<br><em>People Are Our Purpose.</em></h2>
+      <p class="body-text">While our business focuses on transport, cargo, and hospitality services, we also believe deeply in creating positive impact wherever we operate. Community support initiatives like this well project are not a distraction from our work — they are an extension of who we are as a company.</p>
+      <p class="body-text">A responsible business does not just serve its clients. It serves its community. It invests in the people around it, protects the environment it depends on, and builds something worth being proud of — beyond the balance sheet.</p>
+      <p class="body-text">The Furahia Community Well is one visible expression of those values. It will not be the last.</p>
+    </div>
+    <div class="values-right reveal-r">
+      <div class="value-item">
+        <div class="value-dot"></div>
+        <div>
+          <div class="value-title">Responsible Business</div>
+          <p class="value-text">We believe that every shilling of revenue carries a responsibility — to the clients who trusted us, the community that surrounds us, and the environment we all share.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-dot"></div>
+        <div>
+          <div class="value-title">Long-Term Thinking</div>
+          <p class="value-text">Building a well is not a short-term gesture. It is a long-term investment in the wellbeing of a community we intend to serve and be part of for decades to come.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-dot"></div>
+        <div>
+          <div class="value-title">Genuine Action</div>
+          <p class="value-text">We do not talk about community responsibility — we act on it. The well exists because our team made it happen, not because it was convenient or required.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-dot"></div>
+        <div>
+          <div class="value-title">Measurable Impact</div>
+          <p class="value-text">Every initiative we take is tied to a real outcome — families served, hours returned, lives improved. We hold ourselves accountable to results, not intentions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     LOOKING FORWARD — FUTURE INITIATIVES
+     ═══════════════════════════════════════ -->
+<section class="future">
+  <div class="future-inner">
+    <div class="reveal">
+      <div class="label">Looking Forward</div>
+      <h2 class="sec-title">This Is Only<br><em>the Beginning</em></h2>
+      <p class="body-text" style="max-width:620px">The water well is part of our broader commitment to contribute positively to the communities we serve. We hope to support more initiatives that improve daily life and create lasting opportunity in the years ahead. Here is what we are working toward next.</p>
+    </div>
+    <div class="future-grid reveal">
+      <div class="future-card">
+        <div class="future-num">02</div>
+        <svg class="future-icon" viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+        <div class="future-title">Furahia Driving Academy</div>
+        <p class="future-text">Free vocational driving and logistics training for youth aged 18–25 in Arusha and Moshi. Graduates receive guaranteed interview placement within our fleet and partner networks.</p>
+        <div class="future-status">● Active — 240+ Graduates</div>
+      </div>
+      <div class="future-card">
+        <div class="future-num">03</div>
+        <svg class="future-icon" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21h2.13c.6-1.63 1.4-3.2 2.37-4.69-.43 3.28.03 5.42.03 5.42l2.1-2.49-.57 4.75C12.2 22.77 14 22 14 22s-1.68-5-1.01-8.52L14.42 16l.53-3.53 1.8 3.56 1.07-3.46 1.29 2.25C19.8 14.78 21 12.72 21 10c0-4.49-3.38-7.38-4-2z"/></svg>
+        <div class="future-title">Green Fleet Programme</div>
+        <p class="future-text">Transitioning 30% of our fleet to hybrid-electric vehicles by 2026. Carbon offset through certified Kilimanjaro reforestation — 12,000 trees planted in year one.</p>
+        <div class="future-status">● Active — 31% Complete</div>
+      </div>
+      <div class="future-card">
+        <div class="future-num">04</div>
+        <svg class="future-icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <div class="future-title">Rural Health Transport</div>
+        <p class="future-text">Monthly free transport runs connecting villages in Monduli and Longido to hospitals and clinics in Arusha. Over 3,000 patients transported at no cost to date.</p>
+        <div class="future-status">● Active — 3,000+ Patients</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     OTHER ACTIVE INITIATIVES
+     ═══════════════════════════════════════ -->
+<section class="other-init">
+  <div class="reveal">
+    <div class="label">All Active Programmes</div>
+    <h2 class="sec-title">Every Initiative,<br><em>Every Year</em></h2>
+  </div>
+  <div class="init-grid reveal">
+    <div class="init-card">
+      <div class="init-year">2024 — Ongoing</div>
+      <svg class="init-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+      <div class="init-name">Community Water Well</div>
+      <p class="init-text">The Furahia Community Well — clean water for 200+ families in the Arusha region, operational year-round and maintained by a community committee.</p>
+    </div>
+    <div class="init-card">
+      <div class="init-year">2023 — Ongoing</div>
+      <svg class="init-icon" viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3z"/></svg>
+      <div class="init-name">Furahia Driving Academy</div>
+      <p class="init-text">Fully subsidised professional driving and logistics training for youth aged 18–25. 240+ graduates to date.</p>
+    </div>
+    <div class="init-card">
+      <div class="init-year">2022 — Ongoing</div>
+      <svg class="init-icon" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21h2.13c.6-1.63 1.4-3.2 2.37-4.69-.43 3.28.03 5.42.03 5.42l2.1-2.49L9.32 24C12.2 22.77 14 22 14 22s-1.68-5-1.01-8.52L14.42 16l.53-3.53z"/></svg>
+      <div class="init-name">Kilimanjaro Reforestation</div>
+      <p class="init-text">1% of all corporate revenues channelled into certified tree-planting and forest restoration. 12,000 trees planted in year one.</p>
+    </div>
+    <div class="init-card">
+      <div class="init-year">2021 — Ongoing</div>
+      <svg class="init-icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      <div class="init-name">Rural Health Transport</div>
+      <p class="init-text">Monthly free transport connecting Monduli and Longido villages to Arusha hospitals. 3,000+ patients served at no cost.</p>
+    </div>
+    <div class="init-card">
+      <div class="init-year">2023 — Ongoing</div>
+      <svg class="init-icon" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+      <div class="init-name">Women in Logistics Bursary</div>
+      <p class="init-text">Annual bursaries for women pursuing logistics and business qualifications. Mentorship from our leadership team included. 15 bursaries awarded.</p>
+    </div>
+    <div class="init-card">
+      <div class="init-year">2022 — Ongoing</div>
+      <svg class="init-icon" viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+      <div class="init-name">Green Fleet Transition</div>
+      <p class="init-text">Hybrid-electric vehicle rollout across our fleet. Charging infrastructure being developed along our main corridors in partnership with TANESCO.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CLOSING CTA
+     ═══════════════════════════════════════ -->
+<div class="cta-bar reveal">
+  <h2 class="cta-left-title">Want to Partner with Us<br>on a <em>Community Initiative?</em></h2>
+  <div class="cta-actions">
+    <a href="/cdn-cgi/l/email-protection#630a0e1302001723051611020b0a021711020d100506114d000c" class="btn-dark">Partner With Us</a>
+    <a href="contact.html" class="btn-outline-dark">Contact Our Team</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">
+      
+      <img src="data:image/png;base64,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" alt="Furahia Transfers &amp; Logistics" style="height:60px;width:auto;display:block;" />
+    </div>
+      <p class="footer-desc">Africa's premier transfer and logistics group. Precision, reliability, and excellence in every engagement since 2005.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="hospitality.html">Airport Transfers</a></li>
+        <li><a href="hospitality.html">Executive Taxi</a></li>
+        <li><a href="hospitality.html">Hospitality</a></li>
+        </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="vehicles.html">Our Fleet</a></li>
+        <li><a href="impact.html">Community Impact</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:+255700000000">+255 700 000 000</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#adc4c3cbc2edcbd8dfccc5c4ccd9dfccc3decbc8df83cec2"><span class="__cf_email__" data-cfemail="355c5b535a75534047545d5c544147545b465350471b565a">[email&#160;protected]</span></a></li>
+        <li><a href="#">Arusha, Tanzania</a></li>
+        <li><a href="#">24/7 Dispatch</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Furahia Transfer Group. All rights reserved.</div>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a class="whatsapp-float" href="https://wa.me/255700000000?text=Hello%20Furahia%20Transfer!%20I%27d%20like%20to%20make%20a%20booking." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M19.11 17.29c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.14-1.12-.41-2.14-1.32-.79-.71-1.33-1.58-1.49-1.85-.16-.27-.02-.41.12-.55.12-.12.27-.31.41-.47.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.47-.07-.14-.61-1.47-.84-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27s.97 2.64 1.11 2.82c.14.18 1.91 2.92 4.63 4.1.65.28 1.15.45 1.55.58.65.21 1.24.18 1.71.11.52-.08 1.61-.66 1.84-1.29.23-.63.23-1.16.16-1.27-.06-.11-.25-.18-.52-.32zM16.02 3.2c-7.07 0-12.8 5.71-12.8 12.76 0 2.26.6 4.47 1.73 6.41L3.12 28.8l6.6-1.73a12.8 12.8 0 0 0 6.3 1.68h.01c7.06 0 12.79-5.72 12.79-12.77 0-3.41-1.33-6.62-3.74-9.02a12.73 12.73 0 0 0-9.06-3.76zm0 23.39h-.01a10.66 10.66 0 0 1-5.43-1.49l-.39-.23-3.92 1.03 1.05-3.82-.25-.39a10.6 10.6 0 0 1-1.63-5.67c0-5.88 4.8-10.67 10.7-10.67 2.85 0 5.52 1.1 7.53 3.11a10.58 10.58 0 0 1 3.12 7.54c0 5.89-4.8 10.68-10.68 10.68z"/>
+  </svg>
+</a>
+
+<script>
+  // Hero video fade-in
+  (function(){
+    var v = document.getElementById('heroBgVideo');
+    if(!v) return;
+    function onReady(){ v.classList.add('loaded'); }
+    if(v.readyState >= 3){ onReady(); }
+    else { v.addEventListener('canplay', onReady, {once:true}); }
+  })();
+
+  // Nav scroll state
+  (function(){
+    var n = document.querySelector('nav');
+    if(!n) return;
+    function check(){ n.classList.toggle('scrolled', window.scrollY > 36); }
+    window.addEventListener('scroll', check, {passive:true});
+    check();
+  })();
+
+  // Scroll reveal — all three directions
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .reveal-l, .reveal-r').forEach(el => revealObs.observe(el));
+
+  // Animated impact numbers counter
+  function animateCount(el) {
+    const raw = el.textContent.trim();
+    const match = raw.match(/[\d,]+/);
+    if (!match) return;
+    const target = parseInt(match[0].replace(/,/g, ''));
+    if (isNaN(target) || target < 2) return;
+    const suffix = raw.replace(/[\d,]+/, '').trim();
+    const prefix = raw.startsWith(match[0]) ? '' : raw.split(match[0])[0];
+    const duration = 1800;
+    const step = 16;
+    const increment = target / (duration / step);
+    let current = 0;
+    const timer = setInterval(() => {
+      current = Math.min(current + increment, target);
+      const formatted = Math.floor(current).toLocaleString();
+      el.textContent = prefix + formatted + suffix;
+      if (current >= target) clearInterval(timer);
+    }, step);
+  }
+
+  const numObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.imp-val').forEach(animateCount);
+        numObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  const numsSection = document.querySelector('.impact-nums');
+  if (numsSection) numObs.observe(numsSection);
+
+  // Progress bar animation on scroll
+  const barObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('[data-width]').forEach(bar => {
+          bar.style.transition = 'width 1.4s cubic-bezier(0.4,0,0.2,1)';
+          bar.style.width = bar.dataset.width;
+        });
+        barObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('.bar-track').forEach(el => barObs.observe(el.parentElement));
+
+  // Mobile nav
+  (function(){
+    var ham = document.getElementById('navHam');
+    var drawer = document.getElementById('navDrawer');
+    var overlay = document.getElementById('navOverlay');
+    var close = document.getElementById('navClose');
+    if(!ham||!drawer||!overlay) return;
+    function open(){drawer.classList.add('open');overlay.classList.add('open');ham.classList.add('open');document.body.style.overflow='hidden';}
+    function shut(){drawer.classList.remove('open');overlay.classList.remove('open');ham.classList.remove('open');document.body.style.overflow='';}
+    ham.addEventListener('click',open);
+    close.addEventListener('click',shut);
+    overlay.addEventListener('click',shut);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')shut();});
+  })();
+</script>
+</body>
+</html>
